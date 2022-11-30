@@ -1,0 +1,68 @@
+body {
+    background-image: url("img/bg_qatar.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 97vh;
+    width: 98vw;
+}
+
+.signin {
+    color: white;
+    font-weight: 1px;
+    font-size: 35px;
+}
+
+#signIn {
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 8px 32px 0 white;
+}
+
+form {
+    color: white;
+    font-weight: lighter;
+}
+
+.input {
+    background-color: rgba(141, 27, 61, 0.7);
+    border-color: white;
+    margin-top: -15px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.btn {
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 170px;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: rgba(231, 233, 232, 0.8);
+    color: rgba(96, 11, 42, 1);
+}
+
+.signup {
+    font-size: 12px;
+}
+
+.privacy {
+    font-size: 10px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgba(254, 206, 80, 1);
+    text-decoration: underline;
+}
