@@ -1,10 +1,10 @@
 <?php include"header.php" ?>
 
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container my-5">
+
 
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container my-5">
+<div class=" my-2">
   <!-- Footer -->
   <footer
           class="text-center text-lg-start text-white"
@@ -12,7 +12,7 @@
           >
     <!-- Grid container -->
     <div class="container p-4 pb-0">
-      <!-- Section: Links -->
+      <!-- Section: Links --> 
       <section class="">
         <!--Grid row-->
         <div class="row">
@@ -109,12 +109,27 @@
             </p>
           </div>
           <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Get the app 
+            </h6>
+            <p>
+              <span class="text-white">YouTickets for android</span>
+            </p>
+            <p>
+              <span class="text-white">YouTickets for ios</span>
+            </p>
+            <p>
+              <span class="text-white">Mobile site</span>
+            </p>
+          </div>
+          <!-- Grid column -->
         </div>
         <!--Grid row-->
       </section>
       <!-- Section: Links -->
 
-      <hr class="my-3">
+      <hr/>
 
       <!-- Section: Copyright -->
       <section class="p-3 pt-0">
@@ -170,8 +185,6 @@
     <!-- Grid container -->
   </footer>
   <!-- Footer -->
-</div>
-<!-- End of .container -->  
 
 
 

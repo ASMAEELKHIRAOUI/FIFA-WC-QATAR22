@@ -1,0 +1,15 @@
+nav .container .login{
+    color: rgb(139, 24, 56);
+    border-color: rgb(139, 24, 56);
+    width: 4rem;
+}
+
+nav .container .logup{
+    background-color: rgb(139, 24, 56);
+    width: 6rem;
+    color: white;
+}
+
+nav .container ul .navbar-nav {
+    margin-right: 5rem;
+}
