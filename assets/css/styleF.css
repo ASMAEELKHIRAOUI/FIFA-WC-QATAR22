@@ -1,0 +1,9 @@
+nav .container .login{
+    color: rgb(139, 24, 56);
+    border-color: rgb(139, 24, 56);
+}
+
+nav .container .logup{
+    background-color: rgb(139, 24, 56);
+    color: white;
+}
