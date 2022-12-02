@@ -11,7 +11,7 @@
           style="background-color: rgb(139, 24, 56)"
           >
     <!-- Grid container -->
-    <div class="container p-4 pb-0">
+    <div class="container p-4 pb-0 ">
       <!-- Section: Links --> 
       <section class="">
         <!--Grid row-->
@@ -186,8 +186,7 @@
   </footer>
   <!-- Footer -->
 
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 
 </body>
 </html>        
