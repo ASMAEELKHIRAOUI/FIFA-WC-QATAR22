@@ -11,7 +11,7 @@
       <div class="card m-3">
         <div class="card-body">
           <h2>
-                Edit Profile
+            Edit Profile
           </h2>
           <hr style="width: 13%; text-align: left; margin-left: 0" />
           <br />
