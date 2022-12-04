@@ -1,9 +1,16 @@
-nav .container .login{
+
+#nav #navbarToggle .brnd{
     color: rgb(139, 24, 56);
     border-color: rgb(139, 24, 56);
 }
 
-nav .container .logup{
+ .logup{
     background-color: rgb(139, 24, 56);
     color: white;
+}
+
+.login{
+    background-color: rgb(139, 24, 56);
+    border-color: rgb(139, 24, 56);
+    color:  rgb(139, 24, 56);
 }

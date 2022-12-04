@@ -1,5 +1,4 @@
 
-<?php include"../include/header.php" ?>
 <?php include"../include/navbar.php" ?>
 
 <div class="alert alert-success m-4 text-center" role="alert">
@@ -13,7 +12,7 @@
           <h2>
             Edit Profile
           </h2>
-          <hr style="width: 13%; text-align: left; margin-left: 0" />
+          <hr class="w-25%" />
           <br />
           <form action="" methode="POST">
             <div class="row">
