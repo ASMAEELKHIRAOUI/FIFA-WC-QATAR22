@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/sign.css"/>
+    <link rel="stylesheet" href="../assets/css/sign.css"/>
     <link rel="stylesheet" href="https://parsleyjs.org/src/parsley.css"/>
     <script defer  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script defer src="https://parsleyjs.org/dist/parsley.min.js"></script>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="row justify-content-center mt-3"><button class="btn" name="signIN">SIGN IN NOW</button></div>
                 <div class="signup text-center mt-4">
-                    Don't have an account? <a class="link" href="signup.php">Create an account</a>
+                    Don't have an account? <a class="link" href="signup.php">Create one!</a>
                 </div>
                 <div class="privacy text-center mt-4">
                     By clicking on "sign in now" you agree to <a class="link" href="">Privacy Policy</a>
@@ -37,6 +37,6 @@
             </form>
         </div>
     </div>
-    <script src="main.js"></script>
+    
 </body>
 </html>
