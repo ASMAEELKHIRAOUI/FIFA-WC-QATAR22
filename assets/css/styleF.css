@@ -1,14 +1,22 @@
 
-#nav #navbarToggle .brnd{
+nav #navbarSupportedContent .navbar-brand{
     color: rgb(139, 24, 56);
 }
 
- .logup{
+.sign .logup{
     background-color: rgb(139, 24, 56);
     color: white;
 }
+.sign .logup:active{
+    height: 1rem;
+    width: 3rem;
+}
 
-.login{
+.sign .login{
     border-color: rgb(139, 24, 56);
     color:  rgb(139, 24, 56);
+}
+.sign .login:active{
+    height: 1rem;
+    width: 3rem;
 }
