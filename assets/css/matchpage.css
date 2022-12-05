@@ -1,0 +1,38 @@
+.match-img{
+    width: 60%;
+}
+
+.bg-img{
+
+    background-color: #DADAFB;;
+}
+.icon{
+    font-size: 22px; 
+    padding: 10px;
+    border: 1px solid #8A1538;
+    border-radius: 4px;
+    color: #8A1538;
+    
+}
+.btn-ticket{
+    height: 40px;
+    background-color: #8A1538;
+    color: white;
+   
+}
+.btn-ticket:hover{
+    background-color:rgba(138, 21, 56, 0.9);
+     
+}
+.card{
+    /* height:50% ; */
+    border-radius: 20px;
+    border: 1px solid #828282;
+}
+.card:hover{
+    box-shadow: 6px 6px 1px #0022BA;    
+}
+.terms{
+  height: 2.3rem;
+}
+
