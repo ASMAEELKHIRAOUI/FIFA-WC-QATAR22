@@ -27,17 +27,15 @@
                             </div>
                             <div class="d-sm-block d-md-flex justify-content-between align-items-center ">
                                 <div class="search-2 ">
-                                    <div class="d-flex align-items-center">
-                                        <!-- <iconify-icon class="me-2 icone-date fs-2" icon="mdi:sort-date-ascending" style="color: #8a1538;"></iconify-icon> -->
+                                    <div class="d-flex align-items-center justify-content-between">
                                         <span class="fw-semibold input-date ms-2" style="color: #8A1538;">start</span>
-                                        <input placeholder="Select date" type="date" id="datePicker" class="form-control ">
+                                        <input class="form-control " placeholder="Select date" type="date" id="datePicker" >
                                     </div>
                                 </div> 
                                 <div class="search-2 ">
-                                    <div class="d-flex align-items-center ">
-                                        <!-- <iconify-icon class="me-2 icone-date fs-2" icon="mdi:sort-date-descending" style="color: #8a1538;"></iconify-icon> -->
+                                    <div class="d-flex align-items-center justify-content-between ">
                                         <span class="ms-2 fw-semibold input-date" style="color: #8A1538;">end</span> 
-                                        <input placeholder="Select date" type="date" id="modal_date" class="form-control ">
+                                        <input class="form-control " placeholder="Select date" type="date" id="modal_date" >
                                     </div>
                                 </div> 
                             </div>
@@ -49,13 +47,6 @@
             </div>
             <!-- Background image -->
         </header>
-
-
-
-
-
-
-
 
 
 
@@ -314,32 +305,46 @@
             </div>
         </section>
 
-        <section>
+
+
+        <section class="pt-5 pb-5">
             <div class="container">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://cloudinary.fifa.com/m/398a75e21d038f69/original/FIFA-World-Cup-Qatar-2022-Final-groups.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                        <img class="d-block w-100" src="..." alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                        <img class="d-block w-100" src="..." alt="Third slide">
-                        </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-between">
+                        <h3 class="mb-3">standings</h3>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div class="col-12 position-relative">
+                        <div id="carouselExampleControls4" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="">
+                                        <div class="">
+                                            <img class="w-100" src="https://neiuindependent.org/wp-content/uploads/2022/04/QUINIELAQATAR-1.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                <div class="">
+                                    <div class=" ">
+                                        <img class="w-100" src="https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-12/England_WC%20Round%20of%2016%20Bracket-2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls4" data-bs-slide="prev">
+                            <iconify-icon class="fs-1" icon="line-md:arrow-left-circle" style="color: #FFF;"></iconify-icon>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls4" data-bs-slide="next">
+                            <iconify-icon class="fs-1" icon="line-md:arrow-right-circle" style="color: #FFF;"></iconify-icon>
+                        </button>
+                    
+                        
+                    </div>
                 </div>
             </div>
-            
         </section>
+
 
         <section class="pt-5 pb-5">
             <div class="container">
