@@ -1,20 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="../styles/landing_page.css">
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    </head>
+    <?php include '../include/head.php' ?>
+    <link rel="stylesheet" href="../assets/css/landing_page.css">
     <body>
-        <header>
-            <!-- Navbar -->
-            
-            <!-- Navbar -->
-
+        <?php include '../include/navbar.php' ?>
+        <header>            
             <!-- Background image -->
             <div
                 class="bg-image"
@@ -24,37 +15,41 @@
                 background-size: 100%;
                 background-repeat: no-repeat;
                 background-position: left top;
-                "
-            >
+                ">
                 <div class="header-content position-relative "  >
                     <div class="text-white">
-                        <h1  class="titel mt-5 ">Exclusive Matchs, priceless moments</h1>
+                        <h1  class="titel mt-5 text-center ">Exclusive Matchs, priceless moments</h1>
                     </div>
-                    <div class="position-absolute top-100 start-50 w-75 translate-middle bg-white border border-dark rounded-1">
-                        <div class="search"> 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="search-1"> 
-                                        <input type="text" placeholder="Search by match">
-                                    </div> 
+                    <div class="position-absolute top-100 start-50 translate-middle bg-white border border-dark rounded-1" >
+                        <div class="position-relative d-sm-block d-md-flex justify-content-between align-items-center" >
+                            <div class="search-1 " style="min-width: 300px;"> 
+                                <input type="text" placeholder="Search by match">
+                            </div>
+                            <div class="d-sm-block d-md-flex justify-content-between align-items-center ">
+                                <div class="search-2 ">
+                                    <div class="d-flex align-items-center">
+                                        <!-- <iconify-icon class="me-2 icone-date fs-2" icon="mdi:sort-date-ascending" style="color: #8a1538;"></iconify-icon> -->
+                                        <span class="fw-semibold input-date ms-2" style="color: #8A1538;">start</span>
+                                        <input placeholder="Select date" type="date" id="datePicker" class="form-control ">
+                                    </div>
                                 </div> 
-                                <div class="col-md-6"> 
-                                    <div>
-                                        <div class="search-2">
-                                        <div class="container">
-                                            <input placeholder="Select date" type="date" id="modal_date" class="form-control">
-                                        </div>
-                                                <button>Search</button> 
-                                        </div> 
-                                    </div> 
+                                <div class="search-2 ">
+                                    <div class="d-flex align-items-center ">
+                                        <!-- <iconify-icon class="me-2 icone-date fs-2" icon="mdi:sort-date-descending" style="color: #8a1538;"></iconify-icon> -->
+                                        <span class="ms-2 fw-semibold input-date" style="color: #8A1538;">end</span> 
+                                        <input placeholder="Select date" type="date" id="modal_date" class="form-control ">
                                     </div>
                                 </div> 
                             </div>
+                            <iconify-icon class="position-absolute top-0 end-0 mt-2 me-2 fs-3  " icon="ion:search-circle" style="color: #8a1538;" rotate="90deg"></iconify-icon>                                                
+
                         </div>
+                    </div>
                 </div>
             </div>
             <!-- Background image -->
         </header>
+
 
 
 
@@ -320,9 +315,30 @@
         </section>
 
         <section>
-            <div class="">
-            <img width="100%" src="https://cloudinary.fifa.com/m/398a75e21d038f69/original/FIFA-World-Cup-Qatar-2022-Final-groups.jpg" alt="">
+            <div class="container">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://cloudinary.fifa.com/m/398a75e21d038f69/original/FIFA-World-Cup-Qatar-2022-Final-groups.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100" src="..." alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                        <img class="d-block w-100" src="..." alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
+            
         </section>
 
         <section class="pt-5 pb-5">
@@ -597,6 +613,10 @@
             </div>
         </section>
 
+
+
+        <?php include '../include/footer.php' ?>
+
         
 
 
@@ -604,7 +624,7 @@
 
 
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
