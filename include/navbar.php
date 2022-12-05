@@ -3,49 +3,46 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        >
-        <i class="fas fa-bars"></i>
-        </button>
+      <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+          <i class="fas fa-bars"></i>
+          </button>
 
-      <div class="collapse navbar-collapse justify-content-between  " id="navbarSupportedContent" >
-       
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <a class="navbar-brand mt-2 mt-lg-0" href="#">
-              <h2><p>YouTickets</p></h2>
-          </a>
-        </ul> 
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link me-3" href="#">About</a>
-          </li>
-          <li class="nav-item me-3">
-            <a class="nav-link" href="#">News</a>
-          </li>
-          <li class="nav-item me-3">
-            <a class="nav-link" href="#">Teams</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse justify-content-between  " id="navbarSupportedContent" >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                <h2><p>YouTickets</p></h2>
+            </a>
+          </ul> 
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link me-3" href="#">About</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="#">Teams</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class=" d-flex mb-2 sign ">
+            <button href="../pages/signin.php" class="btn login me-4"> Log In</button>
+          
+            <a href="../pages/signup.php" class="btn logup me-4"> Sign Up</a>
+        </div>
       </div>
-      <div class=" d-flex mb-2 sign ">
-
-          <a href="../pages/signin.php" class="btn login me-4"> Log In</a>
-        
-          <a href="../pages/signup.php" class="btn logup me-4"> Sign Up</a>
-        
-      </div>
-    </div>
   </nav>
 <!-- Navbar -->
 
