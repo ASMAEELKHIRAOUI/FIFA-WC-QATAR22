@@ -1,0 +1,176 @@
+header{
+    margin-bottom: 40px;
+}
+
+.header-content{
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+.titel{
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    font-size: 3.5em;
+}
+
+.search {
+    background-color: #fff;
+    padding: 1px;
+    border-radius: 5px
+}
+
+
+
+.search-1 {
+    position: relative;
+    width: 100%;
+}
+
+.search-1 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 34px;
+    padding-right: 10px;
+    border-right: 2px solid #eee
+}
+
+.search-1 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-1 i {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    font-size: 24px;
+    color: #eee
+}
+
+
+.search-2 {
+    /* position: relative; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+.search-2 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 100px
+}
+
+.search-2 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-2 i {
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    font-size: 24px;
+    color: #eee
+}
+
+.search-2 button {
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    border: none;
+    height: 45px;
+    background-color: #8A1538;
+    color: #fff;
+    width: 90px;
+    border-radius: 4px
+}
+.card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    /* padding: 14px 80px 18px 36px; */
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card img{
+    height: 200px;
+}
+
+/* @media (max-width:990px) {
+    .search-2 {
+        display: block;
+    }
+} */
+
+@media (max-width:1020px) {
+    .header-content{
+        height: 20vh;
+    }
+}
+
+@media (max-width:800px) {
+    .header-content{
+        height: 20vh;
+    }
+    .titel{
+        display: none;
+    }
+
+    .search-1 input {
+        border-right: none;
+        border-bottom: 1px solid #eee
+    }
+
+    .search-2 i {
+        left: 4px
+    }
+
+    .search-2 input {
+        padding-left: 34px
+    }
+
+    .search-2 button {
+        height: 37px;
+        top: 5px
+    }
+
+
+
+}
+
+@media (max-width:550px) {
+    .header-content{
+        height: 10vh;
+    }
+}
+
+
+
+
+
+
+
