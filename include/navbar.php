@@ -1,51 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>   
-	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>FIFA | QATAR</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/styleF.css">
-</head>
-<body>
+<?php include 'head.php'?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class=" navbar-collapse justify-content-between" id="navbarToggle">
-    <div class="ms-4">
-      <a class="navbar-brand brnd" href="#"> <b> Youtickets.com </b> </a>
-    </div>  
-    <div>
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link me-4" href="#">About</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link me-4" href="#">News</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link me-4" href="#">Teams</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link me-4" href="#">Contact</a>
-        </li>
-      </ul>
-    </div>
-    <!-- align-items-end    d-flex-->
-    <div class="me-4"> 
-        <button type="button" class="btn me-2 login">
-          Log In
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+        <i class="fas fa-bars"></i>
         </button>
-        <button type="button" class="btn me-3 logup">
-          Sign Up
-        </button>
+
+      <div class="collapse navbar-collapse justify-content-between  " id="navbarSupportedContent" >
+       
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a class="navbar-brand mt-2 mt-lg-0" href="#">
+              <h2><p>YouTickets</p></h2>
+          </a>
+        </ul> 
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link me-3" href="#">About</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="#">News</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="#">Teams</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
       </div>
-  </div>
-</nav>
+      <div class=" d-flex mb-2 sign ">
+
+          <a href="../pages/signin.php" class="btn login me-4"> Log In</a>
+        
+          <a href="../pages/signup.php" class="btn logup me-4"> Sign Up</a>
+        
+      </div>
+    </div>
+  </nav>
+<!-- Navbar -->
+
+<!-- start #JavaScript core -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<!-- End #JavaScript core --> 
 
 </body>
 </html>   
