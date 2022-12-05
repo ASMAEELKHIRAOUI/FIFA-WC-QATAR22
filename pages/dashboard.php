@@ -1,6 +1,5 @@
 <?php
 include '../include/header.php';
-include '../include/navbar.php';
 ?>
 
 
@@ -71,10 +70,14 @@ include '../include/navbar.php';
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block" id="dashboard">
-            <div class="menu-sidebar__content js-scrollbar1 mt-5">
+            <div class="menu-sidebar__content js-scrollbar1 ">
                 <nav class="navbar-sidebar ">
-                    <ul class="list-unstyled navbar__list mt-4">
+                    <ul class="list-unstyled navbar__list ">
                     <li class="active has-sub">
+                            <a href="#landingpage.php" class="text-white text-decoration-none">
+                                <i class="fa fa-futbol-o text-white "></i>Home</a>
+                        </li>
+                       <li class="active has-sub">
                             <a href="#statistiques" class="text-white text-decoration-none">
                                 <i class="fa fa-futbol-o text-white "></i>Dashboard</a>
                         </li>
@@ -83,8 +86,7 @@ include '../include/navbar.php';
                                 <i class="fa fa-futbol-o text-white "></i>Matches List</a>
                         </li>
                         <li>
-                            <a href="#table-teams" class="text-white text-decoration-none">
-                                <i class="fa fa-futbol-o text-white"></i>Teams List</a>
+                            <a href="#table-teams" class="text-white text-decoration-none"><i class="fa fa-futbol-o text-white"></i>Teams List</a>
                         </li>
                         <li>
                             <a href="#table-stads" class="text-white text-decoration-none">
@@ -104,16 +106,48 @@ include '../include/navbar.php';
         <!-- PAGE CONTAINER-->
         <div class="page-container">
         <!-- NAVBAR  -->
+        <nav class="navbar fixed-top d-lg-none" id="color">
+  <div class="container-fluid" >
+    <a class="navbar-brand text-light" href="#">Offcanvas navbar</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon text-dark"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header" id="color">
+        <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" id="color">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Matches List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Stads List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Reservations List</a>
+          </li>
+      </div>
+    </div>
+  </div>
+</nav>
         <!-- END OF NAVBAR -->
 
             <!-- MAIN CONTENT-->
-            <div class="main-content">
-                <div class="section__content section__content--p30 ">
-                    <div class="container-fluid" id="statistiques">
+            <div class="main-content pt-5">
+                <div class="section__content section__content ">
+                    <div class="container-fluid" >
                         <div class="row">
-                            <div class="col-md-12 ">
-                                <div class="overview-wrap ">
-                                    <h2 class="title-1">Statistiques</h2>
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1" id="statistiques">Statistiques</h2>
                                     <!-- <button class="au-btn au-btn-icon au-btn--blue rounded" id="color">
                                         <i class="zmdi zmdi-plus"></i>add item</button> -->
                                 </div>
@@ -216,13 +250,13 @@ include '../include/navbar.php';
                             <div class="col-lg-12">
                                 <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
-                                    <h2 class="title-1 m-b-25 me-4">All Matches</h2>
+                                    <h2 class="title-1 m-b-25 me-4" id="table-matches">All Matches</h2>
                                     <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add match</button>
                                 </div>
 
                                 <br>
-                                <div class="table-responsive table--no-card mb-4" id="table-matches">
+                                <div class="table-responsive table--no-card mb-4" >
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
@@ -288,12 +322,12 @@ include '../include/navbar.php';
                             <div class="col-lg-12">
                                 <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
-                                    <h2 class="title-1 m-b-25 me-4">All Teames</h2>
+                                    <h2 class="title-1 m-b-25 me-4" id="table-teams">All Teames</h2>
                                     <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add Team</button>
                                 </div>
                         <br>
-                                <div class="table-responsive table--no-card mb-4" id="table-teams">
+                                <div class="table-responsive table--no-card mb-4" >
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
@@ -360,12 +394,12 @@ include '../include/navbar.php';
                             <div class="col-lg-12">
                                 <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
-                                    <h2 class="title-1 m-b-25 me-4">All Stads</h2>
+                                    <h2 class="title-1 m-b-25 me-4" id="table-stads">All Stads</h2>
                                     <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add stad</button>
                                 </div>
                         <br>
-                                <div class="table-responsive table--no-card mb-4" id="table-stads">
+                                <div class="table-responsive table--no-card mb-4" >
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
@@ -432,12 +466,12 @@ include '../include/navbar.php';
                             <div class="col-lg-12">
                                 <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
-                                    <h2 class="title-1 m-b-25 me-4">All Reservations</h2>
+                                    <h2 class="title-1 m-b-25 me-4" id="table-reservations">All Reservations</h2>
                                     <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add reservation</button>
                                 </div>
                         <br>
-                                <div class="table-responsive table--no-card mb-4" id="table-reservations">
+                                <div class="table-responsive table--no-card mb-4" >
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
@@ -506,5 +540,7 @@ include '../include/navbar.php';
 
 </html>
 
-
+<?php
+include '../include/footer.php';
+?>
 
