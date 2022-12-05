@@ -13,7 +13,7 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <!-- Container wrapper -->
   <div class="container">
     <!-- Navbar brand -->
