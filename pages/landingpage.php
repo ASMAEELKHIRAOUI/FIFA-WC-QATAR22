@@ -50,13 +50,13 @@
             <div class="modal-body">
                 <div class="mb-3">
                     <label class="form-label">Start</label>
-                    <input type="date" class="form-control" id="task_date" name="task-date"/>
+                    <input type="datetime-local" class="form-control" id="task_date" name="task-date"/>
                 </div>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
                     <label class="form-label">End</label>
-                    <input type="date" class="form-control" id="task_date" name="task-date"/>
+                    <input type="datetime-local" class="form-control" id="task_date" name="task-date"/>
                 </div>
             </div>
             <div class="modal-footer">
