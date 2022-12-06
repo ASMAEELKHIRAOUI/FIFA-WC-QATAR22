@@ -44,6 +44,28 @@
             $this->matchStaduim_id = $mS_id;
         }
 
+
+        //crud
+
+        public function getMatchs(){
+
+        }
+
+        public function getMatch($id){
+
+        }
+        public function addMatch($object){
+            
+
+        }
+        public function updateMatch($id){
+            
+        }
+
+        public function deleteMatch($id){
+        }
+
+
     }
 
 
