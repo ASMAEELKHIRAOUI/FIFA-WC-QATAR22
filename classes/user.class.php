@@ -7,14 +7,16 @@ include_once 'database.class.php';
         protected $lasttName;
         protected $password;
         protected $email;
+        protected $roll;
 
-        public function __construct ($fn , $ln , $pas , $emi)
+        public function __construct ($fn , $ln , $pas , $emi , $roll)
         {
             $this->id = NULL;
             $this->firstName = $fn;
             $this->lasttName = $ln;
             $this->password = $pas;
             $this->email = $emi;
+            $this->roll = $roll;
         }
 
 
@@ -27,8 +29,11 @@ include_once 'database.class.php';
         public function setPassword($pas){
             $this->password = $pas;
         }
-        public function setFirtEmail($emi){
+        public function setEmail($emi){
             $this->email = $emi;
+        }
+        public function setRoll($roll){
+            $this->roll = $roll;
         }
 
 
@@ -41,8 +46,11 @@ include_once 'database.class.php';
         public function getPassword(){
             return $this->password  ;
         }
-        public function getFirtEmail(){
+        public function getEmail(){
             return $this->email  ;
+        }
+        public function getRoll(){
+            return $this->roll  ;
         }
 
 

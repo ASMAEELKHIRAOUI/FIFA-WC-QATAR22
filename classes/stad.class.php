@@ -1,5 +1,5 @@
 <?php 
-    class stad{
+    class Stad{
         private $id = NULL;
         private $name;
         private $capacity;
@@ -51,7 +51,33 @@
         public function setImage($image){
             $this->image = $image;
         }
+
+
+
+        //crud
+
+        public function getStads(){
+
+        }
+
+        public function getStad($id){
+
+        }
+        public function addStad($object){
+            
+
+        }
+        public function updateStad($id){
+            
+        }
+
+        public function deleteStad($id){
+        }
+
+
+
     }
+
 
 
 

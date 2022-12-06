@@ -4,9 +4,13 @@ include_once 'user.class.php';
 
     class Spectateur extends User {
 
+        //crud
+        
         public function getSpectateur($id){
+
         }
         public function addSpectateur($object){
+
 
         }
         public function updateSpectateur($id){
