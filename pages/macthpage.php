@@ -1,3 +1,8 @@
+<?php 
+include '../include/navbar.php';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,31 +22,37 @@
 </head>
 <body>
     
-    <div class=" container  d-flex justify-content-between   w-100 my-5  ">
-        <div class=" col-1  d-flex flex-column align-items-center  ">
+    <div class=" container  d-flex justify-content-between  flex-wrap  w-100 my-5  ">
+<!--  col-1  d-flex flex-column align-items-center d-sm-flex  -->
+        <div class=" col-1 d-flex flex-md-column align-items-sm-center ">
              <h5 class="mr-2" >Share </h5>
-             <i class="icon my-2 fa-solid fa-link"></i>
-             <i class="icon my-2  fa-brands fa-square-instagram"></i>
-             <i class="icon my-2  fa-brands fa-facebook"></i>
-             <i class=" icon  my-2  fa-brands fa-square-twitter"></i>
+             <i class="icon my-2 m-2 fa-solid fa-link"></i>
+             <i class="icon my-2 m-2 fa-brands fa-square-instagram"></i>
+             <i class="icon my-2 m-2 fa-brands fa-facebook"></i>
+             <i class=" icon  my-2 m-2  fa-brands fa-square-twitter"></i>
         </div>
-        <div class=" col d-flex flex-column ">
+        <!-- col d-flex flex-column -->
+        <div class=" col-12 col-md-10 d-flex flex-column " >
             <div class=" bg-img d-flex w-100 h-50 justify-content-center">     
                 <img class="match-img" src="../assets/img/matchs/morocco-vs-croatia.png" alt="imagematch">
             </div>
-            <div class=" mt-4  d-flex justify-content-between flex-wrap ">
+            <div class=" mt-4  d-flex justify-content-between ">
                 <div class="my-3  d-flex flex-column align-items-between  ">
                     <h3 class=" ">Morocco vs Canada</h3>
                     <div><i class=" my-1 py-2 mr-2 fa-solid fa-location-dot"></i><span>Al Thumama Stadium</span></div>
                     <div><i class="  text-start mr-2 fa-solid fa-calendar-days"></i><span>December 01, 2022 · 20.00 </span></div>
                     <p class="my-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus debitis repudiandae non! Laborum</p>
                 </div>
-                <div class=" card  rounded-3 " style="  width: 15rem;">
-                    <div class="card-body">
-                        <h5 class=" text-center card-title">Tickets starting at</h5>
-                        <h6 class=" text-center card-subtitle mb-2 text-muted">220$</h6>
-                        <button class="border border-0 rounded  text-center btn-ticket w-100 " >Reserve your  E-Tickets</button>
-                    </div>
+                <div class="row ">
+                    <div class="col-lg-2 col-md-6 col-sm-12">
+                        <div class=" card  " style="  width: 15rem;">
+                            <div class="card-body">
+                                <h5 class=" text-center card-title">Tickets starting at</h5>
+                                <h6 class=" text-center card-subtitle mb-2 text-muted">220$</h6>
+                                <button class="border border-0 rounded  text-center btn-ticket w-100 " >Reserve your  E-Tickets</button>
+                            </div>
+                        </div>
+                    </div>    
                 </div>
             </div>
             <div class="my-3 d-flex flex-column ">
@@ -57,6 +68,7 @@
 
         </div>
      </div>
-    
+     <?php      include '../include/footer.php';?>
+
 </body>
 </html>
