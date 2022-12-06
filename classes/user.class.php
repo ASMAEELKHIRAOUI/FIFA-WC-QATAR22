@@ -46,7 +46,7 @@ include_once 'database.class.php';
         public function getPassword(){
             return $this->password  ;
         }
-        public function getFirtEmail(){
+        public function getEmail(){
             return $this->email  ;
         }
         public function getRoll(){
