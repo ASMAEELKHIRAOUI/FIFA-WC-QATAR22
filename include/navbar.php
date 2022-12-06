@@ -1,55 +1,47 @@
-<?php //include 'head.php'?>
+<link rel="stylesheet" href="../assets/css/navbar.css">
+<nav class="sticky-top navbar navbar-expand-lg bg-light">
+  <div class="container-fluid ">
+    <!-- d-flex justify-content-between -->
+    <a class="fs-4 fw-bolder text-danger navbar-brand" href="#">YouTeckets.com</a>
 
+    <iconify-icon class="open-nav navbar-toggler p-0" inline icon="ph:list-duotone"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: #8a1538;" width="25" height="25"></iconify-icon>
+    <iconify-icon class="close-nav navbar-toggler p-0" inline icon="ph:x-fill"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: #8a1538;" width="25" height="25"></iconify-icon>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            >
-          <i class="fas fa-bars"></i>
-          </button>
+    
 
-        <div class="collapse navbar-collapse justify-content-between  " id="navbarSupportedContent" >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                <h2><p>YouTickets</p></h2>
-            </a>
-          </ul> 
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link me-3" href="#">About</a>
-            </li>
-            <li class="nav-item me-3">
-              <a class="nav-link" href="#">News</a>
-            </li>
-            <li class="nav-item me-3">
-              <a class="nav-link" href="#">Teams</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <div class=" d-flex mb-2 sign ">
-            <button href="../pages/signin.php" class="btn login me-4"> Log In</button>
-          
-            <a href="../pages/signup.php" class="btn logup me-4"> Sign Up</a>
-        </div>
-      </div>
-  </nav>
-<!-- Navbar -->
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
 
-<!-- start #JavaScript core -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<!-- End #JavaScript core --> 
+    <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class=" navbar-nav nav justify-content-center me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active"  href="#">test</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  href="#">test</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  href="#">test</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  href="#">test</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  href="#">test</a>
+        </li>
+        
+      </ul>
+      
+    <div>
+    <button type="button" class="btn btn-outline-secondary">Sign in</button>
+      <button type="button" class="btn btn-danger">Sign up</button>
+    </div>
 
-</body>
-</html>   
+    </div>
+
+    
+
+    
+  </div>
+</nav>
