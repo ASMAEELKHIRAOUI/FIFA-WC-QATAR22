@@ -34,7 +34,7 @@ include '../include/navbar.php';
         <!-- col d-flex flex-column -->
         <div class=" col-12 col-md-10 d-flex flex-column " >
             <div class=" bg-img d-flex w-100 h-50 justify-content-center">     
-                <img class="match-img" src="../assets/img/morocco-vs-croatia.png" alt="imagematch">
+                <img class="match-img" src="../assets/img/matchs/morocco-vs-croatia.png" alt="imagematch">
             </div>
             <div class=" mt-4  d-flex justify-content-between ">
                 <div class="my-3  d-flex flex-column align-items-between  ">
