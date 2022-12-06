@@ -24,19 +24,19 @@ include '../include/navbar.php';
     
     <div class=" container  d-flex justify-content-between  flex-wrap  w-100 my-5  ">
 <!--  col-1  d-flex flex-column align-items-center d-sm-flex  -->
-        <div class=" col-1 d-flex flex-md-column align-items-sm-center ">
-             <h5 class="mr-2" >Share </h5>
+        <div class=" col-1 d-flex  flex-md-column align-items-sm-center ">
+             <spain class=" d-none d-md-block  my-2   text-center  " >Share </spain>
              <i class="icon my-2 m-2 fa-solid fa-link"></i>
              <i class="icon my-2 m-2 fa-brands fa-square-instagram"></i>
              <i class="icon my-2 m-2 fa-brands fa-facebook"></i>
              <i class=" icon  my-2 m-2  fa-brands fa-square-twitter"></i>
         </div>
         <!-- col d-flex flex-column -->
-        <div class=" col-12 col-md-10 d-flex flex-column " >
+        <div class=" col-12 col-md-11 d-flex flex-column " >
             <div class=" bg-img d-flex w-100 h-50 justify-content-center">     
                 <img class="match-img" src="../assets/img/morocco-vs-croatia.png" alt="imagematch">
             </div>
-            <div class=" mt-4  d-flex justify-content-between ">
+            <div class=" mt-4  d-flex justify-content-between flex-wrap  ">
                 <div class="my-3  d-flex flex-column align-items-between  ">
                     <h3 class=" ">Morocco vs Canada</h3>
                     <div><i class=" my-1 py-2 mr-2 fa-solid fa-location-dot"></i><span>Al Thumama Stadium</span></div>
