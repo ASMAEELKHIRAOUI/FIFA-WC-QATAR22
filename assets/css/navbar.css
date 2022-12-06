@@ -1,4 +1,18 @@
+
+/* for change the icone of nav bare with clock  (= -> x) */
 .close-nav{
     display: none;
 }
-/* for change the icone of nav bare with clock  (= -> x) */
+
+nav .container-fluid a {
+    color: rgb(139, 24, 56);
+}
+
+.sign .logup{
+    background-color: rgb(139, 24, 56);
+    color: white;
+}
+.sign .login{
+    border-color: rgb(139, 24, 56);
+    color:  rgb(139, 24, 56);
+}
