@@ -50,13 +50,13 @@
             <div class="modal-body">
                 <div class="mb-3">
                     <label class="form-label">Start</label>
-                    <input type="date" class="form-control" id="task_date" name="task-date"/>
+                    <input type="datetime-local" class="form-control" id="task_date" name="task-date"/>
                 </div>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
                     <label class="form-label">End</label>
-                    <input type="date" class="form-control" id="task_date" name="task-date"/>
+                    <input type="datetime-local" class="form-control" id="task_date" name="task-date"/>
                 </div>
             </div>
             <div class="modal-footer">
@@ -96,7 +96,7 @@
                                         <div class="col-md-4 mb-3">
                                             <div class="card ">
                                                 <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
+                                                    <img class="card-img-top " alt="100%x280" src="../assets/img/general/header_bacground.png">
                                                     <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
                                                     <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
                                                 </div>
