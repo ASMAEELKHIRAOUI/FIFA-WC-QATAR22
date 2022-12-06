@@ -1,10 +1,9 @@
 <?php
-include '../include/header.php';
+include '../include/head.php';
 //include '../include/navbar.php';
 ?>
 
-
-    
+  
 
 <!-- Bootstrap links-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -13,7 +12,7 @@ include '../include/header.php';
 </head>
 <body>
 
-<body class="animsition">
+<body class="animsition" >
  <!-- add match form -->
 <div class="modal fade" id="modal">
 		<div class="modal-dialog">
@@ -28,19 +27,19 @@ include '../include/header.php';
 							<input type="hidden" name="id" >
 
 							<div class="mb-3">
-                                <label for="formFile" class="form-label">Default file input example</label>
+                                <label for="formFile" class="form-label">Image</label>
                                 <input class="form-control" type="file" id="formFile">
                             </div>
 
                             <div class="mb-3">
 								<label class="form-label">Date</label>
-								<input type="date"  class="form-control" step="any" required/>
+								<input type="datetime-local"  class="form-control" step="any" required/>
 							</div>
 							
-							<div class="mb-3">
+							<!-- <div class="mb-3">
 								<label class="form-label">Time</label>
 								<input type="time"  class="form-control"  required/>
-							</div>
+							</div> -->
 							
                             <div class="mb-3">
 								<label class="form-label">First team</label>
@@ -60,7 +59,7 @@ include '../include/header.php';
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Add" class="btn btn-dark text-light task-action-btn" id="save-btn">Add Match</button>
+						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
 					</div>
 				</form>
 			</div>
@@ -75,7 +74,7 @@ include '../include/header.php';
                 <nav class="navbar-sidebar ">
                     <ul class="list-unstyled navbar__list ">
                     <li class="active has-sub">
-                            <a href="#landingpage.php" class="text-white text-decoration-none">
+                            <a href="landingpage.php" class="text-white text-decoration-none">
                                 <i class="fa fa-futbol-o text-white "></i>Home</a>
                         </li>
                        <li class="active has-sub">
@@ -98,6 +97,11 @@ include '../include/header.php';
                             <a href="#table-reservations" class="text-white text-decoration-none">
                                 <i class="fa fa-futbol-o text-white"></i>Reservations List</a>
                         </li>
+
+                        <li>
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fa fa-futbol-o text-white"></i>Log out</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -105,7 +109,7 @@ include '../include/header.php';
         <!-- END MENU SIDEBAR-->
          
         <!-- PAGE CONTAINER-->
-        <div class="page-container">
+        <div class="page-container top-0">
         <!-- NAVBAR  -->
         <nav class="navbar fixed-top d-lg-none" id="color">
   <div class="container-fluid" >
@@ -121,19 +125,25 @@ include '../include/header.php';
       <div class="offcanvas-body" id="color">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Home</a>
+            <a class="nav-link active text-light" aria-current="page" href="landingpage.php"><i class="fa fa-futbol-o text-white me-2"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Dashboard</a>
+            <a class="nav-link active text-light" aria-current="page" href="#statistiques"><i class="fa fa-futbol-o text-white me-2"></i>Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Matches List</a>
+            <a class="nav-link active text-light" aria-current="page" href="#table-matches"><i class="fa fa-futbol-o text-white me-2"></i>Matches List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Stads List</a>
+            <a class="nav-link active text-light" aria-current="page" href="#table-teams"><i class="fa fa-futbol-o text-white me-2"></i>Team List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Reservations List</a>
+            <a class="nav-link active text-light" aria-current="page" href="#table-stads"><i class="fa fa-futbol-o text-white me-2"></i>Stad List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#table-reservations"><i class="fa fa-futbol-o text-white me-2"></i>Reservations List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Log out</a>
           </li>
       </div>
     </div>
@@ -141,14 +151,14 @@ include '../include/header.php';
 </nav>
         <!-- END OF NAVBAR -->
 
-            <!-- MAIN CONTENT-->
+            <!-- Statistiques-->
             <div class="main-content pt-5">
                 <div class="section__content section__content ">
                     <div class="container-fluid" >
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1" id="statistiques">Statistiques</h2>
+                                    <h2 class="title-1 mt-2" id="statistiques">Statistiques</h2>
                                     <!-- <button class="au-btn au-btn-icon au-btn--blue rounded" id="color">
                                         <i class="zmdi zmdi-plus"></i>add item</button> -->
                                 </div>
@@ -190,7 +200,7 @@ include '../include/header.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-users"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>103</h2>
@@ -205,7 +215,7 @@ include '../include/header.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>368</h2>
@@ -220,7 +230,7 @@ include '../include/header.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>103</h2>
@@ -235,7 +245,7 @@ include '../include/header.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>98</h2>
@@ -262,55 +272,61 @@ include '../include/header.php';
                                         <thead >
                                             <tr >
                                                 <th>Image</th>
-                                                <th>Date</th>
-                                                <th>Time</th>
+                                                <th>Date-Time</th>
+                                                <!-- <th>Time</th> -->
                                                 <th class="text-right">First team</th>
                                                 <th class="text-right">Secound team</th>
                                                 <th class="text-right">Stad</th>
+                                                <th class="text-right">Edit</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
+                                                <td>2018-09-29 05:57 PM</td>
+                                                <!-- <td>05:57</td> -->
                                                 <td class="text-right">morocco</td>
                                                 <td class="text-start">usa</td>
                                                 <td class="text-right">tamama</td>
+                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
                                             <tr>
                                                 <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
+                                                <td>2018-09-29 05:57 PM</td>
+                                                <!-- <td>05:57</td> -->
                                                 <td class="text-right">morocco</td>
                                                 <td class="text-start">usa</td>
                                                 <td class="text-right">tamama</td>
+                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
                                             <tr>
                                                 <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
+                                                <td>2018-09-29 05:57 PM</td>
+                                                <!-- <td>05:57</td> -->
                                                 <td class="text-right">morocco</td>
                                                 <td class="text-start">usa</td>
                                                 <td class="text-right">tamama</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
+                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
 
                                             <tr>
                                                 <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
+                                                <td>2018-09-29 05:57 PM</td>
+                                                <!-- <td>05:57</td> -->
                                                 <td class="text-right">morocco</td>
                                                 <td class="text-start">usa</td>
                                                 <td class="text-right">tamama</td>
+                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>test</td>
+                                                <td>2018-09-29 05:57 PM</td>
+                                                <!-- <td>05:57</td> -->
+                                                <td class="text-right">morocco</td>
+                                                <td class="text-start">usa</td>
+                                                <td class="text-right">tamama</td>
+                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
 
                                         </tbody>
@@ -323,7 +339,7 @@ include '../include/header.php';
                             <div class="col-lg-12">
                                 <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
-                                    <h2 class="title-1 m-b-25 me-4" id="table-teams">All Teames</h2>
+                                    <h2 class="title-1 m-b-25 me-4" id="table-teams">All Teams</h2>
                                     <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add Team</button>
                                 </div>
@@ -541,7 +557,5 @@ include '../include/header.php';
 
 </html>
 
-<?php
-include '../include/footer.php';
-?>
+
 
