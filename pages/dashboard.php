@@ -96,7 +96,7 @@ include '../include/header.php';
                         
                         <li>
                             <a href="#table-reservations" class="text-white text-decoration-none">
-                                <i class="fa fa-futbol-o text-white"></i>Reservations List</a>
+                                <i class="fa fa-ticket text-white"></i>Reservations List</a>
                         </li>
                     </ul>
                 </nav>
@@ -133,7 +133,7 @@ include '../include/header.php';
             <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Stads List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Reservations List</a>
+            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-ticket text-white me-2"></i>Reservations List</a>
           </li>
       </div>
     </div>
@@ -141,7 +141,7 @@ include '../include/header.php';
 </nav>
         <!-- END OF NAVBAR -->
 
-            <!-- MAIN CONTENT-->
+            <!-- Statistiques-->
             <div class="main-content pt-5">
                 <div class="section__content section__content ">
                     <div class="container-fluid" >
@@ -190,7 +190,7 @@ include '../include/header.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-users"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>103</h2>
@@ -205,7 +205,7 @@ include '../include/header.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>368</h2>
@@ -220,7 +220,7 @@ include '../include/header.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>103</h2>
@@ -235,7 +235,7 @@ include '../include/header.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>98</h2>
