@@ -4,8 +4,9 @@
     <?php include '../include/head.php' ?>
     <link rel="stylesheet" href="../assets/css/landing_page.css">
     <body>
-        <?php include '../include/navbar.php' ?>
-        <header>            
+    <?php include '../include/navbar.php' ?>          
+
+        <header>  
             <!-- Background image -->
             <div
                 class="bg-image"
@@ -16,30 +17,17 @@
                 background-repeat: no-repeat;
                 background-position: left top;
                 ">
+
                 <div class="header-content position-relative "  >
                     <div class="text-white">
                         <h1  class="titel mt-5 text-center ">Exclusive Matchs, priceless moments</h1>
                     </div>
-                    <div class="position-absolute top-100 start-50 translate-middle bg-white border border-dark rounded-1" >
-                        <div class="position-relative d-sm-block d-md-flex justify-content-between align-items-center" >
-                            <div class="search-1 " style="min-width: 300px;"> 
-                                <input type="text" placeholder="Search by match">
-                            </div>
-                            <div class="d-sm-block d-md-flex justify-content-between align-items-center ">
-                                <div class="search-2 ">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <span class="fw-semibold input-date ms-2" style="color: #8A1538;">start</span>
-                                        <input class="form-control " placeholder="Select date" type="date" id="datePicker" >
-                                    </div>
-                                </div> 
-                                <div class="search-2 ">
-                                    <div class="d-flex align-items-center justify-content-between ">
-                                        <span class="ms-2 fw-semibold input-date" style="color: #8A1538;">end</span> 
-                                        <input class="form-control " placeholder="Select date" type="date" id="modal_date" >
-                                    </div>
-                                </div> 
-                            </div>
-                            <iconify-icon class="position-absolute top-0 end-0 mt-2 me-2 fs-3  " icon="ion:search-circle" style="color: #8a1538;" rotate="90deg"></iconify-icon>                                                
+                    <div class=" header-search position-absolute top-100 start-50 translate-middle bg-white border border-dark rounded-1" >
+                        <div class="input-group rounded d-flex justify-content-between align-items-center">
+                            <input type="search" class="me-3 form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <iconify-icon inline icon="material-symbols:date-range-outline-sharp" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3" style="color: #8a1538;" width="25" height="25"></iconify-icon>
+                            <iconify-icon inline class="me-1" icon="ic:twotone-search" style="color: #8a1538;" width="25" height="25"></iconify-icon>
+                            </span>
 
                         </div>
                     </div>
@@ -47,6 +35,43 @@
             </div>
             <!-- Background image -->
         </header>
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ches date</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Start</label>
+                    <input type="date" class="form-control" id="task_date" name="task-date"/>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">End</label>
+                    <input type="date" class="form-control" id="task_date" name="task-date"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">ok</button>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+
+
+
+
 
 
 
@@ -304,8 +329,6 @@
                 </div>
             </div>
         </section>
-
-
 
         <section class="pt-5 pb-5">
             <div class="container">
@@ -629,9 +652,7 @@
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
     </body>
 </html>
