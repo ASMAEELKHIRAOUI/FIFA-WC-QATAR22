@@ -17,7 +17,7 @@
             <hr class="w-25% my-2"/>
           </div>
             <br>
-            <div class="table-responsive table--no-card mb-4" >
+          <div class="table-responsive table--no-card mb-4" >
                 <table class="table table-borderless table-striped table-earning" >
                     <thead >
                         <tr >
@@ -37,53 +37,13 @@
                             <td class="text-right">tamama</td>
                             <td>200$</td>
                         </tr>
-                        <tr>
-                            <td>2018-09-29 05:57 PM</td>
-                            <!-- <td>05:57</td> -->
-                            <td class="text-right">morocco</td>
-                            <td class="text-start">usa</td>
-                            <td class="text-right">tamama</td>
-                            <td>200$</td>
-                        </tr>
-                        <tr>
-                            <td>2018-09-29 05:57 PM</td>
-                            <!-- <td>05:57</td> -->
-                            <td class="text-right">morocco</td>
-                            <td class="text-start">usa</td>
-                            <td class="text-right">tamama</td>
-                            <td>200$</td>
-                        </tr>
-
-                        <tr>
-                            <td>2018-09-29 05:57 PM</td>
-                            <!-- <td>05:57</td> -->
-                            <td class="text-right">morocco</td>
-                            <td class="text-start">usa</td>
-                            <td class="text-right">tamama</td>
-                            <td>200$</td>
-                        </tr>
-
-                        <tr>
-                            <td>2018-09-29 05:57 PM</td>
-                            <!-- <td>05:57</td> -->
-                            <td class="text-right">morocco</td>
-                            <td class="text-start">usa</td>
-                            <td class="text-right">tamama</td>
-                            <td>200$</td>
-                        </tr>
-
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
+          </div>
+      </div>
+  </div>
 
 
-
-
-
-
-          
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12">
