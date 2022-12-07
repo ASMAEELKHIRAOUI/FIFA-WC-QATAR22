@@ -69,6 +69,7 @@
             $stmt = $database->connect()->prepare($sql);
             $stmt->execute();
             $dbStads = $stmt->fetchAll(PDO::FETCH_OBJ);
+            
             $stadts = array();
             
             $i=0;
@@ -83,8 +84,14 @@
         }
 
         public function getStad($id){
-
+            $database = new Database();
+            $sql = "SELECT * FROM `stad` where id = $id";
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute();
+            $dbStad = $stmt->fetchAll(PDO::FETCH_OBJ);
+            $this->getObject($dbStad);
         }
+
         public function addStad($object){
             
 
@@ -92,21 +99,10 @@
         public function updateStad($id){
             
         }
-
+        
         public function deleteStad($id){
         }
     }
-
-    // test
-
-    // $stad = new Stad();
-    // $stads = $stad->getStads();
-
-    // foreach($stads as $stad){
-    //     echo "<pre>";
-    //     print_r($stad);
-    //     echo "<pre>";
-    // }
     
     
 
