@@ -4,7 +4,7 @@
 
 
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class=" my-2">
+<div class="mt-2">
   <!-- Footer -->
   <footer
           class="text-center text-lg-start text-white"
