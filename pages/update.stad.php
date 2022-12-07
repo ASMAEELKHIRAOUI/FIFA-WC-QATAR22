@@ -7,12 +7,11 @@ include '../include/head.php';
 </head>
 
 <div class="" id="modal-stad">
-		<div class="modal-dialog">
+		<div class="container">
 			<div class="modal-content">
 				<form action="" method="POST" id="form" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">Edit Stad</h5>
-						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
 					<div class="modal-body">
 			
