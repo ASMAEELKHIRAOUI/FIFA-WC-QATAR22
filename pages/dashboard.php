@@ -33,21 +33,36 @@ include '../include/head.php';
 							
                             <div class="mb-3">
 								<label class="form-label">First team</label>
-								<input type="text"  class="form-control"  required/>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
 							</div>
 
                             <div class="mb-3">
-								<label class="form-label">Secound team</label>
-								<input type="text"  class="form-control"  required/>
+								<label class="form-label">Second team</label>
+								<select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
-								<input type="text" class="form-control" id="task-date" required/>
+								<select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
 							</div>
 
                             <div class="mb-3">
-								<label class="form-label">Prix</label>
+								<label class="form-label">Price</label>
 								<input type="number" class="form-control" step="any" id="task-date" required/>
 							</div>
 
@@ -172,12 +187,22 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Match</label>
-								<input type="text"  class="form-control"  required/>
+								<select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">User</label>
-								<input type="text"  class="form-control"  required/>
+								<select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
 							</div>
 						
 					</div>
