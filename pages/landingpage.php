@@ -528,11 +528,11 @@
                                         <?php for($i=0 ; $i<3 ; $i++): ?>
                                             <div class="col-md-4 mb-3">
                                                 <div class="card">
-                                                    <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
+                                                    <img class="card-img-top" alt="100%x280" src="../assets/img/stad/<?php echo($stads[$i]-> getImage()) ;?>">
                                                     <div class="card-body">
                                                             <div><?php echo($stads[$i]->getName()) ;?></div>
-                                                            <div>capacity : <span>40,000</span></div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
+                                                            <div>capacity : <span><?php echo($stads[$i]->getCapacity()) ;?></span></div>
+                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <span><?php echo($stads[$i]->getCity()) ;?></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -544,11 +544,11 @@
                                         <?php for($i=3 ; $i<6 ; $i++): ?>
                                             <div class="col-md-4 mb-3">
                                                 <div class="card">
-                                                    <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
+                                                    <img class="card-img-top" alt="100%x280" src="../assets/img/stad/<?php echo($stads[$i]-> getImage()) ;?>">
                                                     <div class="card-body">
                                                             <div><?php echo($stads[$i]->getName()) ;?></div>
                                                             <div>capacity : <span><?php echo($stads[$i]->getCapacity()) ;?></span></div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <span><?php echo($stads[$i]->getCapacity()) ;?></div>
+                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <span><?php echo($stads[$i]->getCity()) ;?></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -559,14 +559,14 @@
                                 </div>
                                 <div class="carousel-item  ">
                                     <div class="row">
-                                    <?php for($i=6 ; $i<8 ; $i++): ?>
+                                        <?php for($i=6 ; $i<8 ; $i++): ?>
                                             <div class="col-md-4 mb-3">
                                                 <div class="card">
-                                                    <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
+                                                    <img class="card-img-top" alt="100%x280" src="../assets/img/stad/<?php echo($stads[$i]-> getImage()) ;?>">
                                                     <div class="card-body">
                                                             <div><?php echo($stads[$i]->getName()) ;?></div>
-                                                            <div>capacity : <span>40,000</span></div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
+                                                            <div>capacity : <span><?php echo($stads[$i]->getCapacity()) ;?></span></div>
+                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <span><?php echo($stads[$i]->getCity()) ;?></div>
                                                     </div>
                                                 </div>
                                             </div>
