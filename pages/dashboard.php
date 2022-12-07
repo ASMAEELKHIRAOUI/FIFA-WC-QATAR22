@@ -19,7 +19,7 @@ include_once  '../scripts.php/crudadmin.script.php';
 <div class="modal fade" id="modal">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form" data-parsley-validate>
+				<form action="../scripts.php/crudadmin.script.php" method="POST" id="form" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">New Match</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -35,22 +35,22 @@ include_once  '../scripts.php/crudadmin.script.php';
 							
                             <div class="mb-3">
 								<label class="form-label">First team</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="Team1"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Secound team</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="Team2"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
-								<input type="text" class="form-control" id="task-date" required/>
+								<input type="text" name="Stade" class="form-control" id="task-date" required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Prix</label>
-								<input type="number" class="form-control" step="any" id="task-date" required/>
+								<input type="number" name="Prix" class="form-control" step="any" id="task-date" required/>
 							</div>
 
                             <div class="mb-3">
