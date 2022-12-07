@@ -1,4 +1,12 @@
-<div class="modal fade" id="modal-teams">
+<?php
+include '../include/head.php';
+?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Main CSS-->
+    <link href="../assets/css/dashtest.css" rel="stylesheet" media="all">
+</head>
+
+<div class="" id="modal-teams">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form action="" method="POST" id="form" data-parsley-validate>

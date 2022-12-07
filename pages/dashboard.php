@@ -438,9 +438,8 @@ include '../include/head.php';
                                                 <td class="text-right">tamama</td>
                                                 <td class="text-right">7777</td>
                                                 <td class="text-right">tamama kbgnjktjrf jfbjrbf jbfrf</td>
-                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
+                                                <td class="text-left"><a href="update.match.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                             </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -463,7 +462,7 @@ include '../include/head.php';
                                                 <th class="text-right">Logo</th>
                                                 <th class="text-right">Country</th>
                                                 <th class="text-right">Coach</th>
-                                                <th class="text-right"></th>
+                                                <th class="text-left"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -472,7 +471,7 @@ include '../include/head.php';
                                                 <td class="text-right">test logo</td>
                                                 <td class="text-right">morocco</td>
                                                 <td class="text-right">ras lavoca</td>
-                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
+                                                <td class="text-left"><a href="update.team.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                             </tr>
 
                                         </tbody>
@@ -500,7 +499,7 @@ include '../include/head.php';
                                                 <th class="text-right">Capacity</th>
                                                 <th class="text-right">Location</th>
                                                 <th class="text-right">City</th>
-                                                <th class="text-right"></th>
+                                                <th class="text-left"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -510,7 +509,7 @@ include '../include/head.php';
                                                 <td class="text-right">60.000</td>
                                                 <td class="text-right">test test test</td>
                                                 <td class="text-start">Qatar</td>
-                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
+                                                <td class="text-left"><a href="update.stad.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                             </tr>
                                             
                                         </tbody>
@@ -536,7 +535,7 @@ include '../include/head.php';
                                                 <th class="text-right">Match</th>
                                                 <th class="text-right">User</th>
                                                 <th class="text-right">Prix</th>
-                                                <th class="text-right"></th>
+                                                <th class="text-left"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -544,7 +543,7 @@ include '../include/head.php';
                                                 <td class="text-right">morocco vs portogal</td>
                                                 <td class="text-right">test user</td>
                                                 <td class="text-right">19.57$</td>
-                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
+                                                <td class="text-left"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
 
                                         </tbody>
