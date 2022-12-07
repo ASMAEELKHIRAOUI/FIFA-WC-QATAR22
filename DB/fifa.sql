@@ -140,18 +140,18 @@ INSERT INTO `team` (`id`, `country`, `coach`, `image`, `logo`) VALUES
 (19, 'Poland', 'Czesław Michniewicz', 'polandt.jpg', 'polandl.jpg'),
 (20, 'Portugal', 'Fernando Santos', 'portugalt.jpg', 'portugall.jpg'),
 (21, 'Qatar', 'Félix Sánchez', 'qatart.jpg', 'qatarl.jpg'),
-(22, 'Serbia', 'Dragan Stojković', 'serbiat.jpg', 'serbial.jpg'),
+(22, 'Serbia', 'Dragan Stojkovic', 'serbiat.jpg', 'serbial.jpg'),
 (23, 'Spain', 'Luis Enrique', 'spaint.jpg', 'spainl.jpg'),
 (24, 'Switzerland', 'Murat Yakin', 'switzerlandt.jpg', 'switzerlandl.jpg'),
 (25, 'Uruguay', 'Diego Alonso', 'uruguayt.jpg', 'uruguayl.jpg'),
-(26, 'United States', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+(26, 'United States', 'Gregg Berhalter', 'usat.jpg', 'usal.jpg'),
+(27, 'Japan', 'Hajime Moriyasu', 'Japant.jpg', 'Japanl.jpg'),
+(28, 'South Korea', 'Paulo Bento', 'SouthKoreat.jpg', 'SouthKoreal.jpg'),
+(29, 'Tunisia', 'Jalel Kadri', 'Tunisiat.jpg', 'Tunisial.jpg'),
+(30, 'Wales', 'Rob Page', 'Walest.jpg', 'Walesl.jpg'),
+(31, 'Senegal', 'Aliou Cisse', 'Senegalt.jpg', 'Senegall.jpg'),
+(31, 'Netherlands', 'Aliou Cisse', 'Senegalt.jpg', 'Netherlandsl.jpg');
 
-(27, 'Japan', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
-(28, 'South Korea', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
-(29, 'Tunisia', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
-(30, 'Wales', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
-(31, 'Senegal', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
-(32, 'Serbia', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
 
 
 
