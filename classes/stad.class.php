@@ -97,14 +97,16 @@
         }
     }
 
-    $stad = new Stad();
-    $stads = $stad->getStads();
+    // test
 
-    foreach($stads as $stad){
-        echo "<pre>";
-        print_r($stad->getLocation());
-        echo "<pre>";
-    }
+    // $stad = new Stad();
+    // $stads = $stad->getStads();
+
+    // foreach($stads as $stad){
+    //     echo "<pre>";
+    //     print_r($stad);
+    //     echo "<pre>";
+    // }
     
     
 

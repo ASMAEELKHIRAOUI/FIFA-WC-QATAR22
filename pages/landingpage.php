@@ -68,14 +68,6 @@
         </div>
 
 
-
-
-
-
-
-
-
-
         <section class="pt-5 pb-5">
             <div class="container">
                 <div class="row">
@@ -347,12 +339,25 @@
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                <div class="">
-                                    <div class=" ">
-                                        <img class="w-100" src="https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-12/England_WC%20Round%20of%2016%20Bracket-2.jpg" alt="">
+                                    <div class="">
+                                        <div class=" ">
+                                            <img class="w-100" src="https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2022-12/England_WC%20Round%20of%2016%20Bracket-2.jpg" alt="">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+
+                                <div class="carousel-item">
+                                    <div class="">
+                                        <div class="">
+                                            <img class="w-50 " src="../assets/img/standings/8_final.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                
+
+
                         </div>
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls4" data-bs-slide="prev">
