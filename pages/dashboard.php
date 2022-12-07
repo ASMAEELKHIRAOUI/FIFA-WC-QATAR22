@@ -420,24 +420,23 @@ include '../include/head.php';
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
-                                                <th>Image</th>
-                                                <th>Date-Time</th>
-                                                <!-- <th>Time</th> -->
+                                                <th class="text-right">Date-Time</th>
                                                 <th class="text-right">First team</th>
-                                                <th class="text-right">Secound team</th>
+                                                <th class="text-right">Second team</th>
                                                 <th class="text-right">Stad</th>
+                                                <th class="text-right">Price</th>
                                                 <th class="text-right">Description</th>
-                                                <th class="text-right">Edit</th>
+                                                <th class="text-right"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29 05:57 PM</td>
+                                                <td class="text-right">2018-09-29 05:57 PM</td>
                                                 <!-- <td>05:57</td> -->
                                                 <td class="text-right">morocco</td>
                                                 <td class="text-start">usa</td>
                                                 <td class="text-right">tamama</td>
+                                                <td class="text-right">7777</td>
                                                 <td class="text-right">tamama kbgnjktjrf jfbjrbf jbfrf</td>
                                                 <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
@@ -460,18 +459,20 @@ include '../include/head.php';
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
-                                                <th>Image</th>
-                                                <th>Logo</th>
-                                                <th>Country</th>
-                                                <th>Coach</th>
+                                                <th class="text-right">Image</th>
+                                                <th class="text-right">Logo</th>
+                                                <th class="text-right">Country</th>
+                                                <th class="text-right">Coach</th>
+                                                <th class="text-right"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>test img</td>
-                                                <td>test logo</td>
-                                                <td>morocco</td>
-                                                <td>ras lavoca</td>
+                                                <td class="text-right">test img</td>
+                                                <td class="text-right">test logo</td>
+                                                <td class="text-right">morocco</td>
+                                                <td class="text-right">ras lavoca</td>
+                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
 
                                         </tbody>
@@ -494,20 +495,22 @@ include '../include/head.php';
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
-                                                <th>Image</th>
-                                                <th>Name</th>
-                                                <th>Capacity</th>
+                                                <th class="text-right">Image</th>
+                                                <th class="text-right">Name</th>
+                                                <th class="text-right">Capacity</th>
                                                 <th class="text-right">Location</th>
                                                 <th class="text-right">City</th>
+                                                <th class="text-right"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>test img</td>
-                                                <td>tamama</td>
-                                                <td>60.000</td>
+                                                <td class="text-right">test img</td>
+                                                <td class="text-right">tamama</td>
+                                                <td class="text-right">60.000</td>
                                                 <td class="text-right">test test test</td>
                                                 <td class="text-start">Qatar</td>
+                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
                                             
                                         </tbody>
@@ -530,16 +533,18 @@ include '../include/head.php';
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
-                                                <th>Match</th>
-                                                <th>User</th>
-                                                <th>Prix</th>
+                                                <th class="text-right">Match</th>
+                                                <th class="text-right">User</th>
+                                                <th class="text-right">Prix</th>
+                                                <th class="text-right"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>morocco vs portogal</td>
-                                                <td>test user</td>
-                                                <td>19.57$</td>
+                                                <td class="text-right">morocco vs portogal</td>
+                                                <td class="text-right">test user</td>
+                                                <td class="text-right">19.57$</td>
+                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
 
                                         </tbody>
