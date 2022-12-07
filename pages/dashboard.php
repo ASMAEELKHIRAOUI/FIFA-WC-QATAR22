@@ -37,10 +37,58 @@ include '../include/head.php';
 								<input type="datetime-local"  class="form-control" step="any" required/>
 							</div>
 							
-							<!-- <div class="mb-3">
-								<label class="form-label">Time</label>
-								<input type="time"  class="form-control"  required/>
-							</div> -->
+                            <div class="mb-3">
+								<label class="form-label">First team</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label">Secound team</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label">Stad</label>
+								<input type="text" class="form-control" id="task-date" required/>
+							</div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+								<textarea class="form-control" name="Description" rows="4" required></textarea>
+							</div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
+						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<!-- add team form -->
+<div class="modal fade" id="modal-teams">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="" method="POST" id="form" data-parsley-validate>
+					<div class="modal-header">
+						<h5 class="modal-title">New Team</h5>
+						<a href="#" class="btn-close" data-bs-dismiss="modal-teams"></a>
+					</div>
+					<div class="modal-body">
+			
+							<input type="hidden" name="id" >
+
+							<div class="mb-3">
+                                <label for="formFile" class="form-label">Image</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="mb-3">
+								<label class="form-label">Date</label>
+								<input type="datetime-local"  class="form-control" step="any" required/>
+							</div>
 							
                             <div class="mb-3">
 								<label class="form-label">First team</label>
@@ -54,7 +102,12 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
-								<input type="text"  class="form-control" id="task-date" required/>
+								<input type="text" class="form-control" id="task-date" required/>
+							</div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+								<textarea class="form-control" name="Description" rows="4" required></textarea>
 							</div>
 						
 					</div>
@@ -341,7 +394,7 @@ include '../include/head.php';
                                 <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
                                     <h2 class="title-1 m-b-25 me-4" id="table-teams">All Teams</h2>
-                                    <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
+                                    <button class="btn me-3 logup text-light  rounded fs-5" href="#modal-teams" data-bs-toggle="modal-teams" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add Team</button>
                                 </div>
                         <br>
