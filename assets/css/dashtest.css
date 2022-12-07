@@ -862,3 +862,6 @@ ul {
 .table-data3 tbody td.denied {
     color: #fa4251;
 }
+.color:hover{
+    color:#8A1538;
+}
