@@ -26,20 +26,10 @@ include '../include/head.php';
 			
 							<input type="hidden" name="id" >
 
-							<div class="mb-3">
-                                <label for="formFile" class="form-label">Image</label>
-                                <input class="form-control" type="file" id="formFile">
-                            </div>
-
                             <div class="mb-3">
 								<label class="form-label">Date</label>
-								<input type="datetime-local"  class="form-control" step="any" required/>
+								<input type="datetime-local"  class="form-control"  required/>
 							</div>
-							
-							<!-- <div class="mb-3">
-								<label class="form-label">Time</label>
-								<input type="time"  class="form-control"  required/>
-							</div> -->
 							
                             <div class="mb-3">
 								<label class="form-label">First team</label>
@@ -53,13 +43,147 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
-								<input type="text"  class="form-control" id="task-date" required/>
+								<input type="text" class="form-control" id="task-date" required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label">Prix</label>
+								<input type="number" class="form-control" step="any" id="task-date" required/>
+							</div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+								<textarea class="form-control" name="Description" rows="3" required></textarea>
 							</div>
 						
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
 						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<!-- add team form -->
+<div class="modal fade" id="modal-teams">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="" method="POST" id="form" data-parsley-validate>
+					<div class="modal-header">
+						<h5 class="modal-title">New Team</h5>
+						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+					</div>
+					<div class="modal-body">
+			
+							<input type="hidden" name="id" >
+
+                            <div class="mb-3">
+								<label class="form-label">Country</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label">Coach</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+							<div class="mb-3">
+                                <label for="formFile" class="form-label">Image</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Logo</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
+						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+    <!-- add stad form -->
+<div class="modal fade" id="modal-stad">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="" method="POST" id="form" data-parsley-validate>
+					<div class="modal-header">
+						<h5 class="modal-title">New Stad</h5>
+						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+					</div>
+					<div class="modal-body">
+			
+							<input type="hidden" name="id" >
+
+                            <div class="mb-3">
+								<label class="form-label">Name</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label">Capacity</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">Location</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label">City</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Image</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
+						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add stad</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+    <!-- add reservation form -->
+<div class="modal fade" id="modal-reservation">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="" method="POST" id="form" data-parsley-validate>
+					<div class="modal-header">
+						<h5 class="modal-title">New Reservation</h5>
+						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+					</div>
+					<div class="modal-body">
+			
+							<input type="hidden" name="id" >
+
+                            <div class="mb-3">
+								<label class="form-label">Match</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label">User</label>
+								<input type="text"  class="form-control"  required/>
+							</div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
+						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Reservation</button>
 					</div>
 				</form>
 			</div>
@@ -75,32 +199,32 @@ include '../include/head.php';
                     <ul class="list-unstyled navbar__list ">
                     <li class="active has-sub">
                             <a href="landingpage.php" class="text-white text-decoration-none">
-                                <i class="fa fa-futbol-o text-white "></i>Home</a>
+                                <i class="fa fa-home text-white "></i>Home</a>
                         </li>
                        <li class="active has-sub">
                             <a href="#statistiques" class="text-white text-decoration-none">
-                                <i class="fa fa-futbol-o text-white "></i>Dashboard</a>
+                                <i class="fa fa-tachometer text-white "></i>Dashboard</a>
                         </li>
                         <li class="active has-sub">
                             <a href="#table-matches" class="text-white text-decoration-none">
                                 <i class="fa fa-futbol-o text-white "></i>Matches List</a>
                         </li>
                         <li>
-                            <a href="#table-teams" class="text-white text-decoration-none"><i class="fa fa-futbol-o text-white"></i>Teams List</a>
+                            <a href="#table-teams" class="text-white text-decoration-none"><i class="fa fa-users text-white"></i>Teams List</a>
                         </li>
                         <li>
                             <a href="#table-stads" class="text-white text-decoration-none">
-                                <i class="fa fa-futbol-o text-white"></i>Stads List</a>
+                                <i class="fa fa-fort-awesome text-white"></i>Stads List</a>
                         </li>
                         
                         <li>
                             <a href="#table-reservations" class="text-white text-decoration-none">
-                                <i class="fa fa-futbol-o text-white"></i>Reservations List</a>
+                                <i class="fa fa-ticket text-white"></i>Reservations List</a>
                         </li>
 
                         <li>
                             <a href="#" class="text-white text-decoration-none">
-                                <i class="fa fa-futbol-o text-white"></i>Log out</a>
+                                <i class="fa fa-sign-out text-white"></i>Log out</a>
                         </li>
                     </ul>
                 </nav>
@@ -128,22 +252,22 @@ include '../include/head.php';
             <a class="nav-link active text-light" aria-current="page" href="landingpage.php"><i class="fa fa-futbol-o text-white me-2"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#statistiques"><i class="fa fa-futbol-o text-white me-2"></i>Dashboard</a>
+            <a class="nav-link active text-light" aria-current="page" href="#statistiques"><i class="fa fa-tachometer text-white me-2"></i>Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active text-light" aria-current="page" href="#table-matches"><i class="fa fa-futbol-o text-white me-2"></i>Matches List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#table-teams"><i class="fa fa-futbol-o text-white me-2"></i>Team List</a>
+            <a class="nav-link active text-light" aria-current="page" href="#table-teams"><i class="fa fa-users text-white me-2"></i>Team List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#table-stads"><i class="fa fa-futbol-o text-white me-2"></i>Stad List</a>
+            <a class="nav-link active text-light" aria-current="page" href="#table-stads"><i class="fa fa-fort-awesome text-white me-2"></i>Stad List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#table-reservations"><i class="fa fa-futbol-o text-white me-2"></i>Reservations List</a>
+            <a class="nav-link active text-light" aria-current="page" href="#table-reservations"><i class="fa fa-ticket text-white me-2"></i>Reservations List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-futbol-o text-white me-2"></i>Log out</a>
+            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-sign-out text-white me-2"></i>Log out</a>
           </li>
       </div>
     </div>
@@ -185,7 +309,7 @@ include '../include/head.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-futbol-o"></i>
+                                                <i class="fa fa-fort-awesome"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>8</h2>
@@ -200,7 +324,7 @@ include '../include/head.php';
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon mb-4">
-                                                <i class="fa fa-users"></i>
+                                                <i class="fa fa-user"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>103</h2>
@@ -277,6 +401,7 @@ include '../include/head.php';
                                                 <th class="text-right">First team</th>
                                                 <th class="text-right">Secound team</th>
                                                 <th class="text-right">Stad</th>
+                                                <th class="text-right">Description</th>
                                                 <th class="text-right">Edit</th>
                                             </tr>
                                         </thead>
@@ -288,44 +413,7 @@ include '../include/head.php';
                                                 <td class="text-right">morocco</td>
                                                 <td class="text-start">usa</td>
                                                 <td class="text-right">tamama</td>
-                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29 05:57 PM</td>
-                                                <!-- <td>05:57</td> -->
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29 05:57 PM</td>
-                                                <!-- <td>05:57</td> -->
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29 05:57 PM</td>
-                                                <!-- <td>05:57</td> -->
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                                <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29 05:57 PM</td>
-                                                <!-- <td>05:57</td> -->
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
+                                                <td class="text-right">tamama kbgnjktjrf jfbjrbf jbfrf</td>
                                                 <td class="text-right"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
 
@@ -337,10 +425,9 @@ include '../include/head.php';
                      <!-- table of teames -->
                      <div class="row">
                             <div class="col-lg-12">
-                                <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
                                     <h2 class="title-1 m-b-25 me-4" id="table-teams">All Teams</h2>
-                                    <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
+                                    <button class="btn me-3 logup text-light  rounded fs-5" href="#modal-teams" data-bs-toggle="modal" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add Team</button>
                                 </div>
                         <br>
@@ -349,55 +436,17 @@ include '../include/head.php';
                                         <thead >
                                             <tr >
                                                 <th>Image</th>
-                                                <th>Date</th>
-                                                <th>Time</th>
-                                                <th class="text-right">First team</th>
-                                                <th class="text-right">Secound team</th>
-                                                <th class="text-right">Stad</th>
+                                                <th>Logo</th>
+                                                <th>Country</th>
+                                                <th>Coach</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
+                                                <td>test img</td>
+                                                <td>test logo</td>
+                                                <td>morocco</td>
+                                                <td>ras lavoca</td>
                                             </tr>
 
                                         </tbody>
@@ -412,7 +461,7 @@ include '../include/head.php';
                                 <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
                                     <h2 class="title-1 m-b-25 me-4" id="table-stads">All Stads</h2>
-                                    <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
+                                    <button class="btn me-3 logup text-light  rounded fs-5" href="#modal-stad" data-bs-toggle="modal" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add stad</button>
                                 </div>
                         <br>
@@ -421,57 +470,21 @@ include '../include/head.php';
                                         <thead >
                                             <tr >
                                                 <th>Image</th>
-                                                <th>Date</th>
-                                                <th>Time</th>
-                                                <th class="text-right">First team</th>
-                                                <th class="text-right">Secound team</th>
-                                                <th class="text-right">Stad</th>
+                                                <th>Name</th>
+                                                <th>Capacity</th>
+                                                <th class="text-right">Location</th>
+                                                <th class="text-right">City</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
+                                                <td>test img</td>
+                                                <td>tamama</td>
+                                                <td>60.000</td>
+                                                <td class="text-right">test test test</td>
+                                                <td class="text-start">Qatar</td>
                                             </tr>
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -484,7 +497,7 @@ include '../include/head.php';
                                 <!-- <h2 class="title-1 m-b-25">Earnings By Items</h2> -->
                                 <div class="overview-wrap">
                                     <h2 class="title-1 m-b-25 me-4" id="table-reservations">All Reservations</h2>
-                                    <button class="btn me-3 logup text-light  rounded fs-5" href="#modal" data-bs-toggle="modal" id="color">
+                                    <button class="btn me-3 logup text-light  rounded fs-5" href="#modal-reservation" data-bs-toggle="modal" id="color">
                                         <i class="fa fa-plus fs-5 me-2"></i>add reservation</button>
                                 </div>
                         <br>
@@ -492,56 +505,16 @@ include '../include/head.php';
                                     <table class="table table-borderless table-striped table-earning" >
                                         <thead >
                                             <tr >
-                                                <th>Image</th>
-                                                <th>Date</th>
-                                                <th>Time</th>
-                                                <th class="text-right">First team</th>
-                                                <th class="text-right">Secound team</th>
-                                                <th class="text-right">Stad</th>
+                                                <th>Match</th>
+                                                <th>User</th>
+                                                <th>Prix</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>test</td>
-                                                <td>2018-09-29</td>
-                                                <td>05:57</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
+                                                <td>morocco vs portogal</td>
+                                                <td>test user</td>
+                                                <td>19.57$</td>
                                             </tr>
 
                                         </tbody>
