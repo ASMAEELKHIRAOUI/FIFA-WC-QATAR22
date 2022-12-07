@@ -35,17 +35,27 @@ include_once  '../scripts.php/crudadmin.script.php';
 							
                             <div class="mb-3">
 								<label class="form-label">First team</label>
-								<input type="text" name="Team1"  class="form-control"  required/>
+								<input type="text"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Secound team</label>
-								<input type="text" name="Team2"   class="form-control"  required/>
+								<input type="text"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
-								<input type="text" name="Stade"  class="form-control" id="task-date" required/>
+								<input type="text" class="form-control" id="task-date" required/>
+							</div>
+
+                            <div class="mb-3">
+								<label class="form-label">Prix</label>
+								<input type="number" class="form-control" step="any" id="task-date" required/>
+							</div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+								<textarea class="form-control" name="Description" rows="3" required></textarea>
 							</div>
 						
 					</div>
@@ -164,12 +174,22 @@ include_once  '../scripts.php/crudadmin.script.php';
 
                             <div class="mb-3">
 								<label class="form-label">Match</label>
-								<input type="text"  class="form-control"  required/>
+								<select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">User</label>
-								<input type="text"  class="form-control"  required/>
+								<select class="form-select" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
 							</div>
 						
 					</div>

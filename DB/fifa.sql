@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 07 déc. 2022 à 11:59
+-- Généré le : mer. 07 déc. 2022 à 13:29
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -50,13 +50,12 @@ INSERT INTO `admin` (`id`, `first_name`, `last_name`, `email`, `password`) VALUE
 
 CREATE TABLE `matches` (
   `id` int(11) NOT NULL,
-  `date` date DEFAULT NULL,
-  `time` time DEFAULT NULL,
   `match_team1` int(11) DEFAULT NULL,
   `match_team2` int(11) DEFAULT NULL,
   `stad` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
-  `description` text DEFAULT NULL
+  `description` text DEFAULT NULL,
+  `datetime` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
