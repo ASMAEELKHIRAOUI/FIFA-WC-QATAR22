@@ -126,7 +126,7 @@ INSERT INTO `team` (`id`, `country`, `coach`, `image`, `logo`) VALUES
 (5, 'Brazil', 'Tite', 'brazilt.jpg', 'brazill.jpg'),
 (6, 'Cameroon', 'Rigobert Song', 'cameroont.jpg', 'cameroonl.jpg'),
 (7, 'Canada', 'John Herdman', 'canadat.jpg', 'canadal.jpg'),
-(8, 'Costarica', 'Luis Fernando Suárez', 'costaricat.jpg', 'costarical.jpg'),
+(8, 'Costa Rica', 'Luis Fernando Suárez', 'costaricat.jpg', 'costarical.jpg'),
 (9, 'Croitia', 'Zlatko Dalić', 'croitiat.jpg', 'croitial.jpg'),
 (10, 'Denmark', 'Kasper Hjulmand', 'denmarkt.jpg', 'denmarkl.jpg'),
 (11, 'Ecuador', 'Gustavo Alfaro', 'ecuadort.jpg', 'ecuadorl.jpg'),
@@ -144,7 +144,20 @@ INSERT INTO `team` (`id`, `country`, `coach`, `image`, `logo`) VALUES
 (23, 'Spain', 'Luis Enrique', 'spaint.jpg', 'spainl.jpg'),
 (24, 'Switzerland', 'Murat Yakin', 'switzerlandt.jpg', 'switzerlandl.jpg'),
 (25, 'Uruguay', 'Diego Alonso', 'uruguayt.jpg', 'uruguayl.jpg'),
-(26, 'USA', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+(26, 'United States', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+
+(27, 'Japan', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+(28, 'South Korea', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+(29, 'Tunisia', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+(30, 'Wales', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+(31, 'Senegal', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+(32, 'Serbia', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+
+
+
+
+
+
 
 -- --------------------------------------------------------
 

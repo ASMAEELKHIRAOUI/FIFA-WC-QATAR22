@@ -4,23 +4,10 @@
     $stads = array();
     $stads = $stad->getStads();
 
-
-
-
-    // $stad->getStad(0);
-    //     echo "<pre>";
-    //     print_r($stad->getLocation());
-    //     echo "<pre>";
-
-
-
-
-
-    // foreach($stads as $stad){
-    //     echo "<pre>";
-    //     print_r($stad);
-    //     echo "<pre>";
-    // }
+    include_once '../classes/teame.class.php';
+    $team = new Team();
+    $teams = array();
+    $teams = $team->getTeams();
 
 
 
