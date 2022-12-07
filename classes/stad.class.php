@@ -1,4 +1,5 @@
 <?php 
+    include_once '../classes/database.class.php';
     class Stad{
         private $id = NULL;
         private $name;
@@ -7,14 +8,14 @@
         private $city;
         private $image;
 
-        public function __construct($name , $capacity , $location , $city , $image)
-        {
-            $this->name = $name;
-            $this->capacity = $capacity;
-            $this->location = $location;
-            $this->city = $city;
-            $this->image = $image;
-        }
+        // public function __construct($name , $capacity , $location , $city , $image)
+        // {
+        //     $this->name = $name;
+        //     $this->capacity = $capacity;
+        //     $this->location = $location;
+        //     $this->city = $city;
+        //     $this->image = $image;
+        // }
 
         public function getId(){
             return $this->id;
@@ -52,12 +53,33 @@
             $this->image = $image;
         }
 
-
+        public function getObject($dbObject){
+            $this->id = $dbObject->id;
+            $this->name = $dbObject->name;
+            $this->capacity = $dbObject->capacity;
+            $this->location = $dbObject->location;
+            $this->city = $dbObject->city;
+            $this->image = $dbObject->image;
+        }
 
         //crud
-
         public function getStads(){
+            $database = new Database();
+            $sql = "SELECT * FROM `stad`";
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute();
+            $dbStads = $stmt->fetchAll(PDO::FETCH_OBJ);
+            $stadts = array();
+            
+            $i=0;
+            foreach($dbStads as $dbStad){
+                $stadts[$i] = new Stad();
+                $stadts[$i]->getObject($dbStad);
+                $i++;
+            }
 
+            return $stadts;
+            
         }
 
         public function getStad($id){
@@ -73,10 +95,18 @@
         
         public function deleteStad($id){
         }
-
-
-
     }
+
+    $stad = new Stad();
+    $stads = $stad->getStads();
+
+    foreach($stads as $stad){
+        echo "<pre>";
+        print_r($stad->getLocation());
+        echo "<pre>";
+    }
+    
+    
 
 
 
