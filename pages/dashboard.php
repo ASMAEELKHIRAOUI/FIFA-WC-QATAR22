@@ -1,6 +1,6 @@
 <?php
-include '../include/head.php';
-include '../scripts.php/crudadmin.script.php';
+include_once  '../include/head.php';
+include_once  '../scripts.php/crudadmin.script.php';
 
 //include '../include/navbar.php';
 ?>
@@ -30,28 +30,28 @@ include '../scripts.php/crudadmin.script.php';
 
                             <div class="mb-3">
 								<label class="form-label">Date</label>
-								<input type="datetime-local"  class="form-control" step="any" required/>
+								<input type="datetime-local" name="Datetime"  class="form-control" step="any" required/>
 							</div>
 							
                             <div class="mb-3">
 								<label class="form-label">First team</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="Team1"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Secound team</label>
-								<input type="text"   class="form-control"  required/>
+								<input type="text" name="Team2"   class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
-								<input type="text"  class="form-control" id="task-date" required/>
+								<input type="text" name="Stade"  class="form-control" id="task-date" required/>
 							</div>
 						
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-					    <button type="submit"  class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
+					    <button type="submit"  name="SaveMatch" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
 					</div>
 				</form>
 			</div>
@@ -94,7 +94,7 @@ include '../scripts.php/crudadmin.script.php';
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
+						<button type="submit" name="" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
 					</div>
 				</form>
 			</div>

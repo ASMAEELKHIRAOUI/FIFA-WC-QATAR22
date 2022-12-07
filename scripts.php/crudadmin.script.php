@@ -1,4 +1,5 @@
 <?php 
+include_once '../pages/dashboard.php';
 if (isset($_POST('SaveMatch'))){
 
 include '../classes/match.class.php';
@@ -10,8 +11,6 @@ $getproprite->seTeame_2_ID($_POST(Team2));
 $getproprite->setStaduimID($_POST(Stade));
 
 $getproprite->addMatch($object);
-
-
 
 
 }

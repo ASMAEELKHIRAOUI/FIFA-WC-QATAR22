@@ -1,5 +1,7 @@
 <?php
+include_once '../classes/database.class.php';
     class Matches{
+
         private $id = NULL;
         private $dateTime;
         private $matchTeame_1_id;
@@ -54,8 +56,11 @@
         public function getMatch($id){
 
         }
-        public function addMatch($object){
-            
+        public function addMatch(){
+            $database = new Database();
+            $sql = " INSERT INTO matches(date,match_team1,match_team2,stad)values(?,?,?,?,?)"
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute($dateTime,$matchTeame_1_id,$matchTeame_2_id,$matchStaduim_id);
             
 
         }
