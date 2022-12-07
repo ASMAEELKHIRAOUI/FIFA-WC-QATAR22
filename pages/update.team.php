@@ -40,7 +40,7 @@ include '../include/head.php';
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Save changes</button>
+						<button type="submit" name="Add" class="color btn  text-light" id="save-btn">Save changes</button>
 					</div>
 				</form>
 			</div>
