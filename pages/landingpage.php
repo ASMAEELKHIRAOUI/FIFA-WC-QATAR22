@@ -1,4 +1,4 @@
-
+<?php include '../scripts.php/landingpage.script.php';?>
 <!DOCTYPE html>
 <html lang="en">
     <?php include '../include/head.php' ?>
@@ -165,8 +165,8 @@
 
                                     </div>
                                 </div>
-                                <div class="carousel-item">
-                                <div class="row">
+                                <div class="carousel-item ">
+                                    <div class="row">
                                         <div class="col-md-4 mb-3">
                                             <div class="card ">
                                                 <div class="position-relative">
@@ -239,8 +239,8 @@
 
                                     </div>
                                 </div>
-                                <div class="carousel-item">
-                                <div class="row">
+                                <div class="carousel-item ">
+                                    <div class="row">
                                         <div class="col-md-4 mb-3">
                                             <div class="card ">
                                                 <div class="position-relative">
@@ -519,111 +519,53 @@
                         <div id="carouselExampleControls3" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <div class="row ">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
+                                    <div class="row">
+                                        <?php for($i=0 ; $i<3 ; $i++): ?>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
+                                                    <div class="card-body">
+                                                            <div><?php echo($stads[$i]->getName()) ;?></div>
+                                                            <div>capacity : <span>40,000</span></div>
+                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
+                                        <?php endfor; ?>
+                                    </div>
+                                </div>
+                                <div class="carousel-item  ">
+                                    <div class="row">
+                                        <?php for($i=3 ; $i<6 ; $i++): ?>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
+                                                    <div class="card-body">
+                                                            <div><?php echo($stads[$i]->getName()) ;?></div>
+                                                            <div>capacity : <span><?php echo($stads[$i]->getCapacity()) ;?></span></div>
+                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <span><?php echo($stads[$i]->getCapacity()) ;?></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php endfor; ?>
                                         
 
                                     </div>
                                 </div>
                                 <div class="carousel-item  ">
                                     <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
+                                    <?php for($i=6 ; $i<8 ; $i++): ?>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
+                                                    <div class="card-body">
+                                                            <div><?php echo($stads[$i]->getName()) ;?></div>
+                                                            <div>capacity : <span>40,000</span></div>
+                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-
-                                    </div>
-                                </div>
-                                <div class="carousel-item  ">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://www.arabianbusiness.com/cloud/2022/05/09/FIFA-World-Cup-2022-1.jpg">
-                                                <div class="card-body">
-                                                        <div>Khalifa International Stadium</div>
-                                                        <div>capacity : <span>40,000</span></div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Doha</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-
+                                        <?php endfor; ?>
                                     </div>
                                 </div>
                                 
