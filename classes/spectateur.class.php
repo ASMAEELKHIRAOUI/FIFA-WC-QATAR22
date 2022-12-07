@@ -7,15 +7,16 @@ include_once 'user.class.php';
         //crud
         
         public function getSpectateur($id){
-
-        }
+            $sql = "SELECT * FROM spectator WHERE id = ?";
+        }   
         public function addSpectateur($object){
-
-
+            
         }
         public function updateSpectateur($id){
+
         }
         public function deleteSpectateur($id){
+
         }
 
     }
