@@ -1,5 +1,7 @@
 <?php
 include '../include/head.php';
+include '../scripts.php/crudadmin.script.php';
+
 //include '../include/navbar.php';
 ?>
 
@@ -33,7 +35,7 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Date</label>
-								<input type="datetime-local"  class="form-control" step="any" required/>
+								<input type="datetime-local"   class="form-control" step="any" required/>
 							</div>
 							
 							<!-- <div class="mb-3">
@@ -48,18 +50,18 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Secound team</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text"   class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
-								<input type="text"  class="form-control" id="task-date" required/>
+								<input type="text" class="form-control" id="task-date" required/>
 							</div>
 						
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
+					    <button type="submit"  class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
 					</div>
 				</form>
 			</div>
