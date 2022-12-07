@@ -70,7 +70,7 @@
         public function updateStad($id){
             
         }
-
+        
         public function deleteStad($id){
         }
 
