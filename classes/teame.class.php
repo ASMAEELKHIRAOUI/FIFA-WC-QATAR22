@@ -1,5 +1,5 @@
 <?php
-    include 'database.class.php';
+    include_once 'database.class.php';
 
     class Team {
 
@@ -91,9 +91,9 @@
             // return $row;
         }
         public function addTeam(){
-        $database =new Database();
-        $sql="INSERT INTO team  VALUES (?,?,?,?)";
-        $stmt= $database->connect()->prepare($sql);
+        // $database =new Database();
+        // $sql="INSERT INTO team  VALUES (?,?,?,?)";
+        // $stmt= $database->connect()->prepare($sql);
         // $stmt->exucute();
 
             
