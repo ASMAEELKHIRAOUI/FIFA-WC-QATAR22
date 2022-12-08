@@ -3,7 +3,6 @@ include_once 'database.class.php';
 include_once 'user.class.php';
 
     class Spectateur extends User {
-
         //crud
         
         public function getSpectateur(){

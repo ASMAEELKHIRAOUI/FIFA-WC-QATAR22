@@ -15,12 +15,12 @@ include_once 'user.class.php';
         }
     }
 
-    // test
-    $admin = new Admin();
-    $admin->getAdmin();
+    // // test
+    // $admin = new Admin();
+    // $admin->getAdmin();
 
-    echo "<pre>";
-    print_r($admin);
-    echo "<pre>";
+    // echo "<pre>";
+    // print_r($admin);
+    // echo "<pre>";
 
 ?>
