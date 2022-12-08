@@ -8,6 +8,9 @@
 
     $obj->getSpectateur();
 
+    
+    if(isset($_POST['save_Changes']))  $obj->updateSpectateur();
+
 
     
 ?>

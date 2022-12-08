@@ -56,7 +56,7 @@
           </h2>
           <hr class="w-25%" />
           <br />
-          <form action="" methode="POST">
+          <form action="../scripts.php/editepage.script.php" methode="POST">
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-4">
@@ -72,10 +72,10 @@
                     <div class="mb-4">
                         <label class="form-label" >Email </label>
                         <input
-                            type="text"
+                            type="email"
                             class="form-control"
-                            name="firstName"
-                            id="first-name"
+                            name="email"
+                            id="email"
                             value="<?=$obj->getEmail()?>"
                         />
                     </div>
@@ -121,7 +121,7 @@
                   <button
                     type="submit"
                     id="save"
-                    name="save"
+                    name="save_Changes"
                     class="btn btn-primary"
                   >
                   Save Changes
@@ -134,8 +134,7 @@
                 </div>
                 <hr style="width: 20%; text-align: left; margin-left: 0" />
                 <div class="p text-secondary">
-                  <i> Delete your account and all information related to your account such as your profile page, 
-                      badges earned and leaderboard positions. 
+                  <i> Delete your account and all information related to your account such as your profile page,  
                       Please be aware that all data will be permanently lost if you delete your account.
                   </i>
                 </div>
