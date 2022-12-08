@@ -78,7 +78,15 @@ include_once '../classes/database.class.php';
 
         //crud
 
-         public function addMatch(){
+        public function getMatch($id){
+            $database = new Database();
+            $sql = "SELECT * FROM matches where id = $id";
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute();
+            $dbMatch = $stmt->fetchAll(PDO::FETCH_OBJ);
+            $this->getObject($dbMatch);
+        }
+        public function addMatch(){
             $database = new Database();
             $sql = " INSERT INTO matches(match_team1,match_team2,stad,price,description,datetime) VALUES(?,?,?,?,?,?)";
             $conn= $database->connect()->prepare($sql);
@@ -107,7 +115,13 @@ include_once '../classes/database.class.php';
 
        
         public function updateMatch($id){
-            
+            // if(isset(updateMatch)){
+                // $query="UPDATE match SET match_team1=? , match_team2=? , stad=? , price=? , description=? , datetime=? WHERE id=?";
+                // $result = $this->connect()->prepare($query);
+                // $result->execute([$id,$matchTeame_1_id, $$matchTeame_2_id, $matchStaduim_id ,$price ,$description ,$dateTime]);
+                // if($result)
+                //     header('location: dashboard.php');
+            // }
         }
 
         public function deleteMatch($id){
