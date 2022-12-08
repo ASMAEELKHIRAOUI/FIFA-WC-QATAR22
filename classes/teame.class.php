@@ -1,6 +1,5 @@
 <?php
-    include_once '../classes/database.class.php';
-
+    include 'database.class.php';
 
     class Team {
 
@@ -76,21 +75,36 @@
                 $i++;
             }
             return $stadts;
+            
         }
 
         public function getTeam($id){
+            $query="SELECT * FROM team WHERE id=?";
+            $result = $this->connect()->prepare($query);
+            $result->execute([$id]);
+            $row = $result->fetch();
+            // $this->setCountry($row['country']);
+            // $this->setCountry($row['coach']);
+            // $this->setCountry($row['image']);
+            // $this->setCountry($row['logo']);
 
+            return $row;
         }
         public function addTeam(){
         $database =new Database();
         $sql="INSERT INTO team  VALUES (?,?,?,?)";
         $stmt= $database->connect()->prepare($sql);
-        $stmt->exucute();
+        $stmt->execute();
+        // vardump($row);
 
-            
-        }
         public function updateTeam($id){
-
+            // if(isset(updateTeams)){
+                // $query="UPDATE team SET country=? , coach=? , image=? , logo=? WHERE id=?";
+                // $result = $this->connect()->prepare($query);
+                // $result->execute([$id,$country, $coach, $image ,$logo]);
+                // if($result)
+                //     header('location: dashboard.php');
+            // }
         }
 
         public function deleteTeam($id){
