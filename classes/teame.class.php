@@ -52,18 +52,22 @@
         //crud
 
         public function getTeams(){
-
+            
         }
 
         public function getTeam($id){
-
+            $query="SELECT * FROM team WHERE id=?";
+            $result = $this->connect()->prepare($query);
+            $result->execute([$id]);
+            $row = $result->fetch();
+            return $row;
         }
         public function addTeam($object){
             
 
         }
         public function updateTeam($id){
-
+            $sql="UPDATE team SET "
         }
 
         public function deleteTeam($id){
