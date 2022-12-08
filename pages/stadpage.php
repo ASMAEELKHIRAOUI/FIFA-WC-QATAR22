@@ -17,6 +17,7 @@ include '../include/navbar.php';
 <body>
     <div class=" container my-3">
         <div class="row my-2  ">
+            lkljlkj
             <!-- cet card pour les équipes  -->
                 <div class="col-lg-3 col-md-6 col-sm-12 my-1 ">
                     <div class="card ">
