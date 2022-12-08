@@ -85,7 +85,7 @@
         $database =new Database();
         $sql="INSERT INTO team  VALUES (?,?,?,?)";
         $stmt= $database->connect()->prepare($sql);
-        $stmt->exucute();
+        // $stmt->exucute();
 
             
         }
