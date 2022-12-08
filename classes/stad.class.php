@@ -80,7 +80,6 @@
             }
 
             return $stadts;
-            
         }
 
         public function getStad($id){
@@ -103,6 +102,7 @@
         public function deleteStad($id){
         }
     }
+
     
     
 
