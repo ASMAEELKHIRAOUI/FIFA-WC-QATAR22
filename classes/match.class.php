@@ -94,7 +94,6 @@ include_once '../classes/database.class.php';
         }
 
         public function getMatchs(){
-           
             $database = new Database();
             $sql = "SELECT * FROM `matches`";
             $stmt = $database->connect()->prepare($sql);
@@ -113,7 +112,6 @@ include_once '../classes/database.class.php';
             return $matchs;
         }
 
-       
         public function updateMatch($id){
             // if(isset(updateMatch)){
                 // $query="UPDATE match SET match_team1=? , match_team2=? , stad=? , price=? , description=? , datetime=? WHERE id=?";

@@ -96,6 +96,7 @@
         $stmt= $database->connect()->prepare($sql);
         $stmt->execute();
         // vardump($row);
+        }
 
         public function updateTeam($id){
             // if(isset(updateTeams)){
