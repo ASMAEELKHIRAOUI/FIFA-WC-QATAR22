@@ -1,4 +1,5 @@
 <?php
+    include 'database.class.php';
 
     class Team {
         
@@ -60,14 +61,26 @@
             $result = $this->connect()->prepare($query);
             $result->execute([$id]);
             $row = $result->fetch();
+            // $this->setCountry($row['country']);
+            // $this->setCountry($row['coach']);
+            // $this->setCountry($row['image']);
+            // $this->setCountry($row['logo']);
+
             return $row;
         }
+        // vardump($row);
         public function addTeam($object){
             
 
         }
         public function updateTeam($id){
-            $sql="UPDATE team SET "
+            if(isset(updateTeams)){
+                $query="UPDATE team SET country=? , coach=? , image=? , logo=? WHERE id=?";
+                $result = $this->connect()->prepare($query);
+                $result->execute([$id,$country, $coach, $image ,$logo]);
+                if($result)
+                    header('location: dashboard.php');
+            }
         }
 
         public function deleteTeam($id){

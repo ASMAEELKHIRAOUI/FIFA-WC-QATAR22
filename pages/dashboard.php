@@ -471,7 +471,7 @@ include '../include/head.php';
                                                 <td class="text-right">test logo</td>
                                                 <td class="text-right">morocco</td>
                                                 <td class="text-right">ras lavoca</td>
-                                                <td class="text-left"><a href="update.team.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
+                                                <td class="text-left"><a href="update.team.php?id=?"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                             </tr>
 
                                         </tbody>
