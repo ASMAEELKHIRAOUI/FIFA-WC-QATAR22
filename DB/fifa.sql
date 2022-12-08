@@ -127,7 +127,7 @@ INSERT INTO `team` (`id`, `country`, `coach`, `image`, `logo`) VALUES
 (5, 'Brazil', 'Tite', 'brazilt.jpg', 'brazill.jpg'),
 (6, 'Cameroon', 'Rigobert Song', 'cameroont.jpg', 'cameroonl.jpg'),
 (7, 'Canada', 'John Herdman', 'canadat.jpg', 'canadal.jpg'),
-(8, 'Costarica', 'Luis Fernando Suárez', 'costaricat.jpg', 'costarical.jpg'),
+(8, 'Costa Rica', 'Luis Fernando Suárez', 'costaricat.jpg', 'costarical.jpg'),
 (9, 'Croitia', 'Zlatko Dalić', 'croitiat.jpg', 'croitial.jpg'),
 (10, 'Denmark', 'Kasper Hjulmand', 'denmarkt.jpg', 'denmarkl.jpg'),
 (11, 'Ecuador', 'Gustavo Alfaro', 'ecuadort.jpg', 'ecuadorl.jpg'),
@@ -141,11 +141,24 @@ INSERT INTO `team` (`id`, `country`, `coach`, `image`, `logo`) VALUES
 (19, 'Poland', 'Czesław Michniewicz', 'polandt.jpg', 'polandl.jpg'),
 (20, 'Portugal', 'Fernando Santos', 'portugalt.jpg', 'portugall.jpg'),
 (21, 'Qatar', 'Félix Sánchez', 'qatart.jpg', 'qatarl.jpg'),
-(22, 'Serbia', 'Dragan Stojković', 'serbiat.jpg', 'serbial.jpg'),
+(22, 'Serbia', 'Dragan Stojkovic', 'serbiat.jpg', 'serbial.jpg'),
 (23, 'Spain', 'Luis Enrique', 'spaint.jpg', 'spainl.jpg'),
 (24, 'Switzerland', 'Murat Yakin', 'switzerlandt.jpg', 'switzerlandl.jpg'),
 (25, 'Uruguay', 'Diego Alonso', 'uruguayt.jpg', 'uruguayl.jpg'),
-(26, 'USA', 'Gregg Berhalter', 'usat.jpg', 'usa.jpg');
+(26, 'United States', 'Gregg Berhalter', 'usat.jpg', 'usal.jpg'),
+(27, 'Japan', 'Hajime Moriyasu', 'Japant.jpg', 'Japanl.jpg'),
+(28, 'South Korea', 'Paulo Bento', 'SouthKoreat.jpg', 'SouthKoreal.jpg'),
+(29, 'Tunisia', 'Jalel Kadri', 'Tunisiat.jpg', 'Tunisial.jpg'),
+(30, 'Wales', 'Rob Page', 'Walest.jpg', 'Walesl.jpg'),
+(31, 'Senegal', 'Aliou Cisse', 'Senegalt.jpg', 'Senegall.jpg'),
+(32, 'Netherlands', 'Aliou Cisse', 'Senegalt.jpg', 'Netherlandsl.jpg');
+
+
+
+
+
+
+
 
 -- --------------------------------------------------------
 
