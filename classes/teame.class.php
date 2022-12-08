@@ -94,8 +94,9 @@
         $database =new Database();
         $sql="INSERT INTO team  VALUES (?,?,?,?)";
         $stmt= $database->connect()->prepare($sql);
-        $stmt->execute();
-        // vardump($row);
+        // $stmt->exucute();
+
+            
         }
 
         public function updateTeam($id){
