@@ -79,16 +79,16 @@
         }
 
         public function getTeam($id){
-            $query="SELECT * FROM team WHERE id=?";
-            $result = $this->connect()->prepare($query);
-            $result->execute([$id]);
-            $row = $result->fetch();
+            // $query="SELECT * FROM team WHERE id=?";
+            // $result = $this->connect()->prepare($query);
+            // $result->execute([$id]);
+            // $row = $result->fetch();
             // $this->setCountry($row['country']);
             // $this->setCountry($row['coach']);
             // $this->setCountry($row['image']);
             // $this->setCountry($row['logo']);
 
-            return $row;
+            // return $row;
         }
         public function addTeam(){
         $database =new Database();
