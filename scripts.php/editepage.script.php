@@ -1,31 +1,14 @@
 <?php
    include_once '../classes/spectateur.class.php';
     //creat object 
-    $obj = new Spectateur();
+    $obj = new Spectateur(null, null, null, null, null);
     //get id 
-    $id= $_GET['id1'];
-    $obj->setId($id);
+    $id= @$_GET['id'];
+    $obj->setId(1);
 
+    $obj->getSpectateur();
 
+    var_dump($obj);
 
-?>
-<?php
-    include_once '../classes/stad.class.php';
-    $stad = new Stad();
-    $stads = array();
-    $stads = $stad->getStads(); 
-
-    // $stad->getStad(0);
-    //     echo "<pre>";
-    //     print_r($stad->getLocation());
-    //     echo "<pre>";
-
-
-    // foreach($stads as $stad){
-    //     echo "<pre>";
-    //     print_r($stad);
-    //     echo "<pre>";
-    // }
-
-
+    
 ?>
