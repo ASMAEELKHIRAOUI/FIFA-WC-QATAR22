@@ -83,6 +83,7 @@
             
         }
 
+
         public function getStad($id){
             $database = new Database();
             $sql = "SELECT * FROM `stad` where id = $id";
@@ -92,9 +93,12 @@
             $this->getObject($dbStad);
         }
 
-        public function addStad($object){
-            
-
+        public function addStad(){
+            $database = new Database();
+            $sql ="INSERT INTO stad(name,capacity,location,city,image) VALUES(?,?,?,?,?)" ;
+            $stmt= $database->connect()->prepare($sql);
+            $stmt->execute([$this->getName(), $this->getCapacity(),$this->getLocation(),$this->getCity(), $this->getImage() ]) ; 
+            // header("Location:../pages/dashboard.php");
         }
         public function updateStad($id){
             
@@ -102,11 +106,12 @@
         
         public function deleteStad($id){
         }
+         
     }
-    
+
     
 
-
+     
 
 
 ?>
