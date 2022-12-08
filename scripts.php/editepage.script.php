@@ -6,9 +6,9 @@
     $id= @$_GET['id'];
     $obj->setId(1);
 
-        var_dump($obj);
-
     $obj->getSpectateur();
 
+    var_dump($obj);
 
+    
 ?>

@@ -11,7 +11,14 @@ include_once 'user.class.php';
             $conn = Database::connect();
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
-            $res =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $arr =  $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $this->setFirstName($arr['first_name']);
+            $this->setLastName($arr['last_name']);
+            $this->setEmail($arr['email']);
+            $this->setPassword($arr['password']);
+
+            return $arr;
             
         }   
         public function addSpectateur($object){
