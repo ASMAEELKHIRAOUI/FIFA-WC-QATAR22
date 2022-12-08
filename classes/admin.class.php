@@ -4,7 +4,7 @@ include_once 'user.class.php';
     class Admin extends User {
         public function  __construct()
         {
-            
+            $this->roll = 1;
         }
         public function getAdmin(){
             $sql = "SELECT * FROM `admin`";

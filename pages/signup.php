@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +16,15 @@
     <div  class="row-lg h-100 d-flex align-items-center p-5 flex-wrap">
     <div class="col-lg-1"></div>
         <div id="signIn" class="col-lg-5">
-            <form action="signup.php" method="POST" id="form" data-parsley-validate>
+            <form action="../scripts.php/signup.script.php" method="POST" id="form" data-parsley-validate>
                 <p class="signin text-center"> SIGN UP </p>
                 <div class="email pt-3">
                     <p>First Name</p>
-                    <input class="input form form-control" type="text" name="user" data-parsley-trigger="keyup" data-parsley-minlength="3" required>
+                    <input class="input form form-control" type="text" name="firstName" data-parsley-trigger="keyup" data-parsley-minlength="3" required>
                 </div>
                 <div class="email pt-3">
                     <p>Last Name</p>
-                    <input class="input form form-control" type="text" name="user" data-parsley-trigger="keyup" data-parsley-minlength="3" required>
+                    <input class="input form form-control" type="text" name="lastName" data-parsley-trigger="keyup" data-parsley-minlength="3" required>
                 </div>
                 <div class="email pt-3">
                     <p>Email Address</p>
@@ -33,7 +34,7 @@
                     <p>Password</p>
                     <input class="input form form-control" type="password" name="password" data-parsley-minlength="8" required>
                 </div>
-                <div class="row justify-content-center mt-3"><button class="btn" name="signup">SIGN UP</button></div>
+                <div class="row justify-content-center mt-3"><button type="submit" class="btn" name="signup">SIGN UP</button></div>
                 <div class="privacy text-center mt-4">
                     By clicking on "SIGN UP" you agree to <a class="link" href="">Privacy Policy</a>
                 </div>
