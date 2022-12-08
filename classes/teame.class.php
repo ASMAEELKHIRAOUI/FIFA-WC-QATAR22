@@ -81,7 +81,12 @@
         public function getTeam($id){
 
         }
-        public function addTeam($object){
+        public function addTeam(){
+        $database =new Database();
+        $sql="INSERT INTO team  VALUES (?,?,?,?)";
+        $stmt= $database->connect()->prepare($sql);
+        $stmt->exucute();
+
             
         }
         public function updateTeam($id){

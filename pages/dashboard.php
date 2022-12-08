@@ -1,6 +1,8 @@
 <?php
 include '../include/head.php';
-//include '../include/navbar.php';
+include_once '../scripts.php/crudadmin.script.php';
+include_once '../classes/match.class.php';
+ 
 ?>
 
   
@@ -17,7 +19,7 @@ include '../include/head.php';
 <div class="modal fade" id="modal">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form" data-parsley-validate>
+				<form action="../scripts.php/crudadmin.script.php" method="POST" id="form" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">New Match</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -28,12 +30,12 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Date</label>
-								<input type="datetime-local"  class="form-control"  required/>
+								<input type="datetime-local" name="Datetime"  class="form-control"  required/>
 							</div>
 							
                             <div class="mb-3">
 								<label class="form-label">First team</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" name="Team1" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -43,7 +45,7 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Second team</label>
-								<select class="form-select" aria-label="Default select example">
+								<select class="form-select" name="Team2" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -53,7 +55,7 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
-								<select class="form-select" aria-label="Default select example">
+								<select class="form-select" name="Stade" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -63,7 +65,7 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Price</label>
-								<input type="number" class="form-control" step="any" id="task-date" required/>
+								<input type="number" name="Prix" class="form-control" step="any" id="task-date" required/>
 							</div>
 
                             <div class="mb-3">
@@ -74,7 +76,7 @@ include '../include/head.php';
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
+						<button type="submit" name="SaveMatch" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
 					</div>
 				</form>
 			</div>
@@ -85,7 +87,7 @@ include '../include/head.php';
 <div class="modal fade" id="modal-teams">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form" data-parsley-validate>
+				<form action="../scripts.php/crudadmin.script.php" method="POST" id="form" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">New Team</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -96,28 +98,28 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Country</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="Country"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Coach</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="Coach"  class="form-control"  required/>
 							</div>
 
 							<div class="mb-3">
                                 <label for="formFile" class="form-label">Image</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" name="Image" type="file" id="formFile">
                             </div>
 
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Logo</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" name="Logo" type="file" id="formFile">
                             </div>
 						
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
+						<button type="submit" name="Saveteam" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
 					</div>
 				</form>
 			</div>
@@ -128,7 +130,7 @@ include '../include/head.php';
 <div class="modal fade" id="modal-stad">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form" data-parsley-validate>
+				<form action="../scripts.php/crudadmin.script.php " method="POST" id="form" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">New Stad</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -139,33 +141,33 @@ include '../include/head.php';
 
                             <div class="mb-3">
 								<label class="form-label">Name</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="Name"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">Capacity</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="Capacity"  class="form-control"  required/>
 							</div>
 
 							<div class="mb-3">
 								<label class="form-label">Location</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="Location"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
 								<label class="form-label">City</label>
-								<input type="text"  class="form-control"  required/>
+								<input type="text" name="City"  class="form-control"  required/>
 							</div>
 
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Image</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" name="image" type="file" id="formFile">
                             </div>
 						
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Add" class="color btn  text-light task-action-btn" id="save-btn">Add stad</button>
+						<button type="submit" name="SaveStad" class="color btn  text-light task-action-btn" id="save-btn">Add stad</button>
 					</div>
 				</form>
 			</div>
@@ -430,16 +432,18 @@ include '../include/head.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="text-right">2018-09-29 05:57 PM</td>
-                                                <!-- <td>05:57</td> -->
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-start">usa</td>
-                                                <td class="text-right">tamama</td>
-                                                <td class="text-right">7777</td>
-                                                <td class="text-right">tamama kbgnjktjrf jfbjrbf jbfrf</td>
-                                                <td class="text-left"><a href="update.match.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
-                                            </tr>
+                                            <?php foreach($matchs as $match):?>
+                                                <tr>
+                                                    <td class="text-right"><?php echo $match->getDateTime();?></td>
+                                                    <!-- <td>05:57</td> -->
+                                                    <td class="text-right"><?php echo $match->getTeame_1_ID();?></td>
+                                                    <td class="text-start"><?php echo $match->getTeame_2_ID();?></td>
+                                                    <td class="text-right"><?php echo $match->getStaduimID();?></td>
+                                                    <td class="text-right"><?php echo $match->getprice(); ?></td>
+                                                    <td class="text-right"><?php echo $match->getdescription();?></td>
+                                                    <td class="text-left"><a href="update.match.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
+                                                </tr>
+                                            <?php endforeach;?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -503,15 +507,18 @@ include '../include/head.php';
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach($stads as $stad):   ?>
                                             <tr>
-                                                <td class="text-right">test img</td>
-                                                <td class="text-right">tamama</td>
-                                                <td class="text-right">60.000</td>
-                                                <td class="text-right">test test test</td>
-                                                <td class="text-start">Qatar</td>
+                                                
+                                                <td class="text-start"><img style="width:5rem" src="../assets/img/stad/<?php echo $stad->getImage();?>" alt=""></td>
+                                                <td class="text-right"><?php echo $stad->getName();?></td>
+                                                <td class="text-right"><?php echo $stad->getCapacity();?></td>
+                                                <td class="text-right"><?php echo $stad->getLocation();?></td>
+                                                <td class="text-right"><?php echo $stad->getCity();?></td>
+                                                
                                                 <td class="text-left"><a href="update.stad.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                             </tr>
-                                            
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>
