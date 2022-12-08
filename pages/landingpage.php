@@ -6,12 +6,12 @@
     <body>
     <?php include '../include/navbar.php' ?>          
 
-        <header>  
+        <header class="">  
             <!-- Background image -->
             <div
                 class="bg-image"
                 style="
-                background-image: url('https://digitalhub.fifa.com/transform/11efbf28-c08e-4a13-958f-78685fbb8a80/Qatar-2022-s-32-teams-graphic');
+                background-image: url('../assets/img/general/header_bacground.png');
                 background-attachment: fixed;
                 background-size: 100%;
                 background-repeat: no-repeat;
@@ -41,42 +41,46 @@
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Ches date</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label class="form-label">Start</label>
-                    <input type="datetime-local" class="form-control" id="task_date" name="task-date"/>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ches date</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Start</label>
+                        <input type="datetime-local" class="form-control" id="task_date" name="task-date"/>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">End</label>
+                        <input type="datetime-local" class="form-control" id="task_date" name="task-date"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">ok</button>
+                </div>
                 </div>
             </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label class="form-label">End</label>
-                    <input type="datetime-local" class="form-control" id="task_date" name="task-date"/>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">ok</button>
-            </div>
-            </div>
         </div>
-        </div>
+        
+        <div id="section1" class="invisible mb-5">invisible</div>
 
 
-        <section class="pt-5 pb-5">
+        <section class="" >
             <div class="container">
-                <div class="row">
+                <div class="row" >
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="mb-3">Upcoming Machts</h3>
-                        <a href="#" class="d-flex align-items-center text-decoration-none" style="color: #8a1538;">
-                                view all
-                                <iconify-icon class="" icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
-                        </a>
+                        <form action="../scripts.php/landingpage.script.php" method="POST">
+                            <button type="submit" name="Upcoming-Machts" class="d-flex align-items-center bg-white border-0" style="color: #8a1538;">
+                                view all <iconify-icon class=""  icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
+                            </button>
+                        </form>
+                        
                         
                         
                     </div>
@@ -322,7 +326,7 @@
             </div>
         </section>
 
-        <section class="pt-5 pb-5">
+        <section class="pt-5 pb-5" >
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-between">
@@ -373,8 +377,8 @@
             </div>
         </section>
 
-
-        <section class="pt-5 pb-5">
+        <div id="section3" class="invisible mb-5">invisible</div>
+        <section class="" id="section3">
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-between">
@@ -389,112 +393,58 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
+                                        <?php for($i=0 ; $i<3 ; $i++): ?>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card ">
+                                                    <img class="card-img-top" alt="100%x280" src="../assets/img/teams/<?php echo $teams[$i]->getImage() ?>">
+                                                    <div class="card-body">
+                                                            <div><?php echo $teams[$i]->getCountry() ?> National Teames</div>
+                                                            <div>Group F</div>
+                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $teams[$i]->getCountry() ?></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-
+                                        <?php endfor; ?>
                                     </div>
                                 </div>
+                                <?php for($i=3 ; $i<(count($teams)-2); $i+=3): ?>
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            <?php for($j=$i ; $j<($i+3) ; $j++): ?>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card ">
+                                                        <img class="card-img-top" alt="100%x280" src="../assets/img/teams/<?php echo $teams[$j]->getImage() ?>">
+                                                        <div class="card-body">
+                                                                <div><?php echo $teams[$j]->getCountry() ?> National Teames</div>
+                                                                <div>Group F</div>
+                                                                <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $teams[$j]->getCountry() ?></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endfor; ?>
+                                        </div>
+                                    </div>
+                                <?php endfor; ?>
+
                                 <div class="carousel-item">
                                     <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
+                                        <?php for($j=30 ; $j<32 ; $j++): ?>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card ">
+                                                    <img class="card-img-top" alt="100%x280" src="../assets/img/teams/<?php echo $teams[$j]->getImage() ?>">
+                                                    <div class="card-body">
+                                                            <div><?php echo $teams[$j]->getCountry() ?> National Teames</div>
+                                                            <div>Group F</div>
+                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $teams[$j]->getCountry() ?></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-
+                                        <?php endfor; ?>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <img class="card-img-top" alt="100%x280" src="https://i.ytimg.com/vi/PgtNCDpDJeA/sddefault.jpg">
-                                                <div class="card-body">
-                                                        <div>Morocco National Teames</div>
-                                                        <div>Group F</div>
-                                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Morocco</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-
                                     </div>
-                                </div>
+
+                                
+                                
                                 
                             </div>
                         </div>
@@ -573,7 +523,6 @@
                                         <?php endfor; ?>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
 

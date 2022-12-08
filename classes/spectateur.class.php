@@ -6,8 +6,20 @@ include_once 'user.class.php';
 
         //crud
         
-        public function getSpectateur($id){
-            $sql = "SELECT * FROM spectator WHERE id = ?";
+        public function getSpectateur(){
+            $sql = "SELECT * FROM spectator WHERE id = $this->id";
+            $conn = Database::connect();
+            $stmt = $conn->prepare($sql); 
+            $stmt->execute();
+            $arr =  $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $this->setFirstName($arr['first_name']);
+            $this->setLastName($arr['last_name']);
+            $this->setEmail($arr['email']);
+            $this->setPassword($arr['password']);
+
+            return $arr;
+            
         }   
         public function addSpectateur($object){
             
@@ -21,4 +33,4 @@ include_once 'user.class.php';
 
     }
     
-?>
+?> 

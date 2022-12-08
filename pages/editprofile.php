@@ -1,4 +1,6 @@
 
+
+<?php include_once '../scripts.php/editepage.script.php'; ?>
 <link href="../assets/css/dashtest.css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="../assets/css/styleF.css">
 <?php include"../include/head.php" ?>
@@ -64,6 +66,7 @@
                             class="form-control"
                             name="firstName"
                             id="first-name"
+                            value="<?=$obj->getFirstName()?>"
                         />
                     </div>
                     <div class="mb-4">
@@ -73,6 +76,7 @@
                             class="form-control"
                             name="firstName"
                             id="first-name"
+                            value="<?=$obj->getEmail()?>"
                         />
                     </div>
                 </div>
@@ -87,6 +91,7 @@
                             class="form-control"
                             name="lastName"
                             id="lastName"
+                            value="<?=$obj->getLastName()?>"
                         />
                     </div>
                     <div class="mb-4">
@@ -98,6 +103,7 @@
                             class="form-control"
                             name="password"
                             id="password"
+                            value="<?=$obj->getPassword()?>"
                         />
                     </div>    
               </div>

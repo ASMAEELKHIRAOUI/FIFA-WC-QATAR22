@@ -122,7 +122,10 @@ include_once '../classes/database.class.php';
                 if($result)
                     header('location: dashboard.php');
             }
+
+            return $matchs;
         }
+
 
         public function deleteMatch($id){
         }

@@ -80,8 +80,8 @@
             }
 
             return $stadts;
-            
         }
+
 
         public function getStad($id){
             $database = new Database();
@@ -92,27 +92,31 @@
             $this->getObject($dbStad);
         }
 
-        public function addStad($object){
-            
-
+        public function addStad(){
+            $database = new Database();
+            $sql ="INSERT INTO stad(name,capacity,location,city,image) VALUES(?,?,?,?,?)" ;
+            $stmt= $database->connect()->prepare($sql);
+            $stmt->execute([$this->getName(), $this->getCapacity(),$this->getLocation(),$this->getCity(), $this->getImage() ]) ; 
+            // header("Location:../pages/dashboard.php");
         }
         public function updateStad($id){
-            if(isset(updateStad)){
-                $query="UPDATE stad SET name=? , capacity=? , location=? , city=? , image=? WHERE id=?";
-                $result = $this->connect()->prepare($query);
-                $result->execute([$id,$capacity, $location, $city ,$image]);
-                if($result)
-                    header('location: dashboard.php');
-            }
+            // if(isset(updateStad)){
+                // $query="UPDATE stad SET name=? , capacity=? , location=? , city=? , image=? WHERE id=?";
+                // $result = $this->connect()->prepare($query);
+                // $result->execute([$id,$capacity, $location, $city ,$image]);
+                // if($result)
+                //     header('location: dashboard.php');
+            // }
         }
         
         public function deleteStad($id){
         }
+         
     }
-    
+
     
 
-
+     
 
 
 ?>
