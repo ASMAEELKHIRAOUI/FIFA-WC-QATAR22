@@ -9,7 +9,7 @@ include_once 'database.class.php';
         protected $email;
         protected $roll;
 
-        public function __construct ($fn , $ln , $pas , $emi , $roll)
+        public function __construct ($fn="" , $ln="" , $pas ="", $emi="" , $roll="")
         {
             $this->id = NULL;
             $this->firstName = $fn;
