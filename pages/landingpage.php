@@ -1,10 +1,10 @@
-<?php include_once '../scripts.php/landingpage.script.php';?>
+<?php include '../scripts.php/landingpage.script.php';?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include_once '../include/head.php' ?>
+    <?php include '../include/head.php' ?>
     <link rel="stylesheet" href="../assets/css/landing_page.css">
     <body>
-    <?php include_once '../include/navbar.php' ?>          
+    <?php include '../include/navbar.php' ?>          
 
         <header class="">  
             <!-- Background image -->
@@ -75,8 +75,8 @@
                 <div class="row" >
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="mb-3">Upcoming Machts</h3>
-                        <form action="../scripts.php/landingpage.script.php" method="POST">
-                            <button type="submit" name="Upcoming-Machts" class="d-flex align-items-center bg-white border-0" style="color: #8a1538;">
+                        <form action="stadpage.php" method="POST">
+                            <button type="submit" name="display-Machts" class="d-flex align-items-center bg-white border-0" style="color: #8a1538;">
                                 view all <iconify-icon class=""  icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
                             </button>
                         </form>
@@ -383,10 +383,11 @@
                 <div class="row">
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="mb-3">Browse National Teams</h3>
-                        <a href="#" class="d-flex align-items-center text-decoration-none" style="color: #8a1538;">
-                                view all
-                                <iconify-icon class="" icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
-                        </a>
+                        <form action="stadpage.php" method="POST">
+                            <button type="submit" name="display-Teams" class="d-flex align-items-center bg-white border-0" style="color: #8a1538;">
+                                view all <iconify-icon class=""  icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
+                            </button>
+                        </form>
                     </div>
                     <div class="col-12 position-relative">
                         <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
@@ -464,11 +465,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-between">
-                        <h3 class="mb-3">Browse National Teams</h3>
-                        <a href="#" class="d-flex align-items-center text-decoration-none" style="color: #8a1538;">
-                                view all
-                                <iconify-icon class="" icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
-                        </a>
+                        <h3 class="mb-3">Browse Stads</h3>
+                        <form action="stadpage.php" method="POST">
+                            <button type="submit" name="display-Stads" class="d-flex align-items-center bg-white border-0" style="color: #8a1538;">
+                                view all <iconify-icon class=""  icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
+                            </button>
+                        </form>
                     </div>
                     <div class="col-12 position-relative">
                         <div id="carouselExampleControls3" class="carousel slide" data-bs-ride="carousel">
