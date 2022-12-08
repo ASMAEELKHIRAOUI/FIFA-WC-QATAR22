@@ -1,4 +1,7 @@
 <?php
+
+    if(isset($_POST['Upcoming-Machts'])) displayMatches();
+
     include_once '../classes/stad.class.php';
     $stad = new Stad();
     $stads = array();
@@ -8,6 +11,14 @@
     $team = new Team();
     $teams = array();
     $teams = $team->getTeams();
+
+
+    function displayMatches(){
+
+    }
+
+
+
 
 
 

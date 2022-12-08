@@ -150,7 +150,7 @@ INSERT INTO `team` (`id`, `country`, `coach`, `image`, `logo`) VALUES
 (29, 'Tunisia', 'Jalel Kadri', 'Tunisiat.jpg', 'Tunisial.jpg'),
 (30, 'Wales', 'Rob Page', 'Walest.jpg', 'Walesl.jpg'),
 (31, 'Senegal', 'Aliou Cisse', 'Senegalt.jpg', 'Senegall.jpg'),
-(31, 'Netherlands', 'Aliou Cisse', 'Senegalt.jpg', 'Netherlandsl.jpg');
+(32, 'Netherlands', 'Aliou Cisse', 'Senegalt.jpg', 'Netherlandsl.jpg');
 
 
 
