@@ -11,14 +11,13 @@ include_once 'database.class.php';
 
         public function __construct ($fn="" , $ln="" , $pas ="", $emi="" , $roll="")
         {
-            $this->id = NULL;
+            $this->id        = NULL;
             $this->firstName = $fn;
             $this->lasttName = $ln;
-            $this->password = $pas;
-            $this->email = $emi;
-            $this->roll = $roll;
+            $this->password  = $pas;
+            $this->email     = $emi;
+            $this->roll      = $roll;
         }
-
 
         public function setFirstName($fn){
             $this->firstName = $fn;
@@ -39,7 +38,6 @@ include_once 'database.class.php';
         public function setId($id){
             $this->id = $id;
         }
-
 
         public function getFirstName(){
             return $this->firstName ;

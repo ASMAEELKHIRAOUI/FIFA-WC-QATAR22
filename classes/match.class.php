@@ -127,14 +127,14 @@ include_once '../classes/database.class.php';
 
 
         //crud
-
-        public function getMatch($id){
-            $database = new Database();
-            $sql = "SELECT * FROM matches where id = $id";
-            $stmt = $database->connect()->prepare($sql);
-            $stmt->execute();
-            $dbMatch = $stmt->fetchAll(PDO::FETCH_OBJ);
-            $this->getObject($dbMatch);
+  
+        public function getMatch($id){ // cette function n'est pas fonctionné  
+            // $database = new Database();
+            // $sql = "SELECT * FROM matches where id = $id";
+            // $stmt = $database->connect()->prepare($sql);
+            // $stmt->execute();
+            // $dbMatch = $stmt->fetchAll(PDO::FETCH_OBJ);
+            // $this->getObject($dbMatch);
         }
         public function addMatch(){
             $database = new Database();
