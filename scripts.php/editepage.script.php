@@ -1,5 +1,5 @@
 <?php
-    include_once '../classes/spectateur.class.php';
+    include_once dirname(__DIR__) . '/classes/spectateur.class.php';
     //creat object 
     $obj = new Spectateur();
 
