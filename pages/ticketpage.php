@@ -7,7 +7,7 @@ include_once '../include/navbar.php';
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="../assets/css/matchpage.css">
+<link rel="stylesheet" href="../assets/css/ticketspage.css">
 
 
 
@@ -20,9 +20,16 @@ include_once '../include/navbar.php';
             <i class=" icon  my-2 m-2  fa-brands fa-square-twitter"></i>
         </div>
         <!-- col d-flex flex-column -->
-        <div class="image-conatiner col-12 col-md-11 d-flex flex-column " >
-            <div class="d-flex w-100 h-50 justify-content-center">     
+        <div class="col-12 col-md-11 d-flex flex-column " >
+            <div  class="image-conatiner d-flex justify-content-center">
+                <div class="position-relative">
                 <img class="my-1 match-img" src="../assets/img/general/card_background.png" alt="imagematch">
+                <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/argentinat.jpg" alt="teame1">
+                <img class=" position-absolute top-50 end-0 translate-middle-y"  height="20px" src="../assets/img/flag/argentinat.jpg" alt="teame1">
+
+                </div>
+                
+                
             </div>
             <div class=" mt-4  d-flex justify-content-between flex-wrap  ">
                 <div class="my-3  d-flex flex-column align-items-between  ">
