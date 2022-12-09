@@ -48,9 +48,14 @@ include_once 'user.class.php';
 
         }
 
-        public function deleteSpectateur($id)
+        public function deleteSpectateur()
         {
-
+            $sql = "DELETE  FROM `spectator` WHERE id = $this->id";
+            $conn = Database::connect();
+            $stmt = $conn->prepare($sql); 
+            $stmt->execute();
+            
+           header('location: ../pages/editprofile.php');
         }
 
         public function cancel_changes()

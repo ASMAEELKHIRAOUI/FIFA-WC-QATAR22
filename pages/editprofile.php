@@ -140,7 +140,13 @@
                   </i>
                 </div>
                 <div class="mt-3">
-                  <button type="button" class="btn btn-danger btn-lg btn-block">Delete your account</button>
+                  <button 
+                      type="submit"
+                      id="delete-count"
+                      name="delete_count"
+                      class="btn btn-danger btn-lg btn-block"
+                    >Delete your account
+                  </button>
                 </div>  
               </div>
             </div>
