@@ -91,10 +91,10 @@
             // return $row;
         }
         public function addTeam(){
-        // $database =new Database();
-        // $sql="INSERT INTO team  VALUES (?,?,?,?)";
-        // $stmt= $database->connect()->prepare($sql);
-        // $stmt->exucute();
+        $database =new Database();
+        $sql="INSERT INTO team (country,coach,image,logo)  VALUES (?,?,?,?)";
+        $stmt= $database->connect()->prepare($sql);
+        $stmt->execute([$this->getCountry(),$this->getCoatch(),$this->getImage(),$this->getLogo()]);
 
             
         }
