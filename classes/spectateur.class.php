@@ -23,11 +23,6 @@ include_once 'user.class.php';
         
         }
 
-        public function addSpectateur($object)
-        {
-            
-        }
-
         public function updateSpectateur()
         {        
             $id = $_POST['id'];
@@ -54,7 +49,7 @@ include_once 'user.class.php';
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
             
-           header('location: ../pages/editprofile.php');
+           header('location: ../pages/landingpage.php');
         }
 
         public function cancel_changes()
