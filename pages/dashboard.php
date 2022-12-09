@@ -434,10 +434,10 @@ include_once '../classes/match.class.php';
                                         <tbody>
                                             <?php foreach($matchs as $match):?>
                                                 <tr>
-                                                    <td class="text-right"><?php echo $match->getDateTime();?></td>
+                                                    <td class="text-right"><?php echo $match->getDateTimeFormat();?></td>
                                                     <!-- <td>05:57</td> -->
-                                                    <td class="text-right"><?php echo $match->getTeame_1_ID();?></td>
-                                                    <td class="text-start"><?php echo $match->getTeame_2_ID();?></td>
+                                                    <td class="text-right"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
+                                                    <td class="text-start"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
                                                     <td class="text-right"><?php echo $match->getStaduimID();?></td>
                                                     <td class="text-right"><?php echo $match->getprice(); ?></td>
                                                     <td class="text-right"><?php echo $match->getdescription();?></td>
