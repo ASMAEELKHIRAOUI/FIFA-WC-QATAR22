@@ -12,27 +12,26 @@
     </button> -->
 
     <div class=" collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class=" navbar-nav nav justify-content-center me-auto mb-2 mb-lg-0">
+      <ul class=" navbar-nav nav justify-content-between me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active"  href="">About</a>
+          <a class="nav-link active"  href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active"  href="#section1">News</a>
+          <a class="nav-link active"  href="#">News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active"  href="#section3">Teams</a>
+          <a class="nav-link active"  href="#">Teams</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active"  href="#">Contact</a>
         </li>
+        <li class="nav-item ms-5">
+          <span class="nav-link active"><i class="bi bi-person-circle"></i> Hello : <b class="logout"> SPEC </b></span>
+        </li>
       </ul>
-      
-    <div class="sign me-4">
-    <a href="../pages/signin.php" type="button" class="btn login">Sign in</a>
-    <a href="../pages/signup.php" type="button" class="btn logup">Sign up</a>
+      <div class="d-flex me-4 logout-div">
+        <a href="config/scripts.php?logout=1" name="logout" class="logout">  <i class="bi bi-box-arrow-right"></i><span> Logout </span></a>
+      </div>
     </div>
-
-    </div>
-    
   </div>
 </nav>

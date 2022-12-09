@@ -4,7 +4,7 @@
 <link href="../assets/css/dashtest.css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="../assets/css/styleF.css">
 <?php include"../include/head.php" ?>
-<?php include"../include/navbar.php" ?>
+<?php include"../include/navbar_spec.php" ?>
 
 <div class="alert alert-success m-4 text-center" role="alert">
   <h3 > Welcome in you Profile! </h3> 
