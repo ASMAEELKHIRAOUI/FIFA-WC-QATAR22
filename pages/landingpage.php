@@ -118,7 +118,7 @@
                                 <?php for($i=3 ; $i<count($matches); $i+=3): ?>
                                     <div class="carousel-item ">
                                     <div class="row">
-                                        <?php for($j=$i ; $j<$i + 3 && $j <count($matches) ; $j++): ?>
+                                        <?php for($j=$i ; $j<$i + 3 && $j<count($matches) ; $j++): ?>
                                             <div class="col-md-4 mb-3">
                                                 <div class="card ">
                                                     <div class="position-relative">
