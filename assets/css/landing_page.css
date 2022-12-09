@@ -81,6 +81,13 @@
     height: 200px;
 }
 
+
+.card .flag{
+    margin: 0 10px;
+    width: 74px;
+    height: 44px;
+}
+
 /* @media (max-width:990px) {
     .search-2 {
         display: block;

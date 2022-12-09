@@ -5,11 +5,10 @@ class Database {
     private static $pwd = "";
     private static $dbName = "fifa";
 
-    public static function connect() {
+    public  function connect() {
         $dsn = 'mysql:host=' . self::$host . ';dbname=' . self::$dbName;
         $pdo = new PDO($dsn, self::$user, self::$pwd);
         try{
-            
             $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             return $pdo;
         }catch(PDOException $e){
@@ -18,4 +17,3 @@ class Database {
     }
 }
 
-Database::connect();

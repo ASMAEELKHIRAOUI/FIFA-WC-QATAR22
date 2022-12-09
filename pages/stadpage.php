@@ -10,23 +10,23 @@
         <!-- cet card pour les match  -->
         <div class=" row my-2 my-ms-1">
             <?php if(isset($_POST['display-Machts'])):?>
-                <?php foreach($matchs as $match): ?>
+                <?php foreach($matches as $match): ?>
                     <div class="col-lg-3 col-md-6 col-sm-12 my-1">
                         <div class="card ">
                             <div class="position-relative">
-                                <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                <img class=" position-absolute top-50 start-0 translate-middle-y" style="width: 6rem;"  src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                <img class="position-absolute top-50 end-0 translate-middle-y" style="width: 6rem;" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
+                                <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
+
+
+                                <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $match->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $match->getTeame_1_obj()->getLogo(); ?>">
+                                <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $match->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $match->getTeame_2_obj()->getLogo(); ?>">
                             </div>
                             <div class="card-body">
-                                <div class="d-flex">
-                                    <div class=" d-flex align-items-center">
-                                        NOV<br>25
-                                    </div>
-                                    <div class="ms-5">
-                                        <div>morocco vs canada</div>
-                                        <div>$ 150</div>
-                                        <i class="fa-solid fa-location-dot"></i><spain> Ahmed ben Ali staduim</spain>
+                                <div class=" d-flex align-items-center">
+                                    <div class="ms-5 text-center">
+                                        <div><?php echo $match->getTeame_1_obj()->getCountry(); ?> vs <?php echo $match->getTeame_2_obj()->getCountry(); ?></div>
+                                        <div><?php echo $match->getDateTimeFormat() ?></div>
+                                        <div>$ <?php echo $match->getPrice(); ?></div>
+                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $match->getStaduim_obj()->getName(); ?></div>
                                     </div>
                                 </div>
                             </div>

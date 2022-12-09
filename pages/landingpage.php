@@ -69,7 +69,6 @@
         
         <div id="section1" class="invisible mb-5">invisible</div>
 
-
         <section class="" >
             <div class="container">
                 <div class="row" >
@@ -89,226 +88,64 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="../assets/img/general/header_bacground.png">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
+                                        <?php for($i=0 ; $i<3 ; $i++): ?>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card ">
+                                                    <div class="position-relative">
+                                                        <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
 
+
+                                                        <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
+                                                        <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
                                                     </div>
-                                                    
+                                                    <div class="card-body">
+                                                        <div class=" d-flex align-items-center justify-content-between">
+                                                            <div class="text-center">
+                                                            <div><?php echo $matches[$i]->getDateTimeFormat() ?></div>
+                                                            </div>
+                                                            <div class="ms-5 ">
+                                                                <div><?php echo $matches[$i]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$i]->getTeame_2_obj()->getCountry(); ?></div>
+                                                                <div>$ <?php echo $matches[$i]->getPrice(); ?></div>
+                                                                <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$i]->getStaduim_obj()->getName(); ?></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
-
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
-
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                        <?php endfor; ?>
                                     </div>
                                 </div>
-                                <div class="carousel-item ">
+                                <?php for($i=3 ; $i<count($matches); $i+=3): ?>
+                                    <div class="carousel-item ">
                                     <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
+                                        <?php for($j=$i ; $j<$i + 3 && $j <count($matches) ; $j++): ?>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card ">
+                                                    <div class="position-relative">
+                                                        <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
 
+
+                                                        <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
+                                                        <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
                                                     </div>
-                                                    
+                                                    <div class="card-body">
+                                                        <div class=" d-flex align-items-center justify-content-between">
+                                                            <div class="text-center">
+                                                            <div><?php echo $matches[$i]->getDateTimeFormat() ?></div>
+                                                            </div>
+                                                            <div class="ms-5 ">
+                                                                <div><?php echo $matches[$i]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$i]->getTeame_2_obj()->getCountry(); ?></div>
+                                                                <div>$ <?php echo $matches[$i]->getPrice(); ?></div>
+                                                                <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$i]->getStaduim_obj()->getName(); ?></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
-
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
-
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                        <?php endfor; ?>
                                     </div>
-                                </div>
-                                <div class="carousel-item ">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
-
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
-
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="card ">
-                                                <div class="position-relative">
-                                                    <img class="card-img-top " alt="100%x280" src="https://img.freepik.com/premium-vector/football-2022-qatar-purple-background-isometric-vector-illustration_64478-1268.jpg">
-                                                    <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="https://www.nicepng.com/png/full/291-2914458_morocco-soccer-logo-morocco-national-football-team-logo.png" alt="">
-                                                    <img class="position-absolute top-50 end-0 translate-middle-y" src="https://upload.wikimedia.org/wikipedia/ar/thumb/3/31/Spain_National_Football_Team_badge.png/800px-Spain_National_Football_Team_badge.png" alt="">
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="d-flex">
-                                                        <div class=" d-flex align-items-center">
-                                                            NOV<br>25
-                                                        </div>
-                                                        <div class="ms-5">
-                                                            <div>morocco vs canada</div>
-                                                            <div>$ 150</div>
-                                                            <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> Ahmed ben Ali staduim</div>
-                                                        </div>
-
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-
                                     </div>
-                                </div>
+                                <?php endfor; ?>
                                 
                             </div>
                         </div>
@@ -357,11 +194,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-                                
-
-
                         </div>
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls4" data-bs-slide="prev">
