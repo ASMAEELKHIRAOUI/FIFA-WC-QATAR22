@@ -7,7 +7,4 @@
     $obj->setId(1);
 
     $obj->getSpectateur();
-
-
-    
 ?>
