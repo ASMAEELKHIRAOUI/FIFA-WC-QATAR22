@@ -25,13 +25,13 @@ $match = new Matches();
 $matchs  = $match->getMatchs();
 
 if (isset($_POST['SaveStad'])){
-   $name=$_POST['Name'];
-   $capacity=$_POST['Capacity'];
-   $location=$_POST['Location'];
-   $city=$_POST['City'];
-   $image=$_FILES['image']['name'];
-   $pathimage = $_FILES['image']['tem_name'];
-   $foolder = "../img/stad/".$image;
+  $name=$_POST['Name'];
+  $capacity=$_POST['Capacity'];
+  $location=$_POST['Location'];
+  $city=$_POST['City'];
+  $image=$_FILES['image']['name'];
+  $pathimage = $_FILES['image']['tem_name'];
+  $foolder = "../img/stad/".$image;
 
   $getstad = new Stad();
   $getstad-> setName($name); 
@@ -48,11 +48,11 @@ if (isset($_POST['SaveStad'])){
 $stad =new Stad();
 $stads=$stad->getStads();
 
-   
-   
-   
+  
+  
+  
 
-   
+  
 
 if(isset($_POST['Saveteam'])){
 

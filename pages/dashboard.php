@@ -15,7 +15,7 @@ include_once '../classes/match.class.php';
 <body>
 
 <body class="animsition" >
- <!-- add match form -->
+<!-- add match form -->
 <div class="modal fade" id="modal">
 		<div class="modal-dialog">
 			<div class="modal-content">
