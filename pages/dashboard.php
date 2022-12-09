@@ -119,7 +119,7 @@ include_once '../classes/match.class.php';
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Saveteam" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
+						<button type="submit" name="SaveTeam" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
 					</div>
 				</form>
 			</div>
@@ -470,14 +470,15 @@ include_once '../classes/match.class.php';
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach($teams as $team ):?>
                                             <tr>
-                                                <td class="text-right">test img</td>
-                                                <td class="text-right">test logo</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-right">ras lavoca</td>
+                                                <td class="text-right"><img style="width:5rem" src="../assets/img/teams/<?php echo $team->getImage();?>"> </td>
+                                                <td class="text-right"><img style="width:5rem" src="../assets/img/flag/<?php echo $team->getLogo();?>"> </td>
+                                                <td class="text-right"><?php echo $team->getCountry();?></td>
+                                                <td class="text-right"><?php echo $team->getCoatch(); ?></td>
                                                 <td class="text-left"><a href="update.team.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                             </tr>
-
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>

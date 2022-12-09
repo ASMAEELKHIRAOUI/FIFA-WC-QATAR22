@@ -83,9 +83,9 @@
         }
         public function addTeam(){
         $database =new Database();
-        $sql="INSERT INTO team  VALUES (?,?,?,?)";
+        $sql="INSERT INTO team (country,coach,image,logo)  VALUES (?,?,?,?)";
         $stmt= $database->connect()->prepare($sql);
-        $stmt->exucute();
+        $stmt->execute([$this->getCountry(),$this->getCoatch(),$this->getImage(),$this->getLogo()]);
 
             
         }
