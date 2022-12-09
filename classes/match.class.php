@@ -75,7 +75,6 @@ include_once '../classes/database.class.php';
         }
 
 
-
         // crud same as jointure (not use jointure jus use this SVP ) all you need is here  : abdellah
 
 

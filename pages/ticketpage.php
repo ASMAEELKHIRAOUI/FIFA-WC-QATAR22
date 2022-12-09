@@ -21,21 +21,19 @@ include_once '../include/navbar.php';
         </div>
         <!-- col d-flex flex-column -->
         <div class="col-12 col-md-11 d-flex flex-column " >
-            <div  class="image-conatiner d-flex justify-content-center">
+            <div  class="image-conatiner p-1 d-flex justify-content-center">
                 <div class="position-relative">
-                <img class="my-1 match-img" src="../assets/img/general/card_background.png" alt="imagematch">
-                <img class=" position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/argentinat.jpg" alt="teame1">
-                <img class=" position-absolute top-50 end-0 translate-middle-y"  height="20px" src="../assets/img/flag/argentinat.jpg" alt="teame1">
-
+                    <img class=" img-fluid" src="../assets/img/general/card_background.png" alt="imagematch">
+                    <img class="ms-4 w-25 img-fluid position-absolute top-50 start-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$_POST['match-id']]->getTeame_1_obj()->getLogo(); ?>" alt="teame1">
+                    <img class="me-4 w-25 img-fluid position-absolute top-50 end-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$_POST['match-id']]->getTeame_2_obj()->getLogo(); ?>" alt="teame1">
                 </div>
-                
                 
             </div>
             <div class=" mt-4  d-flex justify-content-between flex-wrap  ">
                 <div class="my-3  d-flex flex-column align-items-between  ">
-                    <h3 class=" ">Morocco vs Canada</h3>
-                    <div><i class=" my-1 py-2 mr-2 fa-solid fa-location-dot"></i><span>Al Thumama Stadium</span></div>
-                    <div><i class="  text-start mr-2 fa-solid fa-calendar-days"></i><span>December 01, 2022 · 20.00 </span></div>
+                    <h3 class=" "><?php echo $matches[$_POST['match-id']]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$_POST['match-id']]->getTeame_2_obj()->getCountry(); ?></h3>
+                    <div><i class=" my-1 py-2 mr-2 fa-solid fa-location-dot"></i><span><?php echo $matches[$_POST['match-id']]->getStaduim_obj()->getName(); ?></span></div>
+                    <div><i class="  text-start mr-2 fa-solid fa-calendar-days"></i><span><?php echo $matches[$_POST['match-id']]->getDateTimeFormat(); ?></span></div>
                     <p class="my-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus debitis repudiandae non! Laborum</p>
                 </div>
                 <div class="row ">
@@ -43,7 +41,7 @@ include_once '../include/navbar.php';
                         <div class=" card  " style="  width: 15rem;">
                             <div class="card-body">
                                 <h5 class=" text-center card-title">Tickets starting at</h5>
-                                <h6 class=" text-center card-subtitle mb-2 text-muted">220$</h6>
+                                <h6 class=" text-center card-subtitle mb-2 text-muted"><?php echo $matches[$_POST['match-id']]->getprice(); ?>$</h6>
                                 <button class="border border-0 rounded  text-center btn-ticket w-100 " >Reserve your  E-Tickets</button>
                             </div>
                         </div>
@@ -53,8 +51,7 @@ include_once '../include/navbar.php';
             <div class="my-3 d-flex flex-column ">
             <h3 class=" ">Match Information</h3>
             <h4 class="mt-3 ">Description</h4>
-            <p>Lorem ipsum dolor sit amet consectetur. Vel volutpat in risus leo erat. Morbi morbi nec urna tellus. Posuere nibh cum commodo quam gravida rhoncus. Tellus sem interdum hendrerit imperdiet maecenas nulla placerat risus. Lectus nullam parturient turpis eget aliquet p
-                orttitor lacus senectus massa. Dui nunc semper eget rhoncus. Vel sed dolor et amet tellus eget.</p>
+            <p><?php echo $matches[$_POST['match-id']]->getdescription(); ?></p>
             </div>
             <div class="my-2">
                 <input class=" terms w-100  " type="text" placeholder="Terms & Condition">
