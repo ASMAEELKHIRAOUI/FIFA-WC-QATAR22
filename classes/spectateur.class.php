@@ -15,7 +15,7 @@ include_once 'user.class.php';
             $stmt = $conn->prepare($sql); 
             $stmt->execute();   
             $arr =  $stmt->fetch(PDO::FETCH_ASSOC);
-            var_dump($arr);
+            //var_dump($arr);
 
             $this->setFirstName($arr['first_name']);
             $this->setLastName($arr['last_name']);
@@ -31,7 +31,7 @@ include_once 'user.class.php';
 
         public function updateSpectateur()
         {        
-            $id          = $_POST['id'];
+            $id = $_POST['id'];
             $firstName   = $_POST['firstName'];
             $lastName    = $_POST['lastName'];  
             $email       = $_POST['email'];
@@ -43,15 +43,19 @@ include_once 'user.class.php';
             $conn = Database::connect();
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
-            $arr =  $stmt->fetch(PDO::FETCH_ASSOC);
-            return $arr;
-           // header('location: ../pages/editprofile.php');
+            
+           header('location: ../pages/editprofile.php');
 
         }
 
         public function deleteSpectateur($id)
         {
 
+        }
+
+        public function cancel_changes()
+        {
+            header('location: ../pages/editprofile.php');
         }
 
     }

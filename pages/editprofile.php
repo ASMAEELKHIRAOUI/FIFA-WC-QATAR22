@@ -56,10 +56,11 @@
           </h2>
           <hr class="w-25%" />
           <br />
-          <form action="../scripts.php/editepage.script.php" methode="POST">
+          <form action="../scripts.php/editepage.script.php" method="POST">
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-4">
+                        <input type="hidden" name="id">
                         <label class="form-label">First Name </label>
                         <input
                             type="text"
@@ -110,7 +111,7 @@
               <div>
                 <div class="">
                   <button
-                    type="button"
+                    type="submit"
                     id="cancel-save"
                     name="cancel_save"
                     class="btn btn-secondary"
@@ -132,7 +133,7 @@
                 <div class="h2">
                   Delete Accounts
                 </div>
-                <hr style="width: 20%; text-align: left; margin-left: 0" />
+                <hr style="width: 25%; text-align: left; margin-left: 0" />
                 <div class="p text-secondary">
                   <i> Delete your account and all information related to your account such as your profile page,  
                       Please be aware that all data will be permanently lost if you delete your account.
