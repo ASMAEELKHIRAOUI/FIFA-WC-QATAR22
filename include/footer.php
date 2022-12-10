@@ -4,14 +4,13 @@
 
 
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="mt-2">
+<div class="m-0">
   <!-- Footer -->
   <footer
           class="text-center text-lg-start text-white"
           style="background-color: rgb(139, 24, 56)"
           >
-    <!-- Grid container -->
-    <div class="container p-4 pb-0 ">
+    <div class="m-0">
       <!-- Section: Links --> 
       <section class="">
         <!--Grid row-->
