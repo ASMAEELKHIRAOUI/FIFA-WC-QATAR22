@@ -148,9 +148,9 @@
                 </div>
                 <div class="mt-3">
                   <button 
-                      type="submit"
+                      type="button"
                       id="delete-count"
-                      name="delete_count"
+                      onclick="delete_count()"
                       class="btn btn-danger btn-lg btn-block"
                     >Delete your account
                   </button>
@@ -163,6 +163,6 @@
     </div>
   </div>
 </div>
-
-  
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../assets/js/main.js"></script>
 <?php include"../include/footer.php" ?>

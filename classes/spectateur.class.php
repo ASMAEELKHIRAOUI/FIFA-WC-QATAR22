@@ -32,8 +32,8 @@ include_once 'user.class.php';
             $password    = $_POST['password'];
             
             $sql = "UPDATE `spectator` 
-                        SET first_name='$firstName', last_name='$lastName',
-                        email='$email',password='$password' WHERE id = $this->id";
+                    SET first_name='$firstName', last_name='$lastName',
+                    email='$email',password='$password' WHERE id = $this->id";
             $conn = Database::connect();
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
