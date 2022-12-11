@@ -5,6 +5,7 @@ include_once 'user.class.php';
 
 
     class Spectateur extends User {
+        private $matchsReserved = array();
         //crud
         
         public function getSpectateur()
@@ -23,9 +24,8 @@ include_once 'user.class.php';
         
         }
 
-        public function addSpectateur($object)
+        public function addSpectateur()
         {
-            
         }
 
         public function updateSpectateur()
@@ -42,9 +42,7 @@ include_once 'user.class.php';
             $conn = Database::connect();
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
-            
-           header('location: ../pages/editprofile.php');
-
+            header('location: ../pages/editprofile.php');
         }
 
         public function deleteSpectateur()
@@ -54,13 +52,34 @@ include_once 'user.class.php';
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
             
-           header('location: ../pages/editprofile.php');
+            header('location: ../pages/editprofile.php');
         }
 
         public function cancel_changes()
         {
             header('location: ../pages/editprofile.php');
         }
+
+        public function setReservation($match){
+            if(!array_search($match , $this->matchsReserved)){
+                include_once 'match.class.php';
+
+
+                $indis = count($this->matchsReserved);
+                $indis++;
+                $this->matchsReserved[$indis] = new Matches();
+                $this->matchsReserved[$indis] = $match;
+            } else echo "this match is alredy reserved";
+
+            
+        }
+
+        public function getMatchsReserved(){
+            return $this->matchsReserved;
+        }
+
+
+
 
     }
     

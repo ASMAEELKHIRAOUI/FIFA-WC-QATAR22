@@ -17,6 +17,22 @@
     $matches = $match->getActiveMatchs();
 
 
+    include_once '../classes/spectateur.class.php';
+    $connectSpectateur = new Spectateur("yassin" , "bonno" , "semi-final" , "fifa@morocco.world" , 2);
+    $connectSpectateur->setReservation($matches[1]);
+    
+    $connectSpectateur->setReservation($matches[1]);
+
+
+    echo "<pre>";
+    print_r($connectSpectateur->getMatchsReserved());
+    echo "</pre>";
+
+    
+
+
+
+
 
 
 ?>

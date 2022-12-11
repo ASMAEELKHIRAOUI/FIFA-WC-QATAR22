@@ -4,14 +4,12 @@ include_once '../scripts.php/landingpage.script.php';
 include_once '../include/head.php';
 ?>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../assets/css/ticketspage.css">
 
     <div class="container">
 
         <?php include_once '../include/navbar.php';?>
-        <div class=" container  d-flex justify-content-between  flex-wrap  w-100 my-5  ">
             <div class=" col-1 d-flex  flex-md-column align-items-sm-center ">
                 <spain class=" d-none d-md-block  my-2   text-center  " >Share </spain>
                 <i class="icon my-2 m-2 fa-solid fa-link"></i>
