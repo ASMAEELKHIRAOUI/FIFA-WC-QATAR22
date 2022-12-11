@@ -10,29 +10,29 @@
         <!-- cet card pour les match  -->
         <div class=" row my-2 my-ms-1">
             <?php if(isset($_POST['display-Machts'])):?>
-                <?php foreach($matches as $match): ?>
-                    <div class="col-lg-3 col-md-6 col-sm-12 my-1">
+                <?php for($i=0 ; $i<count($matches) ; $i++): ?>
+                    <div class="col-md-4 mb-3">
                         <div class="card ">
-                            <div class="position-relative">
-                                <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
-
-
-                                <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $match->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $match->getTeame_1_obj()->getLogo(); ?>">
-                                <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $match->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $match->getTeame_2_obj()->getLogo(); ?>">
-                            </div>
-                            <div class="card-body">
-                                <div class=" d-flex align-items-center">
-                                    <div class="ms-5 text-center">
-                                        <div><?php echo $match->getTeame_1_obj()->getCountry(); ?> vs <?php echo $match->getTeame_2_obj()->getCountry(); ?></div>
-                                        <div><?php echo $match->getDateTimeFormat() ?></div>
-                                        <div>$ <?php echo $match->getPrice(); ?></div>
-                                        <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $match->getStaduim_obj()->getName(); ?></div>
+                            <form class="w-100" action="ticketpage.php" method="POST">
+                                <button value="<?php echo $i ?>" type="submit" name="match-id"  class="w-100  bg-white border border-0  ">
+                                    <div class="position-relative w-100">
+                                        <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
+                                        <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
+                                        <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="card-body">
+                                        <p class="fw-semibold"><?php echo $matches[$i]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$i]->getTeame_2_obj()->getCountry(); ?></p>
+                                        <div class=" d-flex my-2 justify-content-between">
+                                            <div><?php echo $matches[$i]->getDateTimeFormat() ?></div>
+                                            <div>$ <?php echo $matches[$i]->getPrice(); ?></div>
+                                        </div>
+                                        <div class="mt-3"> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$i]->getStaduim_obj()->getName(); ?></div>
+                                    </div>
+                                </button>
+                            </form>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                <?php endfor; ?>
             <?php endif ?>
         </div>
         
