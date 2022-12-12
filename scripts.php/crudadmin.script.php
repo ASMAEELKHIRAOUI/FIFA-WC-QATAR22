@@ -31,8 +31,8 @@ if (isset($_POST['SaveStad'])){
   $location=$_POST['Location'];
   $city=$_POST['City'];
   $image=$_FILES['image']['name'];
-//   $pathimage = $_FILES['image']['tem_name'];
-//   $foolder = "../img/stad/".$image;
+  $pathimage = $_FILES['image']['tem_name'];
+  $foolder = "../assets/img/stad/".$image;
 
   $getstad = new Stad();
   $getstad-> setName($name); 
