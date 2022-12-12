@@ -438,7 +438,7 @@ include_once '../classes/stad.class.php';
                                                 <tr>
                                                     <td class="text-right"><?php echo $match->getDateTimeFormat();?></td>
                                                     <!-- <td>05:57</td> -->
-                                                    <td class="text-right"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
+                                                    <td class="text-right"><?php echo $match->getTeame_1_obj()->getCountry();?></td>
                                                     <td class="text-start"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
                                                     <td class="text-right"><?php echo $match->getStaduim_obj()->getName();?></td>
                                                     <td class="text-right"><?php echo $match->getprice(); ?> $</td>

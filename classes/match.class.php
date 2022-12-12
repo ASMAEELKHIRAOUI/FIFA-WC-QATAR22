@@ -18,18 +18,21 @@ include_once '../classes/database.class.php';
             $this->matchStaduim_id = $mS_id;
             $this->price = $mP;
             $this->description = $mD;
+            
         }
 
 
         public function getId(){
             return $this->id;
         }
+
         public function getDateTime(){
             return $this->dateTime;
         }
         public function getTeame_1_ID(){
             return $this->matchTeame_1_id;
         }
+
         public function getTeame_2_ID(){
             return $this->matchTeame_2_id;
         }

@@ -20,7 +20,7 @@ include '../include/navbar.php';
 
 <title>Document</title>
 </head>
-<body>
+<body style="overflow-x:hidden">
     
     <div class=" container  d-flex justify-content-between  flex-wrap  w-100 my-5  ">
 <!--  col-1  d-flex flex-column align-items-center d-sm-flex  -->
