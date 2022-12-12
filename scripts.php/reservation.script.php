@@ -8,7 +8,7 @@ include_once '../classes/spectateur.class.php';
 
 $connectSpectateur = new Spectateur("yassin" , "bonno" , "semi-final" , "fifa@morocco.world" , 2);
 
-$connectSpectateur->setId(1);
+$connectSpectateur->setId(2);
 
 if(isset($_POST['ajaxRequest'])){
     
