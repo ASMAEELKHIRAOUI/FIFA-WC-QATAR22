@@ -14,9 +14,14 @@
     include_once '../classes/match.class.php';
     $match = new Matches();
     $matches = array();
-    $matches = $match->getMatchs();
+    $matches = $match->getActiveMatchs();
+
+
 
     
+
+
+
 
 
 

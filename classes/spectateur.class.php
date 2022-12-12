@@ -5,6 +5,7 @@ include_once 'user.class.php';
 
 
     class Spectateur extends User {
+        private $matchsReserved = array();
         //crud
         
         public function getSpectateur()
@@ -23,6 +24,10 @@ include_once 'user.class.php';
         
         }
 
+        public function addSpectateur()
+        {
+        }
+
         public function updateSpectateur()
         {        
             $id = $_POST['id'];
@@ -37,9 +42,7 @@ include_once 'user.class.php';
             $conn = Database::connect();
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
-            
-           header('location: ../pages/editprofile.php');
-
+            header('location: ../pages/editprofile.php');
         }
 
         public function deleteSpectateur()
@@ -49,6 +52,7 @@ include_once 'user.class.php';
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
             
+            header('location: ../pages/editprofile.php');
            header('location: ../pages/landingpage.php');
         }
 
@@ -56,6 +60,47 @@ include_once 'user.class.php';
         {
             header('location: ../pages/editprofile.php');
         }
+
+        public function setReservation($match){
+            include_once 'match.class.php';
+            include_once 'ticket.php';
+
+            $ticket = new Ticket( $this->id ,$match->getId());
+
+            // if(!array_search($match , $this->matchsReserved)){
+                $ticket->add();
+                $this->matchsReserved  =  $ticket->gets();
+            // } else echo "this match is alredy reserved";
+
+        }
+
+        public function getMatchsReserved(){
+            include_once 'match.class.php';
+            include_once 'ticket.php';
+
+            $ticket = new Ticket( $this->id );
+
+            $this->matchsReserved  =  $ticket->gets();
+
+
+            return $this->matchsReserved;
+        }
+
+
+        public function getMatchReserved($matchId){
+            include_once 'match.class.php';
+            include_once '/classes/ticket.class.php';
+
+            $ticket = new Ticket( $this->id );
+
+            $this->matchsReserved  =  $ticket->get($matchId);
+
+
+            return $this->matchsReserved;
+        }
+
+
+
 
     }
     

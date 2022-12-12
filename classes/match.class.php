@@ -2,13 +2,14 @@
 include_once '../classes/database.class.php';
     class Matches{
 
-        public $id = NULL;
-        public $dateTime;
-        public $matchTeame_1_id;
-        public $matchTeame_2_id;
-        public $matchStaduim_id;
-        public $price;
-        public $description;
+        private $id = NULL;
+        private $dateTime;
+        private $matchTeame_1_id;
+        private $matchTeame_2_id;
+        private $matchStaduim_id;
+        private $price;
+        private $description;
+        private $code;
 
         public function __construct($mDt="" , $mT1_id="" , $mT2_id="" , $mS_id="" ,$mP="" ,$mD="" )
         {
@@ -18,7 +19,7 @@ include_once '../classes/database.class.php';
             $this->matchStaduim_id = $mS_id;
             $this->price = $mP;
             $this->description = $mD;
-            
+            $this->generateCode();
         }
 
 
@@ -45,6 +46,9 @@ include_once '../classes/database.class.php';
         public function getdescription(){
             return $this-> description;
         }
+        public function getCode(){
+            return $this->code;
+        }
 
 
         public function setDateTime($mDt ){
@@ -66,6 +70,10 @@ include_once '../classes/database.class.php';
             $this->description = $mD;
         }
 
+        public function generateCode(){
+            $this->code = uniqid('' , true);
+        }
+
 
         public function getObject($dbObject){
             $this->id = $dbObject->id;
@@ -75,12 +83,11 @@ include_once '../classes/database.class.php';
             $this->matchStaduim_id = $dbObject->stad;
             $this->price = $dbObject->price;
             $this->description = $dbObject->description;
+            $this->code = $dbObject->Code;
         }
 
 
-
-        // crud same as jointure (not use jointure jus use this SVP ) all you need is here  : abdellah
-
+        // crud same as jointure (d'ont us jointure jus use this SVP ) all you need is here  : abdellah
 
         public function getTeame_1_obj(){
             $database = new Database();
@@ -123,14 +130,11 @@ include_once '../classes/database.class.php';
         }
 
         public function getDateTimeFormat(){
-            $strDate = $this->getDateTime();
-            $formatDate = substr($strDate, 5, -3);
+            $formatDate = date('l j M  H:i', strtotime($this->getDateTime()));
             return $formatDate;
         }
 
-
         //crud
-  
         public function getMatch($id){ // cette function n'est pas fonctionné  
             // $database = new Database();
             // $sql = "SELECT * FROM matches where id = $id";
@@ -141,14 +145,43 @@ include_once '../classes/database.class.php';
         }
         public function addMatch(){
             $database = new Database();
-            $sql = "INSERT INTO matches(match_team1,match_team2,stad,price,description,datetime) VALUES(?,?,?,?,?,?)";
+            $sql = "INSERT INTO matches(match_team1,match_team2,stad,price,description,datetime,Code) VALUES(?,?,?,?,?,?,?)";
             $conn= $database->connect()->prepare($sql);
-            $conn->execute([$this->matchTeame_1_id,$this->matchTeame_2_id ,$this->matchStaduim_id,$this->price,$this->description,$this->dateTime]);
+            $conn->execute([$this->matchTeame_1_id,$this->matchTeame_2_id ,$this->matchStaduim_id,$this->price,$this->description,$this->dateTime,$this->code]);
+        }
+
+        public function getActiveMatchs(){
+            $database = new Database();
+            $sql = "SELECT * FROM `matches` ";  
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute();
+            $dbMatchs = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+            $matchs = array();
+            
+            $i=0;
+            foreach($dbMatchs as $dbmatch){
+                $dbDate = date('Y-m-d', strtotime($dbmatch->datetime));
+                $dbTime = date('H:i', strtotime($dbmatch->datetime));
+                if($dbDate > date('Y-m-d')){
+                    $matchs[$i] = new Matches();
+                    $matchs[$i]->getObject($dbmatch);
+                    $i++;
+                }
+                else if($dbDate == date('Y-m-d') && $dbTime >= date('H:i')){
+                    $matchs[$i] = new Matches();
+                    $matchs[$i]->getObject($dbmatch);
+                    $i++;
+                }
+                
+            }
+
+            return $matchs;
         }
 
         public function getMatchs(){
             $database = new Database();
-            $sql = "SELECT * FROM `matches`";
+            $sql = "SELECT * FROM `matches` ";  
             $stmt = $database->connect()->prepare($sql);
             $stmt->execute();
             $dbMatchs = $stmt->fetchAll(PDO::FETCH_OBJ);

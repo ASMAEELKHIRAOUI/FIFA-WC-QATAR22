@@ -16,7 +16,7 @@
           <a class="nav-link active"  href="#section2">standings</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active"  href="#section3">Tesms</a>
+          <a class="nav-link active"  href="#section3">Teams</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active"  href="#section4">Stads</a>
