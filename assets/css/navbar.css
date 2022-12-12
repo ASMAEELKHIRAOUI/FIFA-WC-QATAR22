@@ -16,3 +16,12 @@ nav .container-fluid a {
     border-color: rgb(139, 24, 56);
     color:  rgb(139, 24, 56);
 }
+
+.logout  {
+    color:  rgb(139, 24, 56);
+}
+
+.logout-div a{
+    text-decoration: none;
+
+}
