@@ -476,7 +476,7 @@ include_once '../classes/match.class.php';
                                                 <td class="text-right"><img style="width:5rem" src="../assets/img/flag/<?php echo $team->getLogo();?>"> </td>
                                                 <td class="text-right"><?php echo $team->getCountry();?></td>
                                                 <td class="text-right"><?php echo $team->getCoatch(); ?></td>
-                                                <td class="text-left"><a href="update.team.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
+                                                <td class="text-left"><a href="update.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>

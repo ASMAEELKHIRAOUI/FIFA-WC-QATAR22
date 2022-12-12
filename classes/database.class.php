@@ -1,19 +1,19 @@
 <?php 
 class Database {
-    private static $host = "localhost";
-    private static $user = "root";
-    private static $pwd = "";
-    private static $dbName = "fifa";
+    public $host = "localhost";
+    public  $user = "root";
+    public  $pwd = "";
+    public  $dbName = "fifa";
 
     public  function connect() {
-        $dsn = 'mysql:host=' . self::$host . ';dbname=' . self::$dbName;
-        $pdo = new PDO($dsn, self::$user, self::$pwd);
-        try{
-            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        try {
+            $pdo = new PDO("mysql:host=$this->host;port=3307;dbname=$this->dbName", $this->user, $this->pwd);
+            // set the PDO error mode to exception
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
-        }catch(PDOException $e){
-            echo $e->getMessage();
-        }
+            echo "Connected successfully";
+          } catch(PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+          }
     }
 }
-

@@ -1,11 +1,16 @@
 <?php
-include '../include/head.php';
-include '../classes/teame.class.php';
-$connect = Database::connect();
-$id=$_GET['id'];
+include_once '../include/head.php';
+include_once '../classes/teame.class.php';
+
+// include_once '../classes/database.class.php';
+
+$connect = new Database;
+$connect->connect();
+// $id=$_GET['id'];
+var_dump($_GET['id']);
 $team= new Team();
 $result = $team->getTeam($_GET['id']);
-
+// var_dump($result);
 //put the attributs inside of objects
 if($result){
     $id = $row['id'];
