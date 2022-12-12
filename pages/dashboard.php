@@ -2,6 +2,7 @@
 include '../include/head.php';
 include_once '../scripts.php/crudadmin.script.php';
 include_once '../classes/match.class.php';
+include_once '../classes/stad.class.php';
  
 ?>
 
@@ -37,9 +38,9 @@ include_once '../classes/match.class.php';
 								<label class="form-label">First team</label>
                                 <select class="form-select" name="Team1" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <?php foreach($teams as $team):?>
+                                        <option value="<?php echo $team->getId(); ?>"><?php echo $team->getCountry(); ?> </option>
+                                    <?php endforeach;?>
                                 </select>
 							</div>
 
@@ -47,9 +48,9 @@ include_once '../classes/match.class.php';
 								<label class="form-label">Second team</label>
 								<select class="form-select" name="Team2" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <?php foreach($teams as $team):?>
+                                        <option value="<?php echo $team->getId(); ?>"><?php echo $team->getCountry(); ?> </option>
+                                    <?php endforeach;?>
                                 </select>
 							</div>
 
@@ -57,10 +58,11 @@ include_once '../classes/match.class.php';
 								<label class="form-label">Stad</label>
 								<select class="form-select" name="Stade" aria-label="Default select example">
                                     <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <?php  foreach( $stads as $stad ) :   ?>
+                                    <option value="<?php  echo $stad->getId(); ?>"><?php echo $stad->getName(); ?></option>
+                                    <?php endforeach; ?>
                                 </select>
+                                
 							</div>
 
                             <div class="mb-3">
@@ -438,8 +440,8 @@ include_once '../classes/match.class.php';
                                                     <!-- <td>05:57</td> -->
                                                     <td class="text-right"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
                                                     <td class="text-start"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
-                                                    <td class="text-right"><?php echo $match->getStaduimID();?></td>
-                                                    <td class="text-right"><?php echo $match->getprice(); ?></td>
+                                                    <td class="text-right"><?php echo $match->getStaduim_obj()->getName();?></td>
+                                                    <td class="text-right"><?php echo $match->getprice(); ?> $</td>
                                                     <td class="text-right"><?php echo $match->getdescription();?></td>
                                                     <td class="text-left"><a href="update.match.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                                 </tr>
