@@ -26,3 +26,24 @@
     /* margin-top: 8rem;
     float: right; */
 }
+
+
+/* _____________________print_______________________ */
+@page
+{
+    size: A4;
+    margin: 0;
+}
+
+#print-btn
+{
+    display: none;
+    visibility: none;
+    display:none !important;
+}
+
+@media print {
+    body {
+        background-color: aqua;
+    }
+  }
