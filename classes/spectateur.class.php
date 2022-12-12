@@ -1,6 +1,8 @@
 <?php 
 include_once 'database.class.php';
 include_once 'user.class.php';
+include_once 'ticket.class.php';
+
 
 
 
@@ -61,20 +63,38 @@ include_once 'user.class.php';
         }
 
         public function setReservation($match){
-            if(!array_search($match , $this->matchsReserved)){
-                include_once 'match.class.php';
+            include_once 'match.class.php';
 
+            $ticket = new Ticket( $this->id ,$match->getId());
 
-                $indis = count($this->matchsReserved);
-                $indis++;
-                $this->matchsReserved[$indis] = new Matches();
-                $this->matchsReserved[$indis] = $match;
-            } else echo "this match is alredy reserved";
+            // if(!array_search($match , $this->matchsReserved)){
+                $ticket->add();
+                $this->matchsReserved  =  $ticket->gets();
+            // } else echo "this match is alredy reserved";
 
-            
         }
 
         public function getMatchsReserved(){
+            include_once 'match.class.php';
+
+
+            $ticket = new Ticket( $this->id );
+
+            $this->matchsReserved  =  $ticket->gets();
+
+
+            return $this->matchsReserved;
+        }
+
+
+        public function getMatchReserved($matchId){
+            include_once 'match.class.php';
+
+            $ticket = new Ticket( $this->id );
+
+            $this->matchsReserved  =  $ticket->get($matchId);
+
+
             return $this->matchsReserved;
         }
 

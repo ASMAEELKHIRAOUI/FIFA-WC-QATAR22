@@ -1,10 +1,13 @@
-<?php include '../scripts.php/landingpage.script.php';?>
+<?php include_once '../scripts.php/landingpage.script.php';
+include_once '../scripts.php/reservation.script.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-    <?php include '../include/head.php' ?>
+    <?php include_once '../include/head.php' ?>
     <link rel="stylesheet" href="../assets/css/landing_page.css">
     <body>
-    <?php include '../include/navbar_landingpage.php' ?>          
+    <?php include_once '../include/navbar_landingpage.php' ?>          
 
         <header class="">  
             <!-- Background image -->
