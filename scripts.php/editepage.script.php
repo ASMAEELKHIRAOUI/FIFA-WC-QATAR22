@@ -1,5 +1,5 @@
 <?php
-   include_once '../classes/spectateur.class.php';
+    include_once '../classes/spectateur.class.php';
     //creat object 
     $obj = new Spectateur();
     //get id 

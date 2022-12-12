@@ -15,7 +15,7 @@ include_once '../classes/match.class.php';
 <body>
 
 <body class="animsition" >
- <!-- add match form -->
+<!-- add match form -->
 <div class="modal fade" id="modal">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -119,7 +119,7 @@ include_once '../classes/match.class.php';
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
-						<button type="submit" name="Saveteam" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
+						<button type="submit" name="SaveTeam" class="color btn  text-light task-action-btn" id="save-btn">Add Team</button>
 					</div>
 				</form>
 			</div>
@@ -434,10 +434,10 @@ include_once '../classes/match.class.php';
                                         <tbody>
                                             <?php foreach($matchs as $match):?>
                                                 <tr>
-                                                    <td class="text-right"><?php echo $match->getDateTime();?></td>
+                                                    <td class="text-right"><?php echo $match->getDateTimeFormat();?></td>
                                                     <!-- <td>05:57</td> -->
-                                                    <td class="text-right"><?php echo $match->getTeame_1_ID();?></td>
-                                                    <td class="text-start"><?php echo $match->getTeame_2_ID();?></td>
+                                                    <td class="text-right"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
+                                                    <td class="text-start"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
                                                     <td class="text-right"><?php echo $match->getStaduimID();?></td>
                                                     <td class="text-right"><?php echo $match->getprice(); ?></td>
                                                     <td class="text-right"><?php echo $match->getdescription();?></td>
@@ -470,14 +470,15 @@ include_once '../classes/match.class.php';
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach($teams as $team ):?>
                                             <tr>
-                                                <td class="text-right">test img</td>
-                                                <td class="text-right">test logo</td>
-                                                <td class="text-right">morocco</td>
-                                                <td class="text-right">ras lavoca</td>
-                                                <td class="text-left"><a href="update.team.php?id=?"><i class="fa fa-edit text-primary me-2"></i></a></td>
+                                                <td class="text-right"><img style="width:5rem" src="../assets/img/teams/<?php echo $team->getImage();?>"> </td>
+                                                <td class="text-right"><img style="width:5rem" src="../assets/img/flag/<?php echo $team->getLogo();?>"> </td>
+                                                <td class="text-right"><?php echo $team->getCountry();?></td>
+                                                <td class="text-right"><?php echo $team->getCoatch(); ?></td>
+                                                <td class="text-left"><a href="update.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a></td>
                                             </tr>
-
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>

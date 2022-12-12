@@ -64,37 +64,86 @@ include_once '../classes/database.class.php';
         }
 
 
-
         public function getObject($dbObject){
             $this->id = $dbObject->id;
             $this->dateTime = $dbObject->datetime;
             $this->matchTeame_1_id = $dbObject->match_team1;
             $this->matchTeame_2_id = $dbObject->match_team2;
+            $this->matchStaduim_id = $dbObject->stad;
             $this->price = $dbObject->price;
             $this->description = $dbObject->description;
+        }
 
+
+
+        // crud same as jointure (not use jointure jus use this SVP ) all you need is here  : abdellah
+
+
+        public function getTeame_1_obj(){
+            $database = new Database();
+            $sql = "SELECT * FROM `team` WHERE id=?";
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute([$this->matchTeame_1_id]);
+            $dbTeames_1 = $stmt->fetch(PDO::FETCH_OBJ);
+
+            include_once 'teame.class.php';
+            $teme_1 = new Team();
+            $teme_1->getObject($dbTeames_1);
+            return $teme_1;
+        }
+
+        public function getTeame_2_obj(){
+            $database = new Database();
+            $sql = "SELECT * FROM `team` WHERE id=?";
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute([$this->matchTeame_2_id]);
+            $dbTeames_2 = $stmt->fetch(PDO::FETCH_OBJ);
+
+            include_once 'teame.class.php';
+            $teme_2 = new Team();
+            $teme_2->getObject($dbTeames_2);
+
+            return $teme_2;
+        }
+
+        public function getStaduim_obj(){
+            $database = new Database();
+            $sql = "SELECT * FROM `stad` WHERE id=?";
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute([$this->matchStaduim_id]);
+            $dbStaduim = $stmt->fetch(PDO::FETCH_OBJ);
+            include_once 'stad.class.php';
+            $staduim = new Stad();
+            $staduim->getObject($dbStaduim);
+
+            return $staduim;
+        }
+
+        public function getDateTimeFormat(){
+            $strDate = $this->getDateTime();
+            $formatDate = substr($strDate, 5, -3);
+            return $formatDate;
         }
 
 
         //crud
-
-        public function getMatch($id){
-            $database = new Database();
-            $sql = "SELECT * FROM matches where id = $id";
-            $stmt = $database->connect()->prepare($sql);
-            $stmt->execute();
-            $dbMatch = $stmt->fetchAll(PDO::FETCH_OBJ);
-            $this->getObject($dbMatch);
+  
+        public function getMatch($id){ // cette function n'est pas fonctionné  
+            // $database = new Database();
+            // $sql = "SELECT * FROM matches where id = $id";
+            // $stmt = $database->connect()->prepare($sql);
+            // $stmt->execute();
+            // $dbMatch = $stmt->fetchAll(PDO::FETCH_OBJ);
+            // $this->getObject($dbMatch);
         }
         public function addMatch(){
             $database = new Database();
-            $sql = " INSERT INTO matches(match_team1,match_team2,stad,price,description,datetime) VALUES(?,?,?,?,?,?)";
+            $sql = "INSERT INTO matches(match_team1,match_team2,stad,price,description,datetime) VALUES(?,?,?,?,?,?)";
             $conn= $database->connect()->prepare($sql);
             $conn->execute([$this->matchTeame_1_id,$this->matchTeame_2_id ,$this->matchStaduim_id,$this->price,$this->description,$this->dateTime]);
         }
 
         public function getMatchs(){
-           
             $database = new Database();
             $sql = "SELECT * FROM `matches`";
             $stmt = $database->connect()->prepare($sql);
@@ -113,7 +162,6 @@ include_once '../classes/database.class.php';
             return $matchs;
         }
 
-       
         public function updateMatch($id){
             if(isset(updateMatch)){
                 $query="UPDATE match SET match_team1=? , match_team2=? , stad=? , price=? , description=? , datetime=? WHERE id=?";
@@ -130,6 +178,7 @@ include_once '../classes/database.class.php';
         public function deleteMatch($id){
         }
     }
+
 
 
 
