@@ -22,6 +22,23 @@ include_once 'user.class.php';
             $this->setPassword($arr['password']);
         
         }
+        public function getOldReservation()
+        {
+            //!!!!!!!!!!!!!!modify this content !!!!!!!!!!!!! 
+
+            $sql = "SELECT * FROM spectator WHERE id = $this->id";
+            $conn = Database::connect();
+            $stmt = $conn->prepare($sql); 
+            $stmt->execute();   
+            $arr =  $stmt->fetch(PDO::FETCH_ASSOC);
+            //var_dump($arr);
+
+            $this->setFirstName($arr['first_name']);
+            $this->setLastName($arr['last_name']);
+            $this->setEmail($arr['email']);
+            $this->setPassword($arr['password']);
+        
+        }
 
         public function updateSpectateur()
         {        
@@ -32,8 +49,8 @@ include_once 'user.class.php';
             $password    = $_POST['password'];
             
             $sql = "UPDATE `spectator` 
-                    SET first_name='$firstName', last_name='$lastName',
-                    email='$email',password='$password' WHERE id = $this->id";
+                        SET first_name='$firstName', last_name='$lastName',
+                        email='$email',password='$password' WHERE id = $this->id";
             $conn = Database::connect();
             $stmt = $conn->prepare($sql); 
             $stmt->execute();

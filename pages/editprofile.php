@@ -36,11 +36,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>2018-09-29 05:57 PM</td>
-                  <!-- <td>05:57</td> -->
-                  <td class="text-right">morocco</td>
-                  <td class="text-start">usa</td>
-                  <td class="text-right">tamama</td>
+                  <td><?=$obj->getDateTime()?></td>
+                  <td class="text-right"><?=$obj->getTeame_1_obj()->getCountry()?></td>
+                  <td class="text-start">usa<?=$obj->getTeame_2_ID()?></td>
+                  <td class="text-right">tamama<?=$obj->getFirstName()?></td>
                   <td>200$</td>
                 </tr>
               </tbody>
