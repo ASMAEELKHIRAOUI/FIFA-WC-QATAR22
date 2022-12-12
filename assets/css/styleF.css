@@ -1,2 +1,28 @@
+.custom-shape-divider-top-1670835323 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
 
+.custom-shape-divider-top-1670835323 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 130px;
+}
 
+.custom-shape-divider-top-1670835323 .shape-fill {
+    fill: #8B1838;
+}   
+
+.img img{
+    height: 55vh;
+    width: 25vw;
+}
+.img {
+    /* margin-top: 8rem;
+    float: right; */
+}
