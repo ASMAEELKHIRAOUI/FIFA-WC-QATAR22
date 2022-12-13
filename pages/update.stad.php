@@ -1,19 +1,25 @@
 <?php
-include '../include/head.php';
-include '../classes/stad.class.php';
-$connect = Database::connect();
-$id=$_GET['id'];
-$stad= new Stad();
-$result = $stad->getStad($_GET['id']);
+include_once '../include/head.php';
+include_once '../classes/stad.class.php';
 
+$connect = new Database;
+$connect->connect();
+if(isset($_POST['updateStad'])){
+    $stad= new Stad($_POST['name'] , $_POST['capacity'] , $_POST['location'] , $_POST['city'], $_POST['image']);
+    $stad->updateStad($_POST['id']);
+    
+    }
+
+$updatestad= new Stad();
+$result = $updatestad->getStad($_GET['id']);
 //put the attributs inside of objects
 if($result){
-    $id = $row['id'];
-    $name = $row['name'];
-    $capacity = $row['capacity'];
-    $location = $row['location'];
-    $city = $row['city'];
-    $image = $row['image'];
+    $id = $result['id'];
+    $name = $result['name'];
+    $capacity = $result['capacity'];
+    $location = $result['location'];
+    $city = $result['city'];
+    $image = $result['image'];
 }
 
 ?>
@@ -34,27 +40,27 @@ if($result){
 
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text"  class="form-control" value="<?php echo $name; ?>" required/>
+                        <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" required/>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Capacity</label>
-                        <input type="text"  class="form-control" value="<?php echo $capacity; ?>" required/>
+                        <input type="number" name="capacity" class="form-control" value="<?php echo $capacity; ?>" required/>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Location</label>
-                        <input type="text"  class="form-control" value="<?php echo $location; ?>" required/>
+                        <input type="text" name="location" class="form-control" value="<?php echo $location; ?>" required/>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">City</label>
-                        <input type="text"  class="form-control" value="<?php echo $city; ?>" required/>
+                        <input type="text" name="city" class="form-control" value="<?php echo $city; ?>" required/>
                     </div>
 
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Image</label>
-                        <input class="form-control" type="file" id="formFile" value="<?php echo $image; ?>">
+                        <input class="form-control" name="image" type="file" id="formFile" value="<?php echo $image; ?>">
                     </div>
                 
             </div>

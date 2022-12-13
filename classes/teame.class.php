@@ -1,7 +1,7 @@
 <?php
     include_once 'database.class.php';
 
-    if(isset($_POST['updateTeams']))        updateTeam();
+    // if(isset($_POST['updateTeams']))        updateTeam();
 
     class Team{
 
@@ -85,9 +85,11 @@
 
         public function getTeam($id){
             $database = new Database();
+            // $database->connect();
             $query= "SELECT * FROM team WHERE id=?";
-            $result = $this->connect()->prepare($query);
+            $result = $database->connect()->prepare($query);
             $result->execute([$id]);
+            if($result){
             $row = $result->fetch();
             $this->setId($row['id']);
             $this->setCountry($row['country']);
@@ -96,6 +98,7 @@
             $this->setLogo($row['logo']);
 
             return $row;
+            }
         }
         public function addTeam(){
         $database =new Database();
@@ -107,9 +110,11 @@
         }
 
         public function updateTeam($id){
-            $query="UPDATE team SET country=? , coach=? , image=? , logo=? WHERE id=?";
-            $result = $this->connect()->prepare($query);
-            $result->execute([$id,$country, $coach, $image ,$logo]);
+            $database =new Database();
+            $query="UPDATE team SET country=? ,coach=? ,image=? ,logo=? WHERE id=?";
+            $result = $database->connect()->prepare($query);
+            $result->execute([$this->getCountry(),$this->getCoatch(),$this->getImage(),$this->getLogo(), $id]);
+            // var_dump($result);
             if($result)
                 header('location: dashboard.php');
         }

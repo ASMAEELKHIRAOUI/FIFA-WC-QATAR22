@@ -1,20 +1,26 @@
 <?php
-include '../include/head.php';
-include '../classes/match.class.php';
-$connect = Database::connect();
-$id=$_GET['id'];
+include_once '../include/head.php';
+include_once '../classes/match.class.php';
+
+$connect = new Database;
+$connect->connect();
+if(isset($_POST['updateMatch'])){
+    $team= new Matches($_POST['datetime'] , $_POST['team_1'] , $_POST['team_2'] , $_POST['stad'] , $_POST['price'] , $_POST['description']);
+    $team->updateMatch($_POST['id']);
+     
+    }
+
 $match= new Matches();
 $result = $match->getMatch($_GET['id']);
-
 //put the attributs inside of objects
 if($result){
-    $id = $row['id'];
-    $t1 = $row['match_team1'];
-    $t2 = $row['match_team2'];
-    $stad = $row['stad'];
-    $price = $row['price'];
-    $description = $row['description'];
-    $datetime = $row['datetime'];
+    $id = $result['id'];
+    $t1 = $result['match_team1'];
+    $t2 = $result['match_team2'];
+    $stad = $result['stad'];
+    $price = $result['price'];
+    $description = $result['description'];
+    $datetime = $result['datetime'];
 }
 
 ?>
@@ -34,12 +40,12 @@ if($result){
 
                     <div class="mb-3">
                         <label class="form-label">Date and Time</label>
-                        <input type="datetime-local"  class="form-control" value="<?php echo $datetime; ?>" required/>
+                        <input type="datetime-local" name="datetime" class="form-control" value="<?php echo $datetime; ?>" required/>
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">First team</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" name="team_1" aria-label="Default select example">
                             <option selected>Open this select menu</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -49,7 +55,7 @@ if($result){
 
                     <div class="mb-3">
                         <label class="form-label">Second team</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" name="team_2" aria-label="Default select example">
                             <option selected>Open this select menu</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -59,7 +65,7 @@ if($result){
 
                     <div class="mb-3">
                         <label class="form-label">Stad</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" name="stad" aria-label="Default select example">
                             <option selected>Open this select menu</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -69,12 +75,12 @@ if($result){
 
                     <div class="mb-3">
                         <label class="form-label">Price</label>
-                        <input type="number" class="form-control" step="any" id="task-date" value="<?php echo $price; ?>" required/>
+                        <input type="number" name ="price" class="form-control" step="any" id="task-date" value="<?php echo $price; ?>" required/>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Description</label>
-                        <textarea class="form-control" name="Description" rows="3" value="<?php echo $description; ?>" required></textarea>
+                        <textarea class="form-control" name="description" rows="3" required><?php echo $description; ?></textarea>
                     </div>
                 
             </div>
