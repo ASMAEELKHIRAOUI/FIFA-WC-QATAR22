@@ -1,4 +1,11 @@
-<?php include '../scripts.php/landingpage.script.php';?>
+<?php 
+include '../classes/spectateur.class.php';
+
+ if(!isset($_SESSION['name'])){
+    header('location:../pages/signin.php');
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <?php include '../include/head.php' ?>

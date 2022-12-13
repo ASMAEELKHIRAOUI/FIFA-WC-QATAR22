@@ -1,6 +1,14 @@
 <?php
 include '../include/head.php';
 //include '../include/navbar.php';
+
+include '../classes/spectateur.class.php';
+
+ if(!isset($_SESSION['name'])){
+    header('location:../pages/signin.php');
+  }
+
+
 ?>
 
   
@@ -224,6 +232,10 @@ include '../include/head.php';
                     <ul class="list-unstyled navbar__list ">
                     <li class="active has-sub">
                             <a href="landingpage.php" class="text-white text-decoration-none">
+                                <i class="fa fa-user text-white fs-3 me-2"></i>Welcome <?php echo $_SESSION['name'] ?></a>
+                        </li>
+                    <li class="active has-sub">
+                            <a href="landingpage.php" class="text-white text-decoration-none">
                                 <i class="fa fa-home text-white "></i>Home</a>
                         </li>
                        <li class="active has-sub">
@@ -248,7 +260,7 @@ include '../include/head.php';
                         </li>
 
                         <li>
-                            <a href="#" class="text-white text-decoration-none">
+                            <a href="../scripts.php/logout.script.php?&action=logOut" class="text-white text-decoration-none">
                                 <i class="fa fa-sign-out text-white"></i>Log out</a>
                         </li>
                     </ul>
@@ -262,13 +274,14 @@ include '../include/head.php';
         <!-- NAVBAR  -->
         <nav class="navbar fixed-top d-lg-none" id="color">
   <div class="container-fluid" >
-    <a class="navbar-brand text-light" href="#">Offcanvas navbar</a>
+    <!-- <a class="navbar-brand text-light" href="#">Offcanvas navbar</a> -->
+    <a href="landingpage.php" class="text-white text-decoration-none"><i class="fa fa-user text-white fs-3 me-2"></i>Welcome <?php echo $_SESSION['name'] ?></a>
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon text-dark"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header" id="color">
-        <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel"><i class="fa fa-user text-white fs-3 me-2"></i><?php echo $_SESSION['name'] ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body" id="color">
@@ -292,7 +305,7 @@ include '../include/head.php';
             <a class="nav-link active text-light" aria-current="page" href="#table-reservations"><i class="fa fa-ticket text-white me-2"></i>Reservations List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#"><i class="fa fa-sign-out text-white me-2"></i>Log out</a>
+            <a class="nav-link active text-light" aria-current="page" href="../scripts.php/logout.script.php?&action=logOut"><i class="fa fa-sign-out text-white me-2"></i>Log out</a>
           </li>
       </div>
     </div>

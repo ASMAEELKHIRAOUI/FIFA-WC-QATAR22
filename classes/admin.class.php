@@ -16,11 +16,11 @@ include_once 'user.class.php';
     }
 
     // test
-    $admin = new Admin();
-    $admin->getAdmin();
+    // $admin = new Admin();
+    // $admin->getAdmin();
 
-    echo "<pre>";
-    print_r($admin);
-    echo "<pre>";
+    // echo "<pre>";
+    // print_r($admin);
+    // echo "<pre>";
 
 ?>
