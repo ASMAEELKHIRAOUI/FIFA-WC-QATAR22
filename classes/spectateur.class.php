@@ -26,6 +26,23 @@ include_once 'ticket.class.php';
             $this->setPassword($arr['password']);
         
         }
+        public function getOldReservation()
+        {
+            //!!!!!!!!!!!!!!modify this content !!!!!!!!!!!!! 
+
+            $sql = "SELECT * FROM spectator WHERE id = $this->id";
+            $conn = Database::connect();
+            $stmt = $conn->prepare($sql); 
+            $stmt->execute();   
+            $arr =  $stmt->fetch(PDO::FETCH_ASSOC);
+            //var_dump($arr);
+
+            $this->setFirstName($arr['first_name']);
+            $this->setLastName($arr['last_name']);
+            $this->setEmail($arr['email']);
+            $this->setPassword($arr['password']);
+        
+        }
 
         public function addSpectateur()
         {
