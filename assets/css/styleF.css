@@ -47,17 +47,16 @@
 
 /* ______________________responsive_____________________ */
 @media screen and (max-width: 480px) 
-{
-    .container {
-      background-color: lightgreen;
-    }
-    
+{    
     .img img{
         height: 40vh;
         width: 25vw;
         margin-top: 5rem;
         margin-left: 1.5rem; 
     }
+    .custom-shape-divider-top-1670835323 .shape-fill {
+        fill: #8B1838;        
+    }  
 
 }
 
