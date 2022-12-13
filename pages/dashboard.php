@@ -3,6 +3,7 @@ include '../include/head.php';
 include_once '../scripts.php/crudadmin.script.php';
 include_once '../classes/match.class.php';
 include_once '../classes/stad.class.php';
+include_once 'delete.php';
  
 ?>
 
@@ -37,7 +38,7 @@ include_once '../classes/stad.class.php';
                             <div class="mb-3">
 								<label class="form-label">First team</label>
                                 <select class="form-select" name="Team1" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
+                                    <option selected>Press to select</option>
                                     <?php foreach($teams as $team):?>
                                         <option value="<?php echo $team->getId(); ?>"><?php echo $team->getCountry(); ?> </option>
                                     <?php endforeach;?>
@@ -47,7 +48,7 @@ include_once '../classes/stad.class.php';
                             <div class="mb-3">
 								<label class="form-label">Second team</label>
 								<select class="form-select" name="Team2" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
+                                    <option selected>Press to select</option>
                                     <?php foreach($teams as $team):?>
                                         <option value="<?php echo $team->getId(); ?>"><?php echo $team->getCountry(); ?> </option>
                                     <?php endforeach;?>
@@ -57,9 +58,9 @@ include_once '../classes/stad.class.php';
                             <div class="mb-3">
 								<label class="form-label">Stad</label>
 								<select class="form-select" name="Stade" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
+                                    <option selected>Press to select</option>
                                     <?php  foreach( $stads as $stad ) :   ?>
-                                    <option value="<?php  echo $stad->getId(); ?>"><?php echo $stad->getName(); ?></option>
+                                        <option value="<?php  echo $stad->getId(); ?>"><?php echo $stad->getName(); ?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 
@@ -443,7 +444,7 @@ include_once '../classes/stad.class.php';
                                                     <td class="text-right"><?php echo $match->getStaduim_obj()->getName();?></td>
                                                     <td class="text-right"><?php echo $match->getprice(); ?> $</td>
                                                     <td class="text-right"><?php echo $match->getdescription();?></td>
-                                                    <td class="text-left"><a href="update.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
+                                                    <td class="text-left"><a href="update.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.php?deletematch=<?php echo $match->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                                 </tr>
                                             <?php endforeach;?>
                                         </tbody>
@@ -478,7 +479,7 @@ include_once '../classes/stad.class.php';
                                                 <td class="text-right"><img style="width:5rem" src="../assets/img/flag/<?php echo $team->getLogo();?>"> </td>
                                                 <td class="text-right"><?php echo $team->getCountry();?></td>
                                                 <td class="text-right"><?php echo $team->getCoatch(); ?></td>
-                                                <td class="text-left"><a href="update.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
+                                                <td class="text-left"><a href="update.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.php?deleteteam=<?php echo $team->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -519,7 +520,7 @@ include_once '../classes/stad.class.php';
                                                 <td class="text-right"><?php echo $stad->getLocation();?></td>
                                                 <td class="text-right"><?php echo $stad->getCity();?></td>
                                                 
-                                                <td class="text-left"><a href="update.stad.php?id=<?php echo $stad->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.stad.php?id=<?php echo $stad->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
+                                                <td class="text-left"><a href="update.stad.php?id=<?php echo $stad->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.php?deletestad=<?php echo $stad->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>

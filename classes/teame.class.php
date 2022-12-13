@@ -1,8 +1,9 @@
 <?php
     include_once 'database.class.php';
+    // include_once '../pages/dashboard.php';
 
     // if(isset($_POST['updateTeams']))        updateTeam();
-
+    if(isset($_POST['delete']))     deleteTeam();
     class Team{
 
         private $id = NULL;
@@ -120,6 +121,12 @@
         }
 
         public function deleteTeam($id){
+            $database =new Database();
+            $query="DELETE FROM team WHERE id=?";
+            $result = $database->connect()->prepare($query);
+            $result->execute([$id]);
+            if($result)
+                header('location: dashboard.php');
         }
     }
 

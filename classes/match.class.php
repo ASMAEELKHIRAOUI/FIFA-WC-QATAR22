@@ -214,7 +214,7 @@ include_once '../classes/database.class.php';
 
         public function updateMatch($id){
             $database = new Database();
-            $query="UPDATE match SET match_team1=? , match_team2=? , stad=? , price=? , description=? , datetime=? WHERE id=?";
+            $query="UPDATE matches SET match_team1=? , match_team2=? , stad=? , price=? , description=? , datetime=? WHERE id=?";
             $result = $database->connect()->prepare($query);
             $result->execute([$this->getTeame_1_ID(),$this->getTeame_2_ID(), $this->getStaduimID(), $this->getprice() ,$this->getdescription() ,$this->getDateTime(), $id]);
             if($result)
@@ -223,6 +223,12 @@ include_once '../classes/database.class.php';
 
 
         public function deleteMatch($id){
+            $database =new Database();
+            $query="DELETE FROM matches WHERE id=?";
+            $result = $database->connect()->prepare($query);
+            $result->execute([$id]);
+            if($result)
+                header('location: dashboard.php');
         }
     }
 

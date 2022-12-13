@@ -122,6 +122,12 @@
         }
         
         public function deleteStad($id){
+            $database =new Database();
+            $query="DELETE FROM stad WHERE id=?";
+            $result = $database->connect()->prepare($query);
+            $result->execute([$id]);
+            if($result)
+                header('location: dashboard.php');
         }
          
     }

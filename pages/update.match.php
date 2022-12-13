@@ -1,12 +1,16 @@
 <?php
 include_once '../include/head.php';
 include_once '../classes/match.class.php';
+include_once '../scripts.php/crudadmin.script.php';
+include_once '../classes/stad.class.php';
+
+
 
 $connect = new Database;
 $connect->connect();
 if(isset($_POST['updateMatch'])){
-    $team= new Matches($_POST['datetime'] , $_POST['team_1'] , $_POST['team_2'] , $_POST['stad'] , $_POST['price'] , $_POST['description']);
-    $team->updateMatch($_POST['id']);
+    $match= new Matches($_POST['datetime'] , $_POST['team_1'] , $_POST['team_2'] , $_POST['stad'] , $_POST['price'] , $_POST['description']);
+    $match->updateMatch($_POST['id']);
      
     }
 
@@ -17,7 +21,7 @@ if($result){
     $id = $result['id'];
     $t1 = $result['match_team1'];
     $t2 = $result['match_team2'];
-    $stad = $result['stad'];
+    $stadium = $result['stad'];
     $price = $result['price'];
     $description = $result['description'];
     $datetime = $result['datetime'];
@@ -46,30 +50,30 @@ if($result){
                     <div class="mb-3">
                         <label class="form-label">First team</label>
                         <select class="form-select" name="team_1" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option <?= (isset($t1)) ? "" : "selected" ?>>Press to select</option>    
+                            <?php foreach($teams as $team) :?>
+                                <option <?= ($team->getId() == $t1) ? "selected" : "" ?> value="<?= $team->getId() ?>"><?php echo $team->getCountry(); ?> </option>
+                            <?php endforeach;?>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Second team</label>
                         <select class="form-select" name="team_2" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option <?= (isset($t2)) ? "" : "selected" ?>>Press to select</option>    
+                            <?php foreach($teams as $team):?>
+                                <option <?= ($team->getId() == $t2) ? "selected" : "" ?> value="<?php echo $team->getId(); ?>"><?php echo $team->getCountry(); ?> </option>
+                            <?php endforeach;?>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Stad</label>
                         <select class="form-select" name="stad" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            
+                            <?php  foreach( $stads as $stad ) :   ?>
+                                <option <?= ($stad->getId() == $stadium) ? "selected" : "" ?> value="<?php  echo $stad->getId(); ?>"><?php echo $stad->getName(); ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
 
