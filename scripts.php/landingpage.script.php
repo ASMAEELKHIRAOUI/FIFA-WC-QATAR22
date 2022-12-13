@@ -16,13 +16,7 @@
     $matches = array();
     $matches = $match->getActiveMatchs();
 
-
-
     
-
-
-
-
 
 
 ?>

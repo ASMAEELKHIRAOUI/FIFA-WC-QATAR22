@@ -1,8 +1,7 @@
 <?php 
 include_once 'database.class.php';
-include_once '../classes/user.class.php';
+include_once 'user.class.php';
 include_once 'ticket.class.php';
-
 
 
 
@@ -55,7 +54,7 @@ include_once 'ticket.class.php';
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
             
-            header('location: ../pages/landingpage.php');
+            header('location: ../pages/editprofile.php');
         }
 
         public function cancel_changes()
