@@ -8,5 +8,4 @@ function logOut(){
     $spectateur->logOut();
 }
 
-
- ?>
+?> 

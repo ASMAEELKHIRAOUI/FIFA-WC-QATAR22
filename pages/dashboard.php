@@ -1,14 +1,11 @@
 <?php
 include '../include/head.php';
-//include '../include/navbar.php';
-
 include '../classes/spectateur.class.php';
+
 
  if(!isset($_SESSION['name'])){
     header('location:../pages/signin.php');
   }
-
-
 ?>
 
   
@@ -228,7 +225,7 @@ include '../classes/spectateur.class.php';
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block" id="dashboard">
             <div class="menu-sidebar__content js-scrollbar1 ">
-                <nav class="navbar-sidebar ">
+                <nav class="navbar-sidebar pt-2">
                     <ul class="list-unstyled navbar__list ">
                     <li class="active has-sub">
                             <a href="landingpage.php" class="text-white text-decoration-none">
@@ -240,7 +237,7 @@ include '../classes/spectateur.class.php';
                         </li>
                        <li class="active has-sub">
                             <a href="#statistiques" class="text-white text-decoration-none">
-                                <i class="fa fa-tachometer text-white "></i>Dashboard</a>
+                                <i class="fa fa-tachometer text-white "></i>Statistiques</a>
                         </li>
                         <li class="active has-sub">
                             <a href="#table-matches" class="text-white text-decoration-none">
@@ -290,7 +287,7 @@ include '../classes/spectateur.class.php';
             <a class="nav-link active text-light" aria-current="page" href="landingpage.php"><i class="fa fa-futbol-o text-white me-2"></i>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#statistiques"><i class="fa fa-tachometer text-white me-2"></i>Dashboard</a>
+            <a class="nav-link active text-light" aria-current="page" href="#statistiques"><i class="fa fa-tachometer text-white me-2"></i>Statistiques</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active text-light" aria-current="page" href="#table-matches"><i class="fa fa-futbol-o text-white me-2"></i>Matches List</a>
