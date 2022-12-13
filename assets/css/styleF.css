@@ -1,3 +1,6 @@
+
+/* _________________design_ticket_______________ */
+
 .custom-shape-divider-top-1670835323 {
     position: absolute;
     top: 0;
@@ -22,28 +25,39 @@
     height: 55vh;
     width: 25vw;
 }
-.img {
-    /* margin-top: 8rem;
-    float: right; */
-}
-
 
 /* _____________________print_______________________ */
-@page
-{
-    size: A4;
-    margin: 0;
-}
 
-#print-btn
+@media print 
 {
-    display: none;
-    visibility: none;
-    display:none !important;
-}
-
-@media print {
-    body {
-        background-color: aqua;
+    .container .print-btn{
+        display: none;
+        visibility: none;
+        display:none !important;
     }
-  }
+
+    .img img{
+        height: 20vh;
+        width: 23vw;
+        margin-top: 2rem;
+        margin-left: 1.5rem; 
+    }
+}
+
+
+/* ______________________responsive_____________________ */
+@media screen and (max-width: 480px) 
+{
+    .container {
+      background-color: lightgreen;
+    }
+    
+    .img img{
+        height: 40vh;
+        width: 25vw;
+        margin-top: 5rem;
+        margin-left: 1.5rem; 
+    }
+
+}
+
