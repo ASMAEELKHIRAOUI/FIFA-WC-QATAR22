@@ -1,5 +1,6 @@
    
 <?php 
+    include_once '../scripts.php/reservation.script.php';
     include_once '../include/head.php';
 ?>
 <body class="container">
@@ -15,10 +16,17 @@
     <div class="row justify-content-between mt-5">
         <div class="mt-4 col-6   ">
             <div class="my-3  d-flex flex-column align-items-between  ">
-                <h3 class=""> Morocco VS France</h3> <hr>
-                <div><i class=" my-1 py-2 mr-2 fa-solid fa-location-dot"></i><span class="ms-3">Location</span></div>
-                <div><i class="  text-start mr-2 fa-solid fa-calendar-days"></i><span class="ms-3">xx/xx/xxxx xx:xx</span></div>
-                <p class="my-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus debitis repudiandae non! Laborum</p>
+                <h3 class=""><?=$matchsReserved[0]->getTeame_1_obj()->getCountry();?> VS <?=$matchsReserved[0]->getTeame_2_obj()->getCountry();?></h3> <hr>
+                <p class="my-3">
+                    <b> Stade </b> : <?=$matchsReserved[0]->getStaduim_obj()->getName();?> 
+                         <br>
+                    <b> code</b> : <?=$matchsReserved[0]->getCode();?> 
+                         <br>
+                    <b> place reservé </b>: <?=count(getRezerveMatch($matches[0]->getId()))?> 
+                </p>
+                <div><i class=" my-1 py-2 mr-2 fa-solid fa-location-dot"></i><span class="ms-3"><?=$matchsReserved[0]->getStaduim_obj()->getLocation();?></span></div>
+                <div><i class="  text-start mr-2 fa-solid fa-calendar-days"></i><span class="ms-3"><?=$matchsReserved[0]->getDateTime();?></span></div>
+                
             </div>
         </div>
         <div class="col-6 img">
