@@ -1,5 +1,10 @@
 <?php include_once '../scripts.php/landingpage.script.php';
 include_once '../scripts.php/reservation.script.php';
+include_once '../classes/spectateur.class.php';
+
+ if(!isset($_SESSION['name'])){
+    header('location:../pages/signin.php');
+  }
 ?>
 
 <!DOCTYPE html>
