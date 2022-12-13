@@ -55,7 +55,8 @@ CREATE TABLE `matches` (
   `stad` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `datetime` datetime DEFAULT NULL
+  `datetime` datetime DEFAULT NULL,
+  `Code` varchar(255) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

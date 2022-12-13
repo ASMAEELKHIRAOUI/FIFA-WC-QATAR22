@@ -1,10 +1,13 @@
-<?php include '../scripts.php/landingpage.script.php';?>
+<?php include_once '../scripts.php/landingpage.script.php';
+include_once '../scripts.php/reservation.script.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-    <?php include '../include/head.php' ?>
+    <?php include_once '../include/head.php' ?>
     <link rel="stylesheet" href="../assets/css/landing_page.css">
     <body>
-    <?php include '../include/navbar.php' ?>          
+    <?php include_once '../include/navbar_landingpage.php' ?>          
 
         <header class="">  
             <!-- Background image -->
@@ -37,8 +40,6 @@
         </header>
 
 
-
-
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -68,79 +69,78 @@
         </div>
         
         <div id="section1" class="invisible mb-5">invisible</div>
-
         <section class="" >
             <div class="container">
                 <div class="row" >
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="mb-3">Upcoming Machts</h3>
-                        <form action="stadpage.php" method="POST">
+                        <form action="displaycards.php" method="POST">
                             <button type="submit" name="display-Machts" class="d-flex align-items-center bg-white border-0" style="color: #8a1538;">
                                 view all <iconify-icon class=""  icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
                             </button>
                         </form>
-                        
-                        
-                        
                     </div>
                     <div class="col-12 position-relative">
                         <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row">
-                                        <?php for($i=0 ; $i<3 ; $i++): ?>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card ">
-                                                    <div class="position-relative">
-                                                        <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
+                                        <?php for($i=0 ; $i<3 && $i < count($matches) ; $i++): ?>
+                                            <div class="col-md-4 mb-3 ">
+                                                    <div class="card">
+                                                        <form class="w-100 h-100" action="ticketpage.php" method="POST">
 
-
-                                                        <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
-                                                        <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
+                                                            <button value="<?php echo $i ?>" type="submit" name="match-id"  class="w-100    bg-white border border-0 ">
+                                                                <div class="position-relative w-100">
+                                                                    <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
+                                                                    <img class="flag position-absolute top-50 start-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
+                                                                    <img class="flag position-absolute top-50 end-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
+                                                                </div>
+                                                                <div class="card-body ">
+                                                                    <p class="fw-semibold"><?php echo $matches[$i]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$i]->getTeame_2_obj()->getCountry(); ?></p>
+                                                                    <div class=" d-flex my-2 justify-content-between">
+                                                                        <div><?php echo $matches[$i]->getDateTimeFormat() ?></div>
+                                                                        <div>$ <?php echo $matches[$i]->getPrice(); ?></div>
+                                                                    </div>
+                                                                    <div class="mt-3"> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$i]->getStaduim_obj()->getName(); ?></div>
+                                                                </div>
+                                                            </button>
+                                                        </form>
                                                     </div>
-                                                    <div class="card-body">
-                                                        <div class=" d-flex align-items-center justify-content-between">
-                                                            <div class="text-center">
-                                                            <div><?php echo $matches[$i]->getDateTimeFormat() ?></div>
-                                                            </div>
-                                                            <div class="ms-5 ">
-                                                                <div><?php echo $matches[$i]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$i]->getTeame_2_obj()->getCountry(); ?></div>
-                                                                <div>$ <?php echo $matches[$i]->getPrice(); ?></div>
-                                                                <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$i]->getStaduim_obj()->getName(); ?></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    
+                                                
                                             </div>
                                         <?php endfor; ?>
                                     </div>
                                 </div>
                                 <?php for($i=3 ; $i<count($matches); $i+=3): ?>
                                     <div class="carousel-item ">
-                                    <div class="row">
+                                    <div class="row ">
                                         <?php for($j=$i ; $j<$i + 3 && $j<count($matches) ; $j++): ?>
                                             <div class="col-md-4 mb-3">
-                                                <div class="card ">
-                                                    <div class="position-relative">
-                                                        <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
-
-
-                                                        <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
-                                                        <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
+                                                    <div class="card ">
+                                                        <form class="" action="ticketpage.php" method="POST">
+                                                            <button value="<?php echo $j ?>" type="submit" name="match-id"  class="w-100 h-100 bg-white border border-0  ">
+                                                                <div class="position-relative w-100">
+                                                                    <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
+                                                                    <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$j]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$j]->getTeame_1_obj()->getLogo(); ?>">
+                                                                    <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$j]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$j]->getTeame_2_obj()->getLogo(); ?>">
+                                                                </div>
+                                                                <div class="card-body">
+                                                                <div class="card-body ">
+                                                                    <p class="fw-semibold"><?php echo $matches[$j]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$j]->getTeame_2_obj()->getCountry(); ?></p>
+                                                                    <div class=" d-flex my-2 justify-content-between">
+                                                                        <div><?php echo $matches[$j]->getDateTimeFormat() ?></div>
+                                                                        <div>$ <?php echo $matches[$j]->getPrice(); ?></div>
+                                                                    </div>
+                                                                    <div class="mt-3"> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$j]->getStaduim_obj()->getName(); ?></div>
+                                                                </div>
+                                                                </div>
+                                                            </button>
+                                                        </form>
                                                     </div>
-                                                    <div class="card-body">
-                                                        <div class=" d-flex align-items-center justify-content-between">
-                                                            <div class="text-center">
-                                                            <div><?php echo $matches[$i]->getDateTimeFormat() ?></div>
-                                                            </div>
-                                                            <div class="ms-5 ">
-                                                                <div><?php echo $matches[$i]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$i]->getTeame_2_obj()->getCountry(); ?></div>
-                                                                <div>$ <?php echo $matches[$i]->getPrice(); ?></div>
-                                                                <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$i]->getStaduim_obj()->getName(); ?></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    
+                                                
                                             </div>
                                         <?php endfor; ?>
                                     </div>
@@ -163,6 +163,8 @@
             </div>
         </section>
 
+
+        <div id="section2" class="invisible mb-5">invisible</div>
         <section class="pt-5 pb-5" >
             <div class="container">
                 <div class="row">
@@ -215,7 +217,7 @@
                 <div class="row">
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="mb-3">Browse National Teams</h3>
-                        <form action="stadpage.php" method="POST">
+                        <form action="displaycards.php" method="POST">
                             <button type="submit" name="display-Teams" class="d-flex align-items-center bg-white border-0" style="color: #8a1538;">
                                 view all <iconify-icon class=""  icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
                             </button>
@@ -226,13 +228,13 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row">
-                                        <?php for($i=0 ; $i<3 ; $i++): ?>
+                                        <?php for($i=0 ; $i<3 && $i < count($teams) ; $i++): ?>
                                             <div class="col-md-4 mb-3">
                                                 <div class="card ">
                                                     <img class="card-img-top" alt="100%x280" src="../assets/img/teams/<?php echo $teams[$i]->getImage() ?>">
                                                     <div class="card-body">
                                                             <div><?php echo $teams[$i]->getCountry() ?> National Teames</div>
-                                                            <div>Group F</div>
+                                                            <div>Coatch : <?php echo $teams[$i]->getCoatch() ?></div>
                                                             <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $teams[$i]->getCountry() ?></div>
                                                     </div>
                                                 </div>
@@ -240,16 +242,16 @@
                                         <?php endfor; ?>
                                     </div>
                                 </div>
-                                <?php for($i=3 ; $i<(count($teams)-2); $i+=3): ?>
+                                <?php for($i=3 ; $i< count($teams) ; $i+=3): ?>
                                     <div class="carousel-item">
                                         <div class="row">
-                                            <?php for($j=$i ; $j<($i+3) ; $j++): ?>
+                                            <?php for( $j=$i ; $j<($i + 3) && $j<count($teams) ; $j++): ?>
                                                 <div class="col-md-4 mb-3">
                                                     <div class="card ">
                                                         <img class="card-img-top" alt="100%x280" src="../assets/img/teams/<?php echo $teams[$j]->getImage() ?>">
                                                         <div class="card-body">
                                                                 <div><?php echo $teams[$j]->getCountry() ?> National Teames</div>
-                                                                <div>Group F</div>
+                                                                <div>Coatch : <?php echo $teams[$i]->getCoatch() ?></div>
                                                                 <div> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $teams[$j]->getCountry() ?></div>
                                                         </div>
                                                     </div>
@@ -293,12 +295,13 @@
             </div>
         </section>
 
+        <div id="section4" class="invisible mb-5">invisible</div>
         <section class="pt-5 pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="mb-3">Browse Stads</h3>
-                        <form action="stadpage.php" method="POST">
+                        <form action="displaycards.php" method="POST">
                             <button type="submit" name="display-Stads" class="d-flex align-items-center bg-white border-0" style="color: #8a1538;">
                                 view all <iconify-icon class=""  icon="material-symbols:arrow-forward-ios-rounded" style="color: #8a1538;"></iconify-icon>
                             </button>
@@ -370,8 +373,6 @@
                 </div>
             </div>
         </section>
-
-
 
         <?php include '../include/footer.php' ?>
 

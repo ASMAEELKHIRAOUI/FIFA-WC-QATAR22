@@ -1,10 +1,14 @@
 
 
 <?php include_once '../scripts.php/editepage.script.php'; ?>
-<link href="../assets/css/dashtest.css" rel="stylesheet" media="all">
-<link rel="stylesheet" href="../assets/css/styleF.css">
-<?php include"../include/head.php" ?>
-<?php include"../include/navbar.php" ?>
+<!DOCTYPE html>
+<html lang="en">
+<body >
+
+  <link href="../assets/css/dashtest.css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="../assets/css/styleF.css">
+  <?php include"../include/head.php" ?>
+  <?php include"../include/navbar_spec.php" ?>
 
 <div class="alert alert-success m-4 text-center" role="alert">
   <h3 > Welcome in you Profile! </h3> 
@@ -20,30 +24,33 @@
           </div>
             <br>
           <div class="table-responsive table--no-card mb-4" >
-                <table class="table table-borderless table-striped table-earning" >
-                    <thead >
-                        <tr >
-                            <th>Date-Time</th>
-                            <th class="text-right">First team</th>
-                            <th class="text-right">Secound team</th>
-                            <th class="text-right">Stad</th>
-                            <th>price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2018-09-29 05:57 PM</td>
-                            <!-- <td>05:57</td> -->
-                            <td class="text-right">morocco</td>
-                            <td class="text-start">usa</td>
-                            <td class="text-right">tamama</td>
-                            <td>200$</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table class="table table-borderless table-striped table-earning" >
+              <thead >
+                <tr >
+                  <th>Date-Time</th>
+                  <th class="text-right">First team</th>
+                  <th class="text-right">Secound team</th>
+                  <th class="text-right">Stad</th>
+                  <th>price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2018-09-29 05:57 PM</td>
+                  <!-- <td>05:57</td> -->
+                  <td class="text-right">morocco</td>
+                  <td class="text-start">usa</td>
+                  <td class="text-right">tamama</td>
+                  <td>200$</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+        </div>
       </div>
+    </div>
   </div>
+</div>
 
 
 <div class="container-fluid">
@@ -56,10 +63,11 @@
           </h2>
           <hr class="w-25%" />
           <br />
-          <form action="" methode="POST">
+          <form action="../scripts.php/editepage.script.php" method="POST">
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-4">
+                        <input type="hidden" name="id">
                         <label class="form-label">First Name </label>
                         <input
                             type="text"
@@ -72,10 +80,10 @@
                     <div class="mb-4">
                         <label class="form-label" >Email </label>
                         <input
-                            type="text"
+                            type="email"
                             class="form-control"
-                            name="firstName"
-                            id="first-name"
+                            name="email"
+                            id="email"
                             value="<?=$obj->getEmail()?>"
                         />
                     </div>
@@ -110,7 +118,7 @@
               <div>
                 <div class="">
                   <button
-                    type="button"
+                    type="submit"
                     id="cancel-save"
                     name="cancel_save"
                     class="btn btn-secondary"
@@ -121,7 +129,7 @@
                   <button
                     type="submit"
                     id="save"
-                    name="save"
+                    name="save_Changes"
                     class="btn btn-primary"
                   >
                   Save Changes
@@ -132,15 +140,20 @@
                 <div class="h2">
                   Delete Accounts
                 </div>
-                <hr style="width: 20%; text-align: left; margin-left: 0" />
+                <hr style="width: 25%; text-align: left; margin-left: 0" />
                 <div class="p text-secondary">
-                  <i> Delete your account and all information related to your account such as your profile page, 
-                      badges earned and leaderboard positions. 
+                  <i> Delete your account and all information related to your account such as your profile page,  
                       Please be aware that all data will be permanently lost if you delete your account.
                   </i>
                 </div>
                 <div class="mt-3">
-                  <button type="button" class="btn btn-danger btn-lg btn-block">Delete your account</button>
+                  <button 
+                      type="submit"
+                      id="delete-count"
+                      name="delete_count"
+                      class="btn btn-danger btn-lg btn-block"
+                    >Delete your account
+                  </button>
                 </div>  
               </div>
             </div>
