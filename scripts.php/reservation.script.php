@@ -13,24 +13,14 @@ if(isset($_POST['ajaxRequest'])){
         for($i=0 ; $i<$_POST['ticket_Number'] ; $i++)
             reservMatch($_POST['match_Id'] , $connectSpectateur);
     }
-    $matchId = $GLOBALS["matches"][$_POST['match_Id'] ]->getId();
-    $data = $_POST['ticket_Number'] ;//count(getRezerveMatch($matchId));
+    $data = $_POST['ticket_Number'];
     echo json_encode($data);
 }
 
 $matchsReserved = $connectSpectateur->getMatchsReserved();
 
-
-
-
-
-
-
-
-
-
 function reservMatch($matchId , $connectSpectateur){
-    $connectSpectateur->setReservation($GLOBALS["matches"][$matchId]);
+    $connectSpectateur->setReservation($matchId);
 }
 
 

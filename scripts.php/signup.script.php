@@ -19,6 +19,8 @@ function signUp(){
         $spectateur->setPassword($_POST['password']);
         $spectateur->addSpectateur();
 
+        header('location:../pages/signin.php');
+
     }
 
 }

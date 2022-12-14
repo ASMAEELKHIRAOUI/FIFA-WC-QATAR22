@@ -34,7 +34,6 @@ include_once '../classes/spectateur.class.php';
                             <iconify-icon inline icon="material-symbols:date-range-outline-sharp" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3" style="color: #8a1538;" width="25" height="25"></iconify-icon>
                             <iconify-icon inline class="me-1" icon="ic:twotone-search" style="color: #8a1538;" width="25" height="25"></iconify-icon>
                             </span>
-
                         </div>
                     </div>
                 </div>
@@ -93,7 +92,7 @@ include_once '../classes/spectateur.class.php';
                                                     <div class="card">
                                                         <form class="w-100 h-100" action="ticketpage.php" method="POST">
 
-                                                            <button value="<?php echo $i ?>" type="submit" name="match-id"  class="w-100    bg-white border border-0 ">
+                                                            <button value="<?php echo $matches[$i]->getId() ?>" type="submit" name="match-id"  class="w-100    bg-white border border-0 ">
                                                                 <div class="position-relative w-100">
                                                                     <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
                                                                     <img class="flag position-absolute top-50 start-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
@@ -119,11 +118,11 @@ include_once '../classes/spectateur.class.php';
                                 <?php for($i=3 ; $i<count($matches); $i+=3): ?>
                                     <div class="carousel-item ">
                                         <div class="row">
-                                            <?php for($j=$i ; $j<$i + 3 && $j<count($matches) ; $j++): ?>
+                                            <?php for($j=$i ; $j<($i + 3) && $j<count($matches) ; $j++): ?>
                                                 <div class="col-md-4 mb-3">
                                                         <div class="card ">
                                                             <form class="" action="ticketpage.php" method="POST">
-                                                                <button value="<?php echo $j ?>" type="submit" name="match-id"  class="w-100 h-100 bg-white border border-0  ">
+                                                                <button value="<?=$matches[$j]->getId()?>" type="submit" name="match-id"  class="w-100 h-100 bg-white border border-0  ">
                                                                     <div class="position-relative w-100">
                                                                         <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
                                                                         <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$j]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$j]->getTeame_1_obj()->getLogo(); ?>">
@@ -387,7 +386,7 @@ include_once '../classes/spectateur.class.php';
         <?php include '../include/footer.php' ?>
         
 
-        <script src="../scripts.js/landingpage.script.js"></script>
+        <script src="../scripts.js/search.script.js"></script>
         <!-- JavaScript Bundle with Popper -->
     </body>
 </html>

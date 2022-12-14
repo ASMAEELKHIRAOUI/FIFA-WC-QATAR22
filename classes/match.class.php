@@ -135,14 +135,20 @@ include_once '../classes/database.class.php';
         }
 
         //crud
-        public function getMatch($id){ // cette function n'est pas fonctionné  
-            // $database = new Database();
-            // $sql = "SELECT * FROM matches where id = $id";
-            // $stmt = $database->connect()->prepare($sql);
-            // $stmt->execute();
-            // $dbMatch = $stmt->fetchAll(PDO::FETCH_OBJ);
-            // $this->getObject($dbMatch);
+        public static function getMatch($id){ 
+            $database = new Database();
+            $sql = "SELECT * FROM `matches` WHERE id=?";  
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute([$id]);
+            $dbMatch = $stmt->fetch(PDO::FETCH_OBJ);
+
+            
+            $match = new Matches();
+            $match->getObject($dbMatch);
+
+            return $match;
         }
+
         public function addMatch(){
             $database = new Database();
             $sql = "INSERT INTO matches(match_team1,match_team2,stad,price,description,datetime,Code) VALUES(?,?,?,?,?,?,?)";
@@ -210,6 +216,8 @@ include_once '../classes/database.class.php';
 
         public function deleteMatch($id){
         }
+
+
         public static function  search($property , $data){
             $database = new Database();
             $sql = "SELECT m.*,t_1.country , t_2.country  FROM matches m INNER JOIN team t_1 ON m.match_team1 = t_1.id 
@@ -238,11 +246,9 @@ include_once '../classes/database.class.php';
                 
             }
 
+            
+
             return $matchs;
-
-            //return $matchs[0]->getTeame_1_obj()->getCountry();
-
-            //  WHERE country LIKE $data 
         }
         
     }

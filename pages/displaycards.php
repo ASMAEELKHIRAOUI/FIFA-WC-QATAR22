@@ -14,11 +14,11 @@
                     <div class="col-md-4 mb-3">
                         <div class="card ">
                             <form class="w-100" action="ticketpage.php" method="POST">
-                                <button value="<?php echo $i ?>" type="submit" name="match-id"  class="w-100  bg-white border border-0  ">
+                                <button value="<?php echo $matches[$i]->getId() ?>" type="submit" name="match-id"  class="w-100    bg-white border border-0 ">
                                     <div class="position-relative w-100">
                                         <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
-                                        <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
-                                        <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
+                                        <img class="flag position-absolute top-50 start-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
+                                        <img class="flag position-absolute top-50 end-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
                                     </div>
                                     <div class="card-body">
                                         <p class="fw-semibold"><?php echo $matches[$i]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$i]->getTeame_2_obj()->getCountry(); ?></p>

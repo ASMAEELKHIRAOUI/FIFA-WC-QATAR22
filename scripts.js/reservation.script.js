@@ -26,6 +26,9 @@ function printTicket(){
 
 function reserveMatch(matchId){
 
+    console.log(matchId);
+    
+
 
     $.post('../scripts.php/reservation.script.php' ,
     {

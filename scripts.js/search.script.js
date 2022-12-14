@@ -3,12 +3,6 @@ let  carouselMatchContainer = document.getElementById('carousel-matchs-container
 
 let height = carouselMatchContainer.offsetHeight;
 
-// let elt = event.target.parentElement;
-// elt = elt.parentElement;
-
-// let tempVal = elt.children[0].innerText;
-
-
 
 
 
@@ -91,7 +85,7 @@ function drawcardMatch(match){
             <div class="col-md-4 mb-3 ">
                 <div class="card">
                     <form class="w-100 h-100" action="ticketpage.php" method="POST">
-                        <button value="${match['dateTime']}" type="submit" name="['dateTime']-id"  class="w-100    bg-white border border-0 ">
+                        <button value="${match['id']}" type="submit" name="match-id"  class="w-100    bg-white border border-0 ">
                             <div class="position-relative w-100">
                                 <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
                                 <img class="flag position-absolute top-50 start-0 translate-middle-y"   src="../assets/img/flag/${match['logo-1']}" alt="${match['teame-1']}">
@@ -111,6 +105,16 @@ function drawcardMatch(match){
             </div>
 
     `;
+}
+
+
+
+function drawTicket(i){
+
+
+
+
+
 }
 
 
