@@ -9,7 +9,7 @@ include_once 'ticket.class.php';
         private $matchsReserved = array();
         //crud
 
-        public function isExistSpectateur($email){
+        public  function isExistSpectateur($email){
             $database = new Database();
             $sql = "SELECT * FROM `spectator` WHERE email =?";
 
@@ -35,11 +35,11 @@ include_once 'ticket.class.php';
             $conn = new Database();
             try{
 
-                   $sql1 = "INSERT INTO spectator(first_name, last_name, email, password) values(?,?,?,?)";
-                   $put = $conn->connect()->prepare($sql1);
-                   $put->execute([$this->firstName, $this->lastName, $this->email, $this->password]);
+                $sql1 = "INSERT INTO spectator(first_name, last_name, email, password) values(?,?,?,?)";
+                $put = $conn->connect()->prepare($sql1);
+                $put->execute([$this->firstName, $this->lastName, $this->email, $this->password]);
 
-                   echo"<script>alert('successfully');document.location='../pages/signin.php'</script>";
+                echo"<script>alert('successfully');document.location='../pages/signin.php'</script>";
         
                 
             }catch(Exception $e){
@@ -60,6 +60,7 @@ include_once 'ticket.class.php';
             if ($stmt->rowCount() > 0) {
             
                 $_SESSION['name'] = $data['first_name'];
+                $_SESSION['email'] = $data['email'];
                 // echo "<pre>";
                 // print_r($_SESSION['name']);
                 // echo "</pre>";
@@ -94,7 +95,7 @@ include_once 'ticket.class.php';
                 // unset($_SESSION['name']);
                 // header('location:../pages/signin.php');
                 echo"<script>alert('successfully');document.location='../pages/signin.php'</script>";
-             }
+            }
         }
         
         
