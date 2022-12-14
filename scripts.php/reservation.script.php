@@ -3,9 +3,6 @@ include_once 'landingpage.script.php';
 include_once '../classes/spectateur.class.php';
 
 
-
-
-
 $connectSpectateur = new Spectateur("yassin" , "bonno" , "semi-final" , "fifa@morocco.world" , 2);
 
 $connectSpectateur->setId(2);
@@ -20,8 +17,6 @@ if(isset($_POST['ajaxRequest'])){
     $data = $_POST['ticket_Number'] ;//count(getRezerveMatch($matchId));
     echo json_encode($data);
 }
-
-
 
 $matchsReserved = $connectSpectateur->getMatchsReserved();
 
