@@ -152,7 +152,7 @@ include_once '../classes/database.class.php';
 
         public function getActiveMatchs(){
             $database = new Database();
-            $sql = "SELECT * FROM `matches` ";  
+            $sql = "SELECT * FROM `matches`";  
             $stmt = $database->connect()->prepare($sql);
             $stmt->execute();
             $dbMatchs = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -210,6 +210,41 @@ include_once '../classes/database.class.php';
 
         public function deleteMatch($id){
         }
+        public static function  search($property , $data){
+            $database = new Database();
+            $sql = "SELECT m.*,t_1.country , t_2.country  FROM matches m INNER JOIN team t_1 ON m.match_team1 = t_1.id 
+            INNER JOIN team t_2 ON m.match_team2 = t_2.id 
+            WHERE t_1.$property LIKE '$data%' OR t_2.$property LIKE '$data%' ";  
+            $stmt = $database->connect()->prepare($sql);
+            $stmt->execute();
+            $dbMatchs = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+            $matchs = array();
+            
+            $i=0;
+            foreach($dbMatchs as $dbmatch){
+                $dbDate = date('Y-m-d', strtotime($dbmatch->datetime));
+                $dbTime = date('H:i', strtotime($dbmatch->datetime));
+                if($dbDate > date('Y-m-d')){
+                    $matchs[$i] = new Matches();
+                    $matchs[$i]->getObject($dbmatch);
+                    $i++;
+                }
+                else if($dbDate == date('Y-m-d') && $dbTime >= date('H:i')){
+                    $matchs[$i] = new Matches();
+                    $matchs[$i]->getObject($dbmatch);
+                    $i++;
+                }
+                
+            }
+
+            return $matchs;
+
+            //return $matchs[0]->getTeame_1_obj()->getCountry();
+
+            //  WHERE country LIKE $data 
+        }
+        
     }
 
 

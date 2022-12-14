@@ -11,7 +11,6 @@ include '../classes/spectateur.class.php';
   }
 ?>
 
-  
 
 <!-- Bootstrap links-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -239,7 +238,7 @@ include '../classes/spectateur.class.php';
                             <a href="landingpage.php" class="text-white text-decoration-none">
                                 <i class="fa fa-home text-white "></i>Home</a>
                         </li>
-                       <li class="active has-sub">
+                        <li class="active has-sub">
                             <a href="#statistiques" class="text-white text-decoration-none">
                                 <i class="fa fa-tachometer text-white "></i>Statistiques</a>
                         </li>
@@ -269,7 +268,6 @@ include '../classes/spectateur.class.php';
             </div>
         </aside>
         <!-- END MENU SIDEBAR-->
-         
         <!-- PAGE CONTAINER-->
         <div class="page-container top-0">
         <!-- NAVBAR  -->
