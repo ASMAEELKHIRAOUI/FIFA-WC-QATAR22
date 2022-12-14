@@ -11,9 +11,13 @@ $connectSpectateur = new Spectateur("yassin" , "bonno" , "semi-final" , "fifa@mo
 $connectSpectateur->setId(2);
 
 if(isset($_POST['ajaxRequest'])){
-    if($_POST['ajaxRequest'] == "reserve-match") reservMatch($_POST['match_Id'] , $connectSpectateur);
+    if($_POST['ajaxRequest'] == "reserve-match") {
+
+        for($i=0 ; $i<$_POST['ticket_Number'] ; $i++)
+            reservMatch($_POST['match_Id'] , $connectSpectateur);
+    }
     $matchId = $GLOBALS["matches"][$_POST['match_Id'] ]->getId();
-    $data = count(getRezerveMatch($matchId));
+    $data = $_POST['ticket_Number'] ;//count(getRezerveMatch($matchId));
     echo json_encode($data);
 }
 

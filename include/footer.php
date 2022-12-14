@@ -7,7 +7,7 @@
 <div class="m-0">
   <!-- Footer -->
   <footer
-          class="text-center text-lg-start text-white"
+          class="d-print-none text-center text-lg-start text-white"
           style="background-color: rgb(139, 24, 56)"
           >
     <div class="m-0">
