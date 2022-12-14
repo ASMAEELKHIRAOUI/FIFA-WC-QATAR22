@@ -9,7 +9,7 @@ function signIn(){
     $spectateur = new Spectateur();
 
     
-     $spectateur->setEmail($_POST['email']);
+    $spectateur->setEmail($_POST['email']);
 
     if( $spectateur->isExistAdmin($spectateur->getEmail())){
 

@@ -6,14 +6,11 @@ include_once '../classes/stad.class.php';
 include '../classes/spectateur.class.php';
 
 
-//  if(!isset($_SESSION['name'])){
-//     header('location:../pages/signin.php');
-//   }
-//   else{
-//     $spectateur = new Spectateur();
-//     if($spectateur->isExistSpectateur($_SESSION['email'])>0) 
-//         header('location:../pages/landingpage.php');
-//   }
+    if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
+
+    else if($_SESSION['roll'] !='admin')  header('location:../pages/landingpage.php');
+    
+
 ?>
 
 

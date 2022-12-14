@@ -60,10 +60,8 @@ include_once 'ticket.class.php';
             if ($stmt->rowCount() > 0) {
             
                 $_SESSION['name'] = $data['first_name'];
-                $_SESSION['email'] = $data['email'];
-                // echo "<pre>";
-                // print_r($_SESSION['name']);
-                // echo "</pre>";
+                $_SESSION['last-name'] = $data['last_name'];
+                $_SESSION['roll'] = 'spectator';
                 echo"<script>alert('successfully');document.location='../pages/landingpage.php'</script>";
             } else {
                 echo"<script>alert('incorrect inputs');document.location='../pages/signin.php'</script>";
@@ -81,6 +79,7 @@ include_once 'ticket.class.php';
             if ($stmt->rowCount() > 0) {
                 
                 $_SESSION['name'] = $admin['first_name'];
+                $_SESSION['roll'] = 'admin';
 
                 echo"<script>alert('successfully');document.location='../pages/dashboard.php'</script>";
             } else {
@@ -165,10 +164,10 @@ include_once 'ticket.class.php';
             header('location: ../pages/editprofile.php');
         }
 
-        public function setReservation($match){
+        public function setReservation($matchId){
             include_once 'match.class.php';
 
-            $ticket = new Ticket( $this->id ,$match->getId());
+            $ticket = new Ticket( $this->id ,$matchId);
 
             // if(!array_search($match , $this->matchsReserved)){
                 $ticket->add();
