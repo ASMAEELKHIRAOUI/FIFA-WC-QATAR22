@@ -5,6 +5,9 @@ include_once '../classes/stad.class.php';
 include_once '../classes/teame.class.php';
 if (isset($_POST['SaveMatch'])){
 
+  
+
+
 $getproprite = new Matches($_POST['Datetime'],$_POST['Team1'],$_POST['Team2'],$_POST['Stade'],$_POST['Prix'],$_POST['Description']);
 // 
 // $getproprite->setDateTime($_POST['Datetime']);
@@ -31,8 +34,8 @@ if (isset($_POST['SaveStad'])){
   $location=$_POST['Location'];
   $city=$_POST['City'];
   $image=$_FILES['image']['name'];
-//   $pathimage = $_FILES['image']['tem_name'];
-//   $foolder = "../img/stad/".$image;
+  $pathimage = $_FILES['image']['tem_name'];
+  $foolder = "../assets/img/stad/".$image;
 
   $getstad = new Stad();
   $getstad-> setName($name); 
@@ -53,7 +56,6 @@ $stads=$stad->getStads();
    
    
 
-   
 
 if(isset($_POST['SaveTeam'])){
 

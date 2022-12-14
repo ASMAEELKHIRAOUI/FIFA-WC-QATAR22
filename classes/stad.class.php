@@ -8,14 +8,14 @@
         private $city;
         private $image;
 
-        // public function __construct($name , $capacity , $location , $city , $image)
-        // {
-        //     $this->name = $name;
-        //     $this->capacity = $capacity;
-        //     $this->location = $location;
-        //     $this->city = $city;
-        //     $this->image = $image;
-        // }
+        public function __construct($name ="" , $capacity ="" , $location="" , $city="" , $image="")
+        {
+            $this->name = $name;
+            $this->capacity = $capacity;
+            $this->location = $location;
+            $this->city = $city;
+            $this->image = $image;
+        }
 
         public function getId(){
             return $this->id;
