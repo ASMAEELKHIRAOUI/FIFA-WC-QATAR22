@@ -6,9 +6,9 @@ include_once '../classes/stad.class.php';
 include '../classes/spectateur.class.php';
 
 
-    if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
+    // if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
 
-    else if($_SESSION['roll'] !='admin')  header('location:../pages/landingpage.php');
+    // else if($_SESSION['roll'] !='admin')  header('location:../pages/landingpage.php');
     
 
 ?>
@@ -234,7 +234,7 @@ include '../classes/spectateur.class.php';
                     <ul class="list-unstyled navbar__list ">
                     <li class="active has-sub">
                             <a href="landingpage.php" class="text-white text-decoration-none">
-                                <i class="fa fa-user text-white fs-3 me-2"></i>Welcome <?php echo $_SESSION['name'] ?></a>
+                                <i class="fa fa-user text-white fs-3 me-2"></i>Welcome <?php  ?></a>
                         </li>
                     <li class="active has-sub">
                             <a href="landingpage.php" class="text-white text-decoration-none">
