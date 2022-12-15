@@ -7,7 +7,7 @@ class Database {
 
     public  function connect() {
         try {
-            $pdo = new PDO("mysql:host=$this->host;port=3307;dbname=$this->dbName", $this->user, $this->pwd);
+            $pdo = new PDO("mysql:host=$this->host;port=3306;dbname=$this->dbName", $this->user, $this->pwd);
             // set the PDO error mode to exception
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
