@@ -3,6 +3,7 @@ include '../include/head.php';
 include_once '../scripts.php/crudadmin.script.php';
 include_once '../classes/match.class.php';
 include_once '../classes/stad.class.php';
+include_once '../classes/statistique.class.php';
  
 ?>
 
@@ -326,7 +327,7 @@ include_once '../classes/stad.class.php';
                                                 <i class="fa fa-futbol-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>36</h2>
+                                                <h2><?php echo $statisquematch[0]["COUNT(id)"];?></h2>
                                                 <span>Matches Played</span>
                                             </div>
                                         </div>
@@ -341,7 +342,9 @@ include_once '../classes/stad.class.php';
                                                 <i class="fa fa-fort-awesome"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>8</h2>
+                                                <h2><?php 
+                                                    echo $statiquestad[0]["COUNT(id)"] ;
+                                                ?></h2>
                                                 <span>Stadiums Available</span>
                                             </div>
                                         </div>
@@ -356,7 +359,7 @@ include_once '../classes/stad.class.php';
                                                 <i class="fa fa-user"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>103</h2>
+                                                <h2><?php echo $statiqueuser[0]["COUNT(id)"];?></h2>
                                                 <span>Registered Spectators</span>
                                             </div>
                                         </div>
@@ -371,7 +374,9 @@ include_once '../classes/stad.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>368</h2>
+                                                <h2><?php  echo $dispoticket[0]['capacitys'];
+                                                
+                                                  ?></h2>
                                                 <span>e-tickets Available</span>
                                             </div>
                                         </div>
@@ -386,7 +391,7 @@ include_once '../classes/stad.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>103</h2>
+                                                <h2><?php echo $reserverticket[0]["COUNT(id)"];?></h2>
                                                 <span>Reserved e-tickets</span>
                                             </div>
                                         </div>
@@ -401,7 +406,7 @@ include_once '../classes/stad.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>98</h2>
+                                                <h2><?php echo $dispoticket[0]['capacitys']-$reserverticket[0]["COUNT(id)"];?></h2>
                                                 <span>Remaining e-tickets</span>
                                             </div>
                                         </div>
@@ -549,13 +554,14 @@ include_once '../classes/stad.class.php';
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach($reservationticket as $rticket ): ?>
                                             <tr>
-                                                <td class="text-right">morocco vs portogal</td>
-                                                <td class="text-right">test user</td>
-                                                <td class="text-right">19.57$</td>
+                                                <td class="text-right"><?php echo $rticket['country1'] .' VS ' .$rticket['country2']  ; ?></td>
+                                                <td class="text-right"><?php echo  $rticket['names'];?></td>
+                                                <td class="text-right"><?php echo $rticket['prices'];?>$</td>
                                                 <td class="text-left"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
-
+                                        <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 07 déc. 2022 à 13:29
+-- Généré le : mar. 13 déc. 2022 à 10:05
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -55,8 +55,20 @@ CREATE TABLE `matches` (
   `stad` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `datetime` datetime DEFAULT NULL
+  `datetime` datetime DEFAULT NULL,
+  `Code` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `matches`
+--
+
+INSERT INTO `matches` (`id`, `match_team1`, `match_team2`, `stad`, `price`, `description`, `datetime`, `Code`) VALUES
+(1, 18, 12, 7, 23, 'FGDFG', '2022-12-17 00:20:00', ''),
+(2, 24, 24, 3, 6, 'Quia ut odit est aut', '2022-12-24 00:45:00', '63978dd7a5ed13.24915622'),
+(3, 14, 16, 5, 543, 'Quo harum omnis ab a', '2022-12-16 21:53:00', '639793c705f1d4.56025756'),
+(4, 25, 30, 8, 53, 'Pariatur Placeat l', '2005-01-06 08:21:00', '63979845a2c5b6.27395938'),
+(5, 24, 19, 3, 8, 'Aut obcaecati quia s', '1996-07-09 18:03:00', '6397998c7f9dd2.13154798');
 
 -- --------------------------------------------------------
 
@@ -71,6 +83,14 @@ CREATE TABLE `spectator` (
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `spectator`
+--
+
+INSERT INTO `spectator` (`id`, `first_name`, `last_name`, `email`, `password`) VALUES
+(1, 'jilali', 'jljl', 'hiro@zoro', 'agadir'),
+(2, 'karmilo', 'balid', 'titili@44', 'kjJKHKJhkjqhs');
 
 -- --------------------------------------------------------
 
@@ -153,13 +173,6 @@ INSERT INTO `team` (`id`, `country`, `coach`, `image`, `logo`) VALUES
 (31, 'Senegal', 'Aliou Cisse', 'Senegalt.jpg', 'Senegall.jpg'),
 (32, 'Netherlands', 'Aliou Cisse', 'Senegalt.jpg', 'Netherlandsl.jpg');
 
-
-
-
-
-
-
-
 -- --------------------------------------------------------
 
 --
@@ -171,6 +184,49 @@ CREATE TABLE `ticket` (
   `match_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `ticket`
+--
+
+INSERT INTO `ticket` (`id`, `match_id`, `user_id`) VALUES
+(3, 2, 1),
+(4, 2, 1),
+(5, 2, 1),
+(6, 2, 1),
+(7, 2, 1),
+(8, 1, 1),
+(9, 1, 1),
+(10, 2, 2),
+(11, 2, 2),
+(12, 1, 2),
+(13, 1, 2),
+(14, 2, 2),
+(15, 2, 2),
+(16, 3, 2),
+(17, 3, 2),
+(18, 3, 2),
+(19, 2, 2),
+(20, 2, 2),
+(21, 2, 2),
+(22, 1, 2),
+(23, 1, 2),
+(24, 1, 2),
+(25, 3, 2),
+(26, 3, 2),
+(27, 3, 2),
+(28, 3, 2),
+(29, 3, 2),
+(30, 3, 2),
+(31, 3, 2),
+(32, 3, 2),
+(33, 3, 2),
+(34, 3, 2),
+(35, 2, 2),
+(36, 2, 2),
+(37, 2, 2),
+(38, 2, 2),
+(39, 2, 2);
 
 --
 -- Index pour les tables déchargées
@@ -231,13 +287,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT pour la table `matches`
 --
 ALTER TABLE `matches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `spectator`
 --
 ALTER TABLE `spectator`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `stad`
@@ -249,13 +305,13 @@ ALTER TABLE `stad`
 -- AUTO_INCREMENT pour la table `team`
 --
 ALTER TABLE `team`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT pour la table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Contraintes pour les tables déchargées
