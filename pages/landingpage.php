@@ -9,11 +9,9 @@ include_once '../classes/spectateur.class.php';
     <link rel="stylesheet" href="../assets/css/landing_page.css">
     <body>
     <?php
-
         if(!isset($_SESSION['name'])) include_once '../include/navbar_landingpage.php';
-        
         else  include_once '../include/navbar_spec.php';
-        ?>          
+    ?>          
 
         <header class="">  
             <!-- Background image -->
