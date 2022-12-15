@@ -3,6 +3,8 @@
 include_once '../classes/match.class.php';
 include_once '../classes/stad.class.php';
 include_once '../classes/teame.class.php';
+include_once '../classes/statistique.class.php';
+include_once '../classes/reservation.class.php';
 if (isset($_POST['SaveMatch'])){
 
   
@@ -81,4 +83,24 @@ if(isset($_POST['SaveTeam'])){
 
 
 
+
+ // partie statistique 
+    // pour les stades 
+    $stadstatique = new Statistique();
+    $statiquestad= $stadstatique->stadst();   
+    // pour les matches 
+    $matchstatique = new Statistique();
+    $statisquematch=$matchstatique-> matchst();
+    // pour les user 
+    $userstatitique = new Statistique();
+    $statiqueuser = $userstatitique->userst();
+    // pour les tickets
+    $ticketreserver =new Statistique();
+    $reserverticket = $ticketreserver->ticketreserver();
+    // pour les 
+    $ticketdispo =new Statistique();
+    $dispoticket = $ticketdispo->ticketdispo();
+    // les reservation 
+    $reservation= new Reservation();
+    $reservationticket=$reservation->getreservation();
 ?>

@@ -57,6 +57,8 @@ CREATE TABLE `matches` (
   `description` text DEFAULT NULL,
   `datetime` datetime DEFAULT NULL,
   `Code` varchar(255) NOT NULL
+  `datetime` datetime DEFAULT NULL,
+  `Code` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -310,6 +312,7 @@ ALTER TABLE `stad`
 -- AUTO_INCREMENT pour la table `team`
 --
 ALTER TABLE `team`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
