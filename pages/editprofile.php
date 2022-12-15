@@ -116,7 +116,7 @@ include_once '../scripts.php/reservation.script.php' ?>
                             class="form-control"
                             name="password"
                             id="password"
-                            value=""
+                            value="<?=$obj->getPassword()?>"
                         />
                     </div>    
               </div>

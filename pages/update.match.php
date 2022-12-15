@@ -15,7 +15,7 @@ if(isset($_POST['updateMatch'])){
     }
 
 $match= new Matches();
-$result = $match->getMatchAss($_GET['id']);
+$result = $match->getMatcheasma($_GET['id']);
 //put the attributs inside of objects
 if($result){
     $id = $result['id'];

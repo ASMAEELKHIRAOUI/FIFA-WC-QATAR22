@@ -1,22 +1,18 @@
 <?php
-include_once '../include/head.php';
-include_once '../classes/teame.class.php';
+include '../include/head.php';
+include '../classes/teame.class.php';
+$connect = Database::connect();
+$id=$_GET['id'];
+$team= new Team();
+$result = $team->getTeam($_GET['id']);
 
-$connect = new Database;
-$connect->connect();
-if(isset($_POST['updateTeams'])){
-$team= new Team($_POST['country'] , $_POST['coach'] , $_POST['logo'] , $_POST['image']);
-$team->updateTeam($_POST['id']);
-}
-$updateteam = new Team();
-$result = $updateteam->getTeam($_GET['id']);
 //put the attributs inside of objects
 if($result){
-    $id = $result['id'];
-    $country = $result['country'];
-    $coach = $result['coach'];
-    // $image = $result['image'];
-    // $logo = $result['logo'];
+    $id = $row['id'];
+    $country = $row['country'];
+    $coach = $row['coach'];
+    $image = $row['image'];
+    $logo = $row['logo'];
 }
 
 ?>
@@ -37,22 +33,22 @@ if($result){
 
                 <div class="mb-3">
                     <label class="form-label">Country</label>
-                    <input type="text" name="country"  class="form-control" value="<?php echo $country; ?>" required/>
+                    <input type="text"  class="form-control" value="<?php echo $country; ?>" required/>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Coach</label>
-                    <input type="text"  name="coach" class="form-control"  value="<?php echo $coach; ?>" required/>
+                    <input type="text"  class="form-control"  value="<?php echo $coach; ?>" required/>
                 </div>
 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Image</label>
-                    <input class="form-control" name="image" type="file" id="formFile" value="<?php echo $image; ?>">
+                    <input class="form-control" type="file" id="formFile" value="<?php echo $image; ?>">
                 </div>
 
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Logo</label>
-                    <input class="form-control" name="logo" type="file" id="formFile" value="<?php echo $logo; ?>">
+                    <input class="form-control" type="file" id="formFile" value="<?php echo $logo; ?>">
                 </div>
             </div>
             <div class="modal-footer">

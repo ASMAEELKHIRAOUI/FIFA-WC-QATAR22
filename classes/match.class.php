@@ -169,26 +169,6 @@ include_once '../classes/database.class.php';
             return $match;
         }
 
-        public function getMatchAss($id){ // cette function n'est pas fonctionné
-            $database = new Database();
-            $sql = "SELECT * FROM matches where id = ?";
-            $stmt = $database->connect()->prepare($sql);
-            $stmt->execute([$id]);
-            if($stmt){
-                $row = $stmt->fetch();
-                $this->setId($row['id']);
-                $this->setDateTime($row['datetime']);
-                $this->seTeame_1_ID($row['match_team1']);
-                $this->seTeame_2_ID($row['match_team2']);
-                $this->setStaduimID($row['stad']);
-                $this->setprice($row['price']);
-                $this->setdescription($row['description']);
-                return $row;
-                }
-        }
-
-        
-
         public function addMatch(){
             $database = new Database();
             $sql = "INSERT INTO matches(match_team1,match_team2,stad,price,description,datetime,Code) VALUES(?,?,?,?,?,?,?)";

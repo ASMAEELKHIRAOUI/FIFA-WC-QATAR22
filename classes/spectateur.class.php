@@ -59,7 +59,6 @@ session_start();
             
             if ($stmt->rowCount() > 0) {
             
-                $_SESSION['id'] = $data['id'];
                 $_SESSION['name'] = $data['first_name'];
                 $_SESSION['id'] = $data['id'];
                 $_SESSION['last-name'] = $data['last_name'];
@@ -127,6 +126,11 @@ session_start();
             $stmt->execute();   
             $arr =  $stmt->fetch(PDO::FETCH_ASSOC);
             //var_dump($arr);
+
+            $this->setFirstName($arr['first_name']);
+            $this->setLastName($arr['last_name']);
+            $this->setEmail($arr['email']);
+            $this->setPassword($arr['password']);
         
         }
 

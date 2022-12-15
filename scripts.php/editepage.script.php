@@ -14,5 +14,4 @@
     if(isset($_POST['cancel_save']))  $obj->cancel_changes();
     if(isset($_GET['delete_count']))  $obj->deleteSpectateur();
     
-    
 ?>

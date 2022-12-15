@@ -1,10 +1,7 @@
 <?php
     include_once 'database.class.php';
-    // include_once '../pages/dashboard.php';
 
-    // if(isset($_POST['updateTeams']))        updateTeam();
-    if(isset($_POST['delete']))     deleteTeam();
-    class Team{
+    class Team {
 
         private $id = NULL;
         private $country;
@@ -41,9 +38,6 @@
 
         public function setCountry($contr){
             $this->country = $contr;
-        }
-        public function setId($id){
-            $this->id = $id;
         }
         public function setCoatch($coat){
             $this->coatch = $coat;
@@ -85,21 +79,16 @@
         }
 
         public function getTeam($id){
-            $database = new Database();
-            // $database->connect();
-            $query= "SELECT * FROM team WHERE id=?";
-            $result = $database->connect()->prepare($query);
-            $result->execute([$id]);
-            if($result){
-            $row = $result->fetch();
-            $this->setId($row['id']);
-            $this->setCountry($row['country']);
-            $this->setCoatch($row['coach']);
-            $this->setImage($row['image']);
-            $this->setLogo($row['logo']);
+            // $query="SELECT * FROM team WHERE id=?";
+            // $result = $this->connect()->prepare($query);
+            // $result->execute([$id]);
+            // $row = $result->fetch();
+            // $this->setCountry($row['country']);
+            // $this->setCountry($row['coach']);
+            // $this->setCountry($row['image']);
+            // $this->setCountry($row['logo']);
 
-            return $row;
-            }
+            // return $row;
         }
         public function addTeam(){
         $database =new Database();
@@ -111,22 +100,16 @@
         }
 
         public function updateTeam($id){
-            $database =new Database();
-            $query="UPDATE team SET country=? ,coach=? WHERE id=?";
-            $result = $database->connect()->prepare($query);
-            $result->execute([$this->getCountry(),$this->getCoatch(), $id]);
-            // var_dump($result);
-            if($result)
-                header('location: dashboard.php');
+            // if(isset(updateTeams)){
+                // $query="UPDATE team SET country=? , coach=? , image=? , logo=? WHERE id=?";
+                // $result = $this->connect()->prepare($query);
+                // $result->execute([$id,$country, $coach, $image ,$logo]);
+                // if($result)
+                //     header('location: dashboard.php');
+            // }
         }
 
         public function deleteTeam($id){
-            $database =new Database();
-            $query="DELETE FROM team WHERE id=?";
-            $result = $database->connect()->prepare($query);
-            $result->execute([$id]);
-            if($result)
-                header('location: dashboard.php');
         }
     }
 

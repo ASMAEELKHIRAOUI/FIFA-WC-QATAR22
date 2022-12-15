@@ -16,9 +16,9 @@ if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
     <?php
         if(!isset($_SESSION['name'])) include_once '../include/navbar_landingpage.php';
         else  include_once '../include/navbar_spec.php';
-        $_SESSION['match-reserved-id'] = $_POST['match-id'];
-        
-    ?>  
+    ?>          
+
+
 
 
     <div class="container">
@@ -139,4 +139,3 @@ if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
 
 <script src="../scripts.js/reservation.script.js"></script>
 
-    

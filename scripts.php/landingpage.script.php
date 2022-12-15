@@ -16,9 +16,6 @@
     $matches = array();
     $matches = $match->getActiveMatchs();
 
-    // echo"<pre>";
-    // echo(Matches::getMatch(1)->getTeame_1_obj()->getCountry());
-    // echo"</pre>";
 
 
 
