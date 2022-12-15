@@ -8,7 +8,8 @@
   <!-- Footer -->
   <footer
           class="d-print-none text-center text-lg-start text-white"
-          style="background-color: rgb(139, 24, 56)"
+          style="background-color: rgb(139, 24, 56);
+          overflow-x : hidden ;"
           >
     <div class="m-0">
       <!-- Section: Links --> 

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../assets/css/navbar.css">
-<nav class="sticky-top navbar navbar-expand-lg bg-light">
+<nav class="d-print-none sticky-top navbar navbar-expand-lg bg-light">
   <div class="container-fluid ">
     <!-- d-flex justify-content-between -->
     <a class="fs-4 fw-bolder navbar-brand ms-4" href="#"> YouTickets</a>
