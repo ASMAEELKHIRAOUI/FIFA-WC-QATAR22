@@ -17,7 +17,7 @@
     <div class="row-lg h-100 d-flex align-items-center p-5 flex-wrap">
         <div class="col-lg-1"></div>
         <div id="signIn" class="col-lg-5">
-            <form action="signin.php" method="POST" id="form" data-parsley-validate>
+            <form action="../scripts.php/signin.script.php" method="POST" id="form" data-parsley-validate>
                 <p class="signin text-center"> SIGN IN </p>
                 <div class="email pt-3">
                     <p>Email Address</p>
@@ -27,7 +27,7 @@
                     <p>Password</p>
                     <input class="input form form-control" type="password" name="password" data-parsley-minlength="8" required>
                 </div>
-                <div class="row justify-content-center mt-3"><button class="btn" name="signIN">SIGN IN NOW</button></div>
+                <div class="row justify-content-center mt-3"><button class="btn" name="signin">SIGN IN NOW</button></div>
                 <div class="signup text-center mt-4">
                     Don't have an account? <a class="link" href="signup.php">Create one!</a>
                 </div>

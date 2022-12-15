@@ -1,13 +1,19 @@
 <?php include_once '../scripts.php/landingpage.script.php';
 include_once '../scripts.php/reservation.script.php';
+include_once '../classes/spectateur.class.php';
+
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
     <?php include_once '../include/head.php' ?>
     <link rel="stylesheet" href="../assets/css/landing_page.css">
     <body>
-    <?php include_once '../include/navbar_landingpage.php' ?>          
+    <?php
+
+        if(!isset($_SESSION['name'])) include_once '../include/navbar_landingpage.php';
+        
+        else  include_once '../include/navbar_spec.php';
+        ?>          
 
         <header class="">  
             <!-- Background image -->
@@ -27,11 +33,10 @@ include_once '../scripts.php/reservation.script.php';
                     </div>
                     <div class=" header-search position-absolute top-100 start-50 translate-middle bg-white border border-dark rounded-1" >
                         <div class="input-group rounded d-flex justify-content-between align-items-center">
-                            <input type="search" class="me-3 form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <input type="search" id="search-input-id" onkeyup="search(this.value)" class="me-3 form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                             <iconify-icon inline icon="material-symbols:date-range-outline-sharp" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3" style="color: #8a1538;" width="25" height="25"></iconify-icon>
                             <iconify-icon inline class="me-1" icon="ic:twotone-search" style="color: #8a1538;" width="25" height="25"></iconify-icon>
                             </span>
-
                         </div>
                     </div>
                 </div>
@@ -82,7 +87,7 @@ include_once '../scripts.php/reservation.script.php';
                     </div>
                     <div class="col-12 position-relative">
                         <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
+                            <div class="carousel-inner" id="carousel-matchs-container-id" >
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <?php for($i=0 ; $i<3 && $i < count($matches) ; $i++): ?>
@@ -90,13 +95,13 @@ include_once '../scripts.php/reservation.script.php';
                                                     <div class="card">
                                                         <form class="w-100 h-100" action="ticketpage.php" method="POST">
 
-                                                            <button value="<?php echo $i ?>" type="submit" name="match-id"  class="w-100    bg-white border border-0 ">
+                                                            <button value="<?php echo $matches[$i]->getId() ?>" type="submit" name="match-id"  class="w-100    bg-white border border-0 ">
                                                                 <div class="position-relative w-100">
                                                                     <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
                                                                     <img class="flag position-absolute top-50 start-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_1_obj()->getLogo(); ?>">
                                                                     <img class="flag position-absolute top-50 end-0 translate-middle-y"   src="../assets/img/flag/<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$i]->getTeame_2_obj()->getLogo(); ?>">
                                                                 </div>
-                                                                <div class="card-body ">
+                                                                <div class="card-body">
                                                                     <p class="fw-semibold"><?php echo $matches[$i]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$i]->getTeame_2_obj()->getCountry(); ?></p>
                                                                     <div class=" d-flex my-2 justify-content-between">
                                                                         <div><?php echo $matches[$i]->getDateTimeFormat() ?></div>
@@ -115,35 +120,35 @@ include_once '../scripts.php/reservation.script.php';
                                 </div>
                                 <?php for($i=3 ; $i<count($matches); $i+=3): ?>
                                     <div class="carousel-item ">
-                                    <div class="row ">
-                                        <?php for($j=$i ; $j<$i + 3 && $j<count($matches) ; $j++): ?>
-                                            <div class="col-md-4 mb-3">
-                                                    <div class="card ">
-                                                        <form class="" action="ticketpage.php" method="POST">
-                                                            <button value="<?php echo $j ?>" type="submit" name="match-id"  class="w-100 h-100 bg-white border border-0  ">
-                                                                <div class="position-relative w-100">
-                                                                    <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
-                                                                    <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$j]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$j]->getTeame_1_obj()->getLogo(); ?>">
-                                                                    <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$j]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$j]->getTeame_2_obj()->getLogo(); ?>">
-                                                                </div>
-                                                                <div class="card-body">
-                                                                <div class="card-body ">
-                                                                    <p class="fw-semibold"><?php echo $matches[$j]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$j]->getTeame_2_obj()->getCountry(); ?></p>
-                                                                    <div class=" d-flex my-2 justify-content-between">
-                                                                        <div><?php echo $matches[$j]->getDateTimeFormat() ?></div>
-                                                                        <div>$ <?php echo $matches[$j]->getPrice(); ?></div>
+                                        <div class="row">
+                                            <?php for($j=$i ; $j<($i + 3) && $j<count($matches) ; $j++): ?>
+                                                <div class="col-md-4 mb-3">
+                                                        <div class="card ">
+                                                            <form class="" action="ticketpage.php" method="POST">
+                                                                <button value="<?=$matches[$j]->getId()?>" type="submit" name="match-id"  class="w-100 h-100 bg-white border border-0  ">
+                                                                    <div class="position-relative w-100">
+                                                                        <img class="card-img-top " alt="100%x280" src="../assets/img/general/card_background.png">
+                                                                        <img class="flag position-absolute top-50 start-0 translate-middle-y"  height="20px" src="../assets/img/flag/<?php echo $matches[$j]->getTeame_1_obj()->getLogo(); ?>" alt="<?php echo $matches[$j]->getTeame_1_obj()->getLogo(); ?>">
+                                                                        <img class="flag position-absolute top-50 end-0 translate-middle-y" src="../assets/img/flag/<?php echo $matches[$j]->getTeame_2_obj()->getLogo(); ?>" alt="<?php echo $matches[$j]->getTeame_2_obj()->getLogo(); ?>">
                                                                     </div>
-                                                                    <div class="mt-3"> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$j]->getStaduim_obj()->getName(); ?></div>
-                                                                </div>
-                                                                </div>
-                                                            </button>
-                                                        </form>
-                                                    </div>
+                                                                    <div class="card-body">
+                                                                    <div class="card-body ">
+                                                                        <p class="fw-semibold"><?php echo $matches[$j]->getTeame_1_obj()->getCountry(); ?> vs <?php echo $matches[$j]->getTeame_2_obj()->getCountry(); ?></p>
+                                                                        <div class=" d-flex my-2 justify-content-between">
+                                                                            <div><?php echo $matches[$j]->getDateTimeFormat() ?></div>
+                                                                            <div>$ <?php echo $matches[$j]->getPrice(); ?></div>
+                                                                        </div>
+                                                                        <div class="mt-3"> <iconify-icon icon="ri:map-pin-2-line"></iconify-icon> <?php echo $matches[$j]->getStaduim_obj()->getName(); ?></div>
+                                                                    </div>
+                                                                    </div>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                        
                                                     
-                                                
-                                            </div>
-                                        <?php endfor; ?>
-                                    </div>
+                                                </div>
+                                            <?php endfor; ?>
+                                        </div>
                                     </div>
                                 <?php endfor; ?>
                                 
@@ -193,6 +198,13 @@ include_once '../scripts.php/reservation.script.php';
                                     <div class="">
                                         <div class="">
                                             <img class="w-50 " src="../assets/img/standings/8_final.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="">
+                                        <div class="">
+                                            <img class="w-100 " src="https://i.ytimg.com/vi/qyjhQaVtoT8/maxresdefault.jpg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -375,14 +387,9 @@ include_once '../scripts.php/reservation.script.php';
         </section>
 
         <?php include '../include/footer.php' ?>
-
         
 
-
-
-
-
-
+        <script src="../scripts.js/search.script.js"></script>
         <!-- JavaScript Bundle with Popper -->
     </body>
 </html>

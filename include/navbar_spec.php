@@ -21,16 +21,16 @@
         </li>
         <li class="nav-item">
           <a class="nav-link active"  href="#">Teams</a>
-        </li>
+        </li> 
         <li class="nav-item">
           <a class="nav-link active"  href="#">Contact</a>
         </li>
         <li class="nav-item ms-5">
-          <span class="nav-link active"><i class="bi bi-person-circle"></i> Hello : <b class="logout"> SPEC </b></span>
+          <span class="nav-link active"><i class="bi bi-person-circle"></i> Hello : <b class="logout"> <?=$_SESSION['name']?></b></span>
         </li>
       </ul>
       <div class="d-flex me-4 logout-div">
-        <a href="config/scripts.php?logout=1" name="logout" class="logout">  <i class="bi bi-box-arrow-right"></i><span> Logout </span></a>
+        <a href="../scripts.php/logout.script.php?&action=logOut" name="logout" class="logout">  <i class="bi bi-box-arrow-right"></i><span> Logout </span></a>
       </div>
     </div>
   </div>

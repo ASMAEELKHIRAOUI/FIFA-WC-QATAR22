@@ -4,7 +4,7 @@ include_once 'database.class.php';
     abstract class User extends Database{
         protected $id = NULL;
         protected $firstName;
-        protected $lasttName;
+        protected $lastName;
         protected $password;
         protected $email;
         protected $roll;
@@ -23,7 +23,7 @@ include_once 'database.class.php';
             $this->firstName = $fn;
         }
         public function setLastName($ln){
-            $this->lasttName = $ln;
+            $this->lastName = $ln;
         }
         public function setPassword($pas){
             $this->password = $pas;
@@ -43,7 +43,7 @@ include_once 'database.class.php';
             return $this->firstName ;
         }
         public function getLastName(){
-            return $this->lasttName  ;
+            return $this->lastName  ;
         }
         public function getPassword(){
             return $this->password  ;
@@ -76,10 +76,20 @@ include_once 'database.class.php';
             $this->lasttName = $dbObject->last_name;
             $this->password = $dbObject->password;
             $this->email = $dbObject->email;
+            $this->roll = $dbObject->roll;
         }
 
         public static function viewLandingPage(){
             echo "test landing page";
+        }
+
+
+        public function addSession(){
+           session_start();
+          $_SESSION['name'] = $this->name;
+          $_SESSION['id'] = $this->id;
+          $_SESSION['roll'] = $this->roll;
+
         }
 
     }
