@@ -559,18 +559,18 @@ include_once '../classes/spectateur.class.php';
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($stads as $stad):   ?>
-                                            <tr>
-                                                
-                                                <td class="text-start"><img style="width:5rem" src="../assets/img/stad/<?php echo $stad->getImage();?>" alt=""></td>
-                                                <td class="text-right"><?php echo $stad->getName();?></td>
-                                                <td class="text-right"><?php echo $stad->getCapacity();?></td>
-                                                <td class="text-right"><?php echo $stad->getLocation();?></td>
-                                                <td class="text-right"><?php echo $stad->getCity();?></td>
-                                                
-                                                <td class="text-left"><a href="update.stad.php?id=<?php echo $stad->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.stad.php?id=<?php echo $stad->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
-                                            </tr>
-                                            <?php endforeach; ?>
+                                            <?php foreach($matchs as $match):?>
+                                                    <tr>
+                                                        <td class="text-right"><?php echo $match->getDateTimeFormat();?></td>
+                                                        <!-- <td>05:57</td> -->
+                                                        <td class="text-right"><?php echo $match->getTeame_1_obj()->getCountry();?></td>
+                                                        <td class="text-start"><?php echo $match->getTeame_2_obj()->getCountry();?></td>
+                                                        <td class="text-right"><?php echo $match->getStaduim_obj()->getName();?></td>
+                                                        <td class="text-right"><?php echo $match->getprice(); ?> $</td>
+                                                        <td class="text-right"><?php echo $match->getdescription();?></td>
+                                                        <td class="text-left"><a href="update.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.match.php?deletematch=<?php echo $match->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
+                                                    </tr>
+                                            <?php endforeach;?>
                                         </tbody>
                                     </table>
                                 </div>

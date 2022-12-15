@@ -9,32 +9,6 @@ include_once 'database.class.php';
 
 
 
-    //  public  funtion getteam1(){
-    //     return $this->team1;
-    //  } 
-    //  public  funtion getteam2(){
-    //     return $this->team2;
-    //  } 
-    //  public  funtion getprices(){
-    //     return $this->prices;
-    //  } 
-    //  public  funtion getnames(){
-    //     return $this->names;
-    //  } 
-
-    //  public  funtion setteam1($team11){
-    //     $this->team1=$team11;
-    //  } 
-    //  public  funtion setteam2($team22){
-    //     $this->team2=$team22;
-    //  } 
-    //  public  funtion setprices($prics){
-    //     $this->prices=$prics;
-    //  } 
-    //  public  funtion setnames($nams){
-    //     $this->team1=$names;
-    //  } 
-     
 
 
 
