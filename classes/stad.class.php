@@ -8,13 +8,13 @@
         private $city;
         private $image;
 
-        public function __construct($name ="" , $capacity ="" , $location="" , $city="" , $image="")
+        public function __construct($namec="" , $capacityc="" , $locationc="" , $cityc="" , $imagec="")
         {
-            $this->name = $name;
-            $this->capacity = $capacity;
-            $this->location = $location;
-            $this->city = $city;
-            $this->image = $image;
+            $this->name = $namec;
+            $this->capacity = $capacityc;
+            $this->location = $locationc;
+            $this->city = $cityc;
+            $this->image = $imagec;
         }
 
         public function getId(){
@@ -37,6 +37,9 @@
         }
         
 
+        public function setId($id){
+            $this->id = $id;
+        }
         public function setName($name){
             $this->name = $name;
         }
@@ -85,11 +88,21 @@
 
         public function getStad($id){
             $database = new Database();
-            $sql = "SELECT * FROM `stad` where id = $id";
+            $sql = "SELECT * FROM `stad` where id = ?";
             $stmt = $database->connect()->prepare($sql);
-            $stmt->execute();
-            $dbStad = $stmt->fetchAll(PDO::FETCH_OBJ);
-            $this->getObject($dbStad);
+            $stmt->execute([$id]);
+            // $dbStad = $stmt->fetchAll(PDO::FETCH_OBJ);
+            // $this->getObject($dbStad);
+            if($stmt){
+                $row = $stmt->fetch();
+                $this->setId($row['id']);
+                $this->setName($row['name']);
+                $this->setCapacity($row['capacity']);
+                $this->setLocation($row['location']);
+                $this->setCity($row['city']);
+                $this->setImage($row['image']);
+                return $row;
+                }
         }
 
         public function addStad(){
@@ -100,16 +113,21 @@
             // header("Location:../pages/dashboard.php");
         }
         public function updateStad($id){
-            // if(isset(updateStad)){
-                // $query="UPDATE stad SET name=? , capacity=? , location=? , city=? , image=? WHERE id=?";
-                // $result = $this->connect()->prepare($query);
-                // $result->execute([$id,$capacity, $location, $city ,$image]);
-                // if($result)
-                //     header('location: dashboard.php');
-            // }
+            $database =new Database();
+            $query="UPDATE stad SET name=? , capacity=? , location=? , city=? WHERE id=?";
+            $result = $database->connect()->prepare($query);
+            $result->execute([$this->getName(), $this->getCapacity(), $this->getLocation(), $this->getCity(), $id]);
+            if($result)
+                header('location: dashboard.php');
         }
         
         public function deleteStad($id){
+            $database =new Database();
+            $query="DELETE FROM stad WHERE id=?";
+            $result = $database->connect()->prepare($query);
+            $result->execute([$id]);
+            if($result)
+                header('location: dashboard.php');
         }
          
     }
