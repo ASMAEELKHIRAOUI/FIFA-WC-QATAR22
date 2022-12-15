@@ -491,7 +491,7 @@ include_once '../classes/spectateur.class.php';
                                                     <td class="text-right"><?php echo $match->getStaduim_obj()->getName();?></td>
                                                     <td class="text-right"><?php echo $match->getprice(); ?> $</td>
                                                     <td class="text-right"><?php echo $match->getdescription();?></td>
-                                                    <td class="text-left"><a href="update.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
+                                                    <td class="text-left"><a href="update.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.php?deletematch=<?php echo $match->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                                 </tr>
                                             <?php endforeach;?>
                                         </tbody>
@@ -526,7 +526,7 @@ include_once '../classes/spectateur.class.php';
                                                 <td class="text-right"><img style="width:5rem" src="../assets/img/flag/<?php echo $team->getLogo();?>"> </td>
                                                 <td class="text-right"><?php echo $team->getCountry();?></td>
                                                 <td class="text-right"><?php echo $team->getCoatch(); ?></td>
-                                                <td class="text-left"><a href="update.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
+                                                <td class="text-left"><a href="update.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.php?deleteteam=<?php echo $team->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -567,7 +567,7 @@ include_once '../classes/spectateur.class.php';
                                                         <td class="text-right"><?php echo $match->getStaduim_obj()->getName();?></td>
                                                         <td class="text-right"><?php echo $match->getprice(); ?> $</td>
                                                         <td class="text-right"><?php echo $match->getdescription();?></td>
-                                                        <td class="text-left"><a href="update.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.match.php?deletematch=<?php echo $match->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
+                                                        <td class="text-left"><a href="update.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.php?deletematch=<?php echo $match->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                                     </tr>
                                             <?php endforeach;?>
                                         </tbody>
