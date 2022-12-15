@@ -114,9 +114,9 @@
         }
         public function updateStad($id){
             $database =new Database();
-            $query="UPDATE stad SET name=? , capacity=? , location=? , city=? , image=? WHERE id=?";
+            $query="UPDATE stad SET name=? , capacity=? , location=? , city=? WHERE id=?";
             $result = $database->connect()->prepare($query);
-            $result->execute([$this->getName(), $this->getCapacity(), $this->getLocation(), $this->getCity(), $this->getImage(),$id]);
+            $result->execute([$this->getName(), $this->getCapacity(), $this->getLocation(), $this->getCity(), $id]);
             if($result)
                 header('location: dashboard.php');
         }

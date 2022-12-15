@@ -19,7 +19,7 @@ if($result){
     $capacity = $result['capacity'];
     $location = $result['location'];
     $city = $result['city'];
-    $image = $result['image'];
+    // $image = $result['image'];
 }
 
 ?>

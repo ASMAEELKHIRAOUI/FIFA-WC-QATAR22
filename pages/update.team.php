@@ -15,8 +15,8 @@ if($result){
     $id = $result['id'];
     $country = $result['country'];
     $coach = $result['coach'];
-    $image = $result['image'];
-    $logo = $result['logo'];
+    // $image = $result['image'];
+    // $logo = $result['logo'];
 }
 
 ?>

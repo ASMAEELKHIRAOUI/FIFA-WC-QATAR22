@@ -267,13 +267,13 @@ include_once 'delete.php';
         <!-- NAVBAR  -->
         <nav class="navbar fixed-top d-lg-none" id="color">
   <div class="container-fluid" >
-    <a class="navbar-brand text-light" href="#">Offcanvas navbar</a>
+    <a class="navbar-brand text-light" href="#">YouTickets</a>
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon text-dark"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header" id="color">
-        <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">YouTickets</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body" id="color">
@@ -312,7 +312,7 @@ include_once 'delete.php';
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1 mt-2" id="statistiques">Statistiques</h2>
+                                    <h2 class="title-1 mt-2" id="statistiques">Statistics</h2>
                                     <!-- <button class="au-btn au-btn-icon au-btn--blue rounded" id="color">
                                         <i class="zmdi zmdi-plus"></i>add item</button> -->
                                 </div>

@@ -112,9 +112,9 @@
 
         public function updateTeam($id){
             $database =new Database();
-            $query="UPDATE team SET country=? ,coach=? ,image=? ,logo=? WHERE id=?";
+            $query="UPDATE team SET country=? ,coach=? WHERE id=?";
             $result = $database->connect()->prepare($query);
-            $result->execute([$this->getCountry(),$this->getCoatch(),$this->getImage(),$this->getLogo(), $id]);
+            $result->execute([$this->getCountry(),$this->getCoatch(), $id]);
             // var_dump($result);
             if($result)
                 header('location: dashboard.php');
