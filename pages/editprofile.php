@@ -3,8 +3,8 @@
 <?php include_once '../scripts.php/editepage.script.php';
 include_once '../scripts.php/reservation.script.php' ?>
 <!DOCTYPE html>
-<html lang="en">
-<body >
+  <html lang="en">
+  <body >
 
   <link href="../assets/css/dashtest.css" rel="stylesheet" media="all">
   <link rel="stylesheet" href="../assets/css/styleF.css">
@@ -116,7 +116,7 @@ include_once '../scripts.php/reservation.script.php' ?>
                             class="form-control"
                             name="password"
                             id="password"
-                            value="<?=$obj->getPassword()?>"
+                            value=""
                         />
                     </div>    
               </div>

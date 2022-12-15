@@ -59,6 +59,7 @@ include_once 'ticket.class.php';
             
             if ($stmt->rowCount() > 0) {
             
+                $_SESSION['id'] = $data['id'];
                 $_SESSION['name'] = $data['first_name'];
                 $_SESSION['last-name'] = $data['last_name'];
                 $_SESSION['roll'] = 'spectator';
@@ -125,11 +126,6 @@ include_once 'ticket.class.php';
             $stmt->execute();   
             $arr =  $stmt->fetch(PDO::FETCH_ASSOC);
             //var_dump($arr);
-
-            $this->setFirstName($arr['first_name']);
-            $this->setLastName($arr['last_name']);
-            $this->setEmail($arr['email']);
-            $this->setPassword($arr['password']);
         
         }
 
@@ -158,7 +154,8 @@ include_once 'ticket.class.php';
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
             
-            header('location: ../pages/editprofile.php');
+            session_destroy();
+            header('location: ../pages/landingpage.php');
         }
 
         public function cancel_changes()

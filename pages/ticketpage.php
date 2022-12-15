@@ -4,6 +4,7 @@ include_once '../include/head.php';
 include_once '../scripts.php/reservation.script.php';
 
 if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
+
 // else if($_SESSION['roll'] !='spectator')  header('location:../pages/signin.php');
 ?>
 
@@ -15,6 +16,8 @@ if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
     <?php
         if(!isset($_SESSION['name'])) include_once '../include/navbar_landingpage.php';
         else  include_once '../include/navbar_spec.php';
+        $_SESSION['match-reserved-id'] = $_POST['match-id'];
+        
     ?>  
 
 
