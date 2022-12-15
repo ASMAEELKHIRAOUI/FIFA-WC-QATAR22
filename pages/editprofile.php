@@ -1,6 +1,7 @@
 
 
-<?php include_once '../scripts.php/editepage.script.php'; ?>
+<?php include_once '../scripts.php/editepage.script.php';
+include_once '../scripts.php/reservation.script.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <body >
@@ -36,10 +37,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><?=$obj->getDateTime()?></td>
-                  <td class="text-right"><?=$obj->getTeame_1_obj()->getCountry()?></td>
-                  <td class="text-start">usa<?=$obj->getTeame_2_ID()?></td>
-                  <td class="text-right">tamama<?=$obj->getFirstName()?></td>
+                  <td>date</td>
+                  <td class="text-right">maroc</td>
+                  <td class="text-start">usa</td>
+                  <td class="text-right"> stade  </td>
                   <td>200$</td>
                 </tr>
               </tbody>

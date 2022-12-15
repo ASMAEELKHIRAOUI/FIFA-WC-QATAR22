@@ -4,8 +4,7 @@ include_once '../include/head.php';
 include_once '../scripts.php/reservation.script.php';
 
 if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
-
-else if($_SESSION['roll'] !='spectator')  header('location:../pages/signin.php');
+// else if($_SESSION['roll'] !='spectator')  header('location:../pages/signin.php');
 ?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,8 +12,10 @@ else if($_SESSION['roll'] !='spectator')  header('location:../pages/signin.php')
 <link rel="stylesheet" href="../assets/css/ticketspage.css">
 
 
-<?php include_once '../include/navbar.php';?>
-
+    <?php
+        if(!isset($_SESSION['name'])) include_once '../include/navbar_landingpage.php';
+        else  include_once '../include/navbar_spec.php';
+    ?>  
 
 
     <div class="container">
