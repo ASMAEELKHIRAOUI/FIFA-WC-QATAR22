@@ -3,7 +3,6 @@ include_once 'database.class.php';
 include_once 'user.class.php';
 include_once 'ticket.class.php';
 
-  session_start();
 
     class Spectateur extends User {
         private $matchsReserved = array();
@@ -98,6 +97,7 @@ include_once 'ticket.class.php';
             }
         }
         
+        //____________mouad crud_____________
         
         public function getSpectateur()
         {
