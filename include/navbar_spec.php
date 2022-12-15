@@ -26,7 +26,7 @@
           <a class="nav-link active"  href="#">Contact</a>
         </li>
         <li class="nav-item ms-5">
-          <span class="nav-link active"><i class="bi bi-person-circle"></i> Hello : <b class="logout"> <?=$_SESSION['name']?></b></span>
+          <a href="../pages/editprofile.php"><span class="nav-link active"><i class="bi bi-person-circle"></i> Hello : <b class="logout"> <?=$_SESSION['name']?></b></span></a>
         </li>
       </ul>
       <div class="d-flex me-4 logout-div">
