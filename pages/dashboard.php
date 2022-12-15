@@ -3,7 +3,9 @@ include '../include/head.php';
 include_once '../scripts.php/crudadmin.script.php';
 include_once '../classes/match.class.php';
 include_once '../classes/stad.class.php';
-include '../classes/spectateur.class.php';
+include_once '../classes/spectateur.class.php';
+
+
 
 
     // if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
@@ -31,7 +33,10 @@ include '../classes/spectateur.class.php';
 						<h5 class="modal-title">New Match</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
-					<div class="modal-body">
+
+
+
+                    <div class="modal-body">
 			
 							<input type="hidden" name="id" >
 
@@ -82,6 +87,23 @@ include '../classes/spectateur.class.php';
 							</div>
 						
 					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
 						<button type="submit" name="SaveMatch" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
@@ -154,7 +176,7 @@ include '../classes/spectateur.class.php';
 
                             <div class="mb-3">
 								<label class="form-label">Capacity</label>
-								<input type="text" name="Capacity"  class="form-control"  required/>
+								<input type="number" name="Capacity"  class="form-control"  required/>
 							</div>
 
 							<div class="mb-3">
@@ -314,8 +336,10 @@ include '../classes/spectateur.class.php';
 </nav>
         <!-- END OF NAVBAR -->
 
-            <!-- Statistiques-->
-            <div class="main-content pt-5">
+
+
+                    <!-- Statistiques-->
+                    <div class="main-content pt-5">
                 <div class="section__content section__content ">
                     <div class="container-fluid" >
                         <div class="row">
@@ -336,7 +360,7 @@ include '../classes/spectateur.class.php';
                                                 <i class="fa fa-futbol-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>36</h2>
+                                                <h2><?php echo $statisquematch[0]["COUNT(id)"];?></h2>
                                                 <span>Matches Played</span>
                                             </div>
                                         </div>
@@ -351,7 +375,9 @@ include '../classes/spectateur.class.php';
                                                 <i class="fa fa-fort-awesome"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>8</h2>
+                                                <h2><?php 
+                                                    echo $statiquestad[0]["COUNT(id)"] ;
+                                                ?></h2>
                                                 <span>Stadiums Available</span>
                                             </div>
                                         </div>
@@ -366,7 +392,7 @@ include '../classes/spectateur.class.php';
                                                 <i class="fa fa-user"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>103</h2>
+                                                <h2><?php echo $statiqueuser[0]["COUNT(id)"];?></h2>
                                                 <span>Registered Spectators</span>
                                             </div>
                                         </div>
@@ -381,7 +407,9 @@ include '../classes/spectateur.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>368</h2>
+                                                <h2><?php  echo $dispoticket[0]['capacitys'];
+                                                
+                                                  ?></h2>
                                                 <span>e-tickets Available</span>
                                             </div>
                                         </div>
@@ -396,7 +424,7 @@ include '../classes/spectateur.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>103</h2>
+                                                <h2><?php echo $reserverticket[0]["COUNT(id)"];?></h2>
                                                 <span>Reserved e-tickets</span>
                                             </div>
                                         </div>
@@ -411,7 +439,7 @@ include '../classes/spectateur.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>98</h2>
+                                                <h2><?php echo $dispoticket[0]['capacitys']-$reserverticket[0]["COUNT(id)"];?></h2>
                                                 <span>Remaining e-tickets</span>
                                             </div>
                                         </div>
@@ -419,6 +447,17 @@ include '../classes/spectateur.class.php';
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+ 
                         <!-- table of matches -->
                         <div class="row">
                             <div class="col-lg-12">
@@ -453,7 +492,7 @@ include '../classes/spectateur.class.php';
                                                     <td class="text-right"><?php echo $match->getStaduim_obj()->getName();?></td>
                                                     <td class="text-right"><?php echo $match->getprice(); ?> $</td>
                                                     <td class="text-right"><?php echo $match->getdescription();?></td>
-                                                    <td class="text-left"><a href="update.match.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
+                                                    <td class="text-left"><a href="update.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.match.php?id=<?php echo $match->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                                 </tr>
                                             <?php endforeach;?>
                                         </tbody>
@@ -488,7 +527,7 @@ include '../classes/spectateur.class.php';
                                                 <td class="text-right"><img style="width:5rem" src="../assets/img/flag/<?php echo $team->getLogo();?>"> </td>
                                                 <td class="text-right"><?php echo $team->getCountry();?></td>
                                                 <td class="text-right"><?php echo $team->getCoatch(); ?></td>
-                                                <td class="text-left"><a href="update.team.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
+                                                <td class="text-left"><a href="update.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.team.php?id=<?php echo $team->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -529,7 +568,7 @@ include '../classes/spectateur.class.php';
                                                 <td class="text-right"><?php echo $stad->getLocation();?></td>
                                                 <td class="text-right"><?php echo $stad->getCity();?></td>
                                                 
-                                                <td class="text-left"><a href="update.stad.php"><i class="fa fa-edit text-primary me-2"></i></a></td>
+                                                <td class="text-left"><a href="update.stad.php?id=<?php echo $stad->getId(); ?>"><i class="fa fa-edit text-primary me-2"></i></a><a href="delete.stad.php?id=<?php echo $stad->getId(); ?>"><i class="fa fa-trash text-danger me-2"></i></a></td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -559,12 +598,14 @@ include '../classes/spectateur.class.php';
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach($reservationticket as $rticket ): ?>
                                             <tr>
-                                                <td class="text-right">morocco vs portogal</td>
-                                                <td class="text-right">test user</td>
-                                                <td class="text-right">19.57$</td>
+                                                <td class="text-right"><?php echo $rticket['country1'] .' VS ' .$rticket['country2']  ; ?></td>
+                                                <td class="text-right"><?php echo  $rticket['names'];?></td>
+                                                <td class="text-right"><?php echo $rticket['prices'];?>$</td>
                                                 <td class="text-left"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
+                                        <?php endforeach; ?>
 
                                         </tbody>
                                     </table>

@@ -3,6 +3,7 @@ include_once 'database.class.php';
 include_once 'user.class.php';
 include_once 'ticket.class.php';
 
+  session_start();
 
     class Spectateur extends User {
         private $matchsReserved = array();
@@ -78,6 +79,7 @@ include_once 'ticket.class.php';
             if ($stmt->rowCount() > 0) {
                 
                 $_SESSION['name'] = $admin['first_name'];
+                $_SESSION['last-name'] = $admin['last_name'];
                 $_SESSION['id'] = $admin['id'];
                 $_SESSION['roll'] = 'admin';
 
@@ -97,7 +99,6 @@ include_once 'ticket.class.php';
             }
         }
         
-        //____________mouad crud_____________
         
         public function getSpectateur()
         {
@@ -116,7 +117,7 @@ include_once 'ticket.class.php';
         }
         public function getOldReservation()
         {
-            
+            //!!!!!!!!!!!!!!modify this content !!!!!!!!!!!!! 
 
             $sql = "SELECT * FROM spectator WHERE id = $this->id";
             $conn = Database::connect();
