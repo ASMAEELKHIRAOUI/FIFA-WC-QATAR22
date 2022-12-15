@@ -6,6 +6,8 @@ include_once '../classes/stad.class.php';
 include_once '../classes/spectateur.class.php';
 
 
+
+
     if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
 
     else if($_SESSION['roll'] !='admin')  header('location:../pages/landingpage.php');
@@ -31,7 +33,10 @@ include_once '../classes/spectateur.class.php';
 						<h5 class="modal-title">New Match</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
 					</div>
-					<div class="modal-body">
+
+
+
+                    <div class="modal-body">
 			
 							<input type="hidden" name="id" >
 
@@ -82,6 +87,23 @@ include_once '../classes/spectateur.class.php';
 							</div>
 						
 					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white border" data-bs-dismiss="modal" id="cancel-btn">Cancel</a>
 						<button type="submit" name="SaveMatch" class="color btn  text-light task-action-btn" id="save-btn">Add Match</button>
