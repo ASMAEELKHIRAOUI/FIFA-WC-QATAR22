@@ -336,8 +336,10 @@ include_once '../classes/spectateur.class.php';
 </nav>
         <!-- END OF NAVBAR -->
 
-            <!-- Statistiques-->
-            <div class="main-content pt-5">
+
+
+                    <!-- Statistiques-->
+                    <div class="main-content pt-5">
                 <div class="section__content section__content ">
                     <div class="container-fluid" >
                         <div class="row">
@@ -358,7 +360,7 @@ include_once '../classes/spectateur.class.php';
                                                 <i class="fa fa-futbol-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>36</h2>
+                                                <h2><?php echo $statisquematch[0]["COUNT(id)"];?></h2>
                                                 <span>Matches Played</span>
                                             </div>
                                         </div>
@@ -373,7 +375,9 @@ include_once '../classes/spectateur.class.php';
                                                 <i class="fa fa-fort-awesome"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>8</h2>
+                                                <h2><?php 
+                                                    echo $statiquestad[0]["COUNT(id)"] ;
+                                                ?></h2>
                                                 <span>Stadiums Available</span>
                                             </div>
                                         </div>
@@ -388,7 +392,7 @@ include_once '../classes/spectateur.class.php';
                                                 <i class="fa fa-user"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>103</h2>
+                                                <h2><?php echo $statiqueuser[0]["COUNT(id)"];?></h2>
                                                 <span>Registered Spectators</span>
                                             </div>
                                         </div>
@@ -403,7 +407,9 @@ include_once '../classes/spectateur.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>368</h2>
+                                                <h2><?php  echo $dispoticket[0]['capacitys'];
+                                                
+                                                  ?></h2>
                                                 <span>e-tickets Available</span>
                                             </div>
                                         </div>
@@ -418,7 +424,7 @@ include_once '../classes/spectateur.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>103</h2>
+                                                <h2><?php echo $reserverticket[0]["COUNT(id)"];?></h2>
                                                 <span>Reserved e-tickets</span>
                                             </div>
                                         </div>
@@ -433,7 +439,7 @@ include_once '../classes/spectateur.class.php';
                                                 <i class="fa fa-ticket"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>98</h2>
+                                                <h2><?php echo $dispoticket[0]['capacitys']-$reserverticket[0]["COUNT(id)"];?></h2>
                                                 <span>Remaining e-tickets</span>
                                             </div>
                                         </div>
@@ -441,6 +447,17 @@ include_once '../classes/spectateur.class.php';
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+ 
                         <!-- table of matches -->
                         <div class="row">
                             <div class="col-lg-12">
