@@ -598,12 +598,14 @@ include_once '../classes/spectateur.class.php';
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach($reservationticket as $rticket ): ?>
                                             <tr>
-                                                <td class="text-right">morocco vs portogal</td>
-                                                <td class="text-right">test user</td>
-                                                <td class="text-right">19.57$</td>
+                                                <td class="text-right"><?php echo $rticket['country1'] .' VS ' .$rticket['country2']  ; ?></td>
+                                                <td class="text-right"><?php echo  $rticket['names'];?></td>
+                                                <td class="text-right"><?php echo $rticket['prices'];?>$</td>
                                                 <td class="text-left"><i class="fa fa-edit text-primary me-2"></i></td>
                                             </tr>
+                                        <?php endforeach; ?>
 
                                         </tbody>
                                     </table>
