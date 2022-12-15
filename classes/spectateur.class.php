@@ -3,7 +3,7 @@ include_once 'database.class.php';
 include_once 'user.class.php';
 include_once 'ticket.class.php';
 
-  session_start();
+session_start();
 
     class Spectateur extends User {
         private $matchsReserved = array();
@@ -60,6 +60,7 @@ include_once 'ticket.class.php';
             if ($stmt->rowCount() > 0) {
             
                 $_SESSION['name'] = $data['first_name'];
+                $_SESSION['id'] = $data['id'];
                 $_SESSION['last-name'] = $data['last_name'];
                 $_SESSION['roll'] = 'spectator';
                 echo"<script>alert('successfully');document.location='../pages/landingpage.php'</script>";
@@ -148,7 +149,16 @@ include_once 'ticket.class.php';
             $conn = Database::connect();
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
-            header('location: ../pages/editprofile.php');
+
+            // session_destroy();
+            // session_start();
+
+            $_SESSION['name'] = $firstName;
+            // $_SESSION['id'] = $id;
+            $_SESSION['last-name'] = $lastName;
+            $_SESSION['roll'] = 'spectator';
+
+            header('location: ../pages/landingpage.php');
         }
 
         public function deleteSpectateur()
@@ -157,8 +167,8 @@ include_once 'ticket.class.php';
             $conn = Database::connect();
             $stmt = $conn->prepare($sql); 
             $stmt->execute();
-            
-            header('location: ../pages/editprofile.php');
+            session_destroy();
+            header('location: ../pages/landingpage.php');
         }
 
         public function cancel_changes()

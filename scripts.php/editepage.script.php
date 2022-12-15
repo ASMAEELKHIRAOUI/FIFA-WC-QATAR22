@@ -4,8 +4,8 @@
     $obj = new Spectateur();
 
     //get id 
-    $id= @$_GET['id'];
-    $obj->setId(1);
+    $id= @$_SESSION['id'];
+    $obj->setId($id);
 
     //Routting
     $obj->getSpectateur();
