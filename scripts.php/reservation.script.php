@@ -3,9 +3,10 @@ include_once 'landingpage.script.php';
 include_once '../classes/spectateur.class.php';
 
 
-$connectSpectateur = new Spectateur("yassin" , "bonno" , "semi-final" , "fifa@morocco.world" , 2);
+$connectSpectateur = new Spectateur();
 
-$connectSpectateur->setId(2);
+if(isset($_SESSION['id'])) $connectSpectateur->setId($_SESSION['id']);
+
 
 if(isset($_POST['ajaxRequest'])){
     if($_POST['ajaxRequest'] == "reserve-match") {
