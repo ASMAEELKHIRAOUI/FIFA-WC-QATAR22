@@ -97,6 +97,7 @@ include_once 'ticket.class.php';
              }
         }
         
+        //____________mouad crud_____________
         
         public function getSpectateur()
         {
