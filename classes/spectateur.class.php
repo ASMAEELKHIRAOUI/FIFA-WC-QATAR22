@@ -79,6 +79,7 @@ include_once 'ticket.class.php';
             if ($stmt->rowCount() > 0) {
                 
                 $_SESSION['name'] = $admin['first_name'];
+                $_SESSION['last-name'] = $admin['last_name'];
                 $_SESSION['id'] = $admin['id'];
                 $_SESSION['roll'] = 'admin';
 
