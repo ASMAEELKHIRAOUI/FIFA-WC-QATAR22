@@ -6,9 +6,9 @@ include_once '../classes/stad.class.php';
 include '../classes/spectateur.class.php';
 
 
-    if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
+    // if(!isset($_SESSION['name']))  header('location:../pages/signin.php');
 
-    else if($_SESSION['roll'] !='admin')  header('location:../pages/landingpage.php');
+    // else if($_SESSION['roll'] !='admin')  header('location:../pages/landingpage.php');
     
 
 ?>
