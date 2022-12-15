@@ -116,7 +116,7 @@ include_once 'ticket.class.php';
         }
         public function getOldReservation()
         {
-            //!!!!!!!!!!!!!!modify this content !!!!!!!!!!!!! 
+            
 
             $sql = "SELECT * FROM spectator WHERE id = $this->id";
             $conn = Database::connect();
