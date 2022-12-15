@@ -3,30 +3,28 @@ include_once 'landingpage.script.php';
 include_once '../classes/spectateur.class.php';
 
 
-$connectSpectateur = new Spectateur("yassin" , "bonno" , "semi-final" , "fifa@morocco.world" , 2);
+$connectSpectateur = new Spectateur();
 
-$connectSpectateur->setId(2);
+if(isset($_SESSION['id'])) $connectSpectateur->setId($_SESSION['id']);
+
 
 if(isset($_POST['ajaxRequest'])){
-    
-    if($_POST['ajaxRequest'] == "reserve-match") reservMatch($_POST['match_Id'] , $connectSpectateur);
-    $matchId = $GLOBALS["matches"][$_POST['match_Id'] ]->getId();
-    $data = count(getRezerveMatch($matchId));
-    
+    if($_POST['ajaxRequest'] == "reserve-match") {
+
+        for($i=0 ; $i<$_POST['ticket_Number'] ; $i++)
+            reservMatch($_POST['match_Id'] , $connectSpectateur);
+    }
+    $data = $_POST['ticket_Number'];
     echo json_encode($data);
 }
 
 $matchsReserved = $connectSpectateur->getMatchsReserved();
 
-
-
-
-
-
-
 function reservMatch($matchId , $connectSpectateur){
-    $connectSpectateur->setReservation($GLOBALS["matches"][$matchId]);
+    $connectSpectateur->setReservation($matchId);
 }
+
+
 
 function getRezerveMatch($matchId){
     $matchReserved = $GLOBALS["connectSpectateur"]->getMatchReserved($matchId);
