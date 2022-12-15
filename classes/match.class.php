@@ -143,8 +143,6 @@ include_once '../classes/database.class.php';
             $sql = "SELECT * FROM matches where id = ?";
             $stmt = $database->connect()->prepare($sql);
             $stmt->execute([$id]);
-            // $dbMatch = $stmt->fetchAll(PDO::FETCH_OBJ);
-            // $this->getObject($dbMatch);
             if($stmt){
                 $row = $stmt->fetch();
                 $this->setId($row['id']);
