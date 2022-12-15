@@ -3,7 +3,6 @@ include_once 'database.class.php';
 include_once '../classes/user.class.php';
 include_once 'ticket.class.php';
 
-  session_start();
 
     class Spectateur extends User {
         private $matchsReserved = array();
