@@ -79,6 +79,7 @@ include_once 'ticket.class.php';
                 
                 $_SESSION['name'] = $admin['first_name'];
                 $_SESSION['id'] = $admin['id'];
+                $_SESSION['last-name'] = $admin['last_name'];
                 $_SESSION['roll'] = 'admin';
 
                 echo"<script>alert('successfully');document.location='../pages/dashboard.php'</script>";
